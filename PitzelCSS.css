@@ -1,0 +1,92 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.img-background, .landing-bg{
+    height: 100%;
+}
+
+.img-background { 
+    background-image: url("Imagenes/fondo.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:black;
+    background-color: #0f1e25;
+}
+
+.main-logo{
+	height: 100px;
+}
+
+.dropdown-menu{
+		background-color: #77666630;	
+}
+
+.sign-up-menu{
+	border-radius: 130px 5px 5px 130px;
+	background-color: #e6e2e247;
+}
+
+.games-img{
+	border-radius: 90px 90px 90px 90px;
+}
+
+.registrar-text{
+	font-size: 35px;
+	text-align: center;
+	color: white;
+}
+
+.sign-up-menu label{
+	color: white;
+}
+
+.navbar-default{
+	background-color: #06292f73;
+	border:none;
+}
+
+.triforce{
+	margin-top: -70px;
+	width: 160px;
+}
+
+.navi-img{
+	width: 60%;
+}
+
+.sign-up-btn{
+	background-color:#2fa8d3;
+	padding: 15px 50px 15px 50px;
+	border-radius: 40px 40px 40px 40px;
+	border:none;
+}
+
+.main-image-link{
+	width: 100%;
+}
+
+.img-background h4{
+	font-size: 30px;
+	text-align: center;
+	color: #0f1e25;
+	margin-top: -1px;
+}
+
+.btn-login{
+	background-color:#5e9aaf;
+	padding: 5px 40px 5px 40px;
+	border-radius: 40px 40px 40px 40px;
+	border:none;
+	font-size:18px;
+	color: white;
+}
+
+.btn-login-nav{
+	color: white;
+	font-size:15px;
+}
+
+.rupia-img{
+	width:100%;
+}

@@ -1,17 +1,4 @@
-﻿<!--
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-	<h1>Now is php</h1>
-	<?php echo ("hola pipe"); ?> 
-</body>
-</html>
-	<html><body><h1>It works!</h1></body></html>
--->
-
-<!doctype html>
+﻿<!doctype html>
 <html class="landing-bg">
   <head>
     <!-- Required meta tags -->

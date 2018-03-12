@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="landing-bg">
   <head>
     <!-- Required meta tags -->
@@ -63,19 +63,23 @@
                         <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
                           <div class="row">   
                           <div class="col-sm-1">
-                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img">
+                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img 
+                          visible-sm-inline visible-md-inline visible-lg-inline">
                           </div>
                           <div class="col-sm-1">
-                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img">
+                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img
+                          visible-sm-inline visible-md-inline visible-lg-inline">
                           </div>       
                           <div class="col-sm-8">
                           <h4>Ingresa con tu cuenta</h4>
                           </div>
                           <div class="col-sm-1">
-                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img">
+                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img
+                          visible-sm-inline visible-md-inline visible-lg-inline">
                           </div>
                           <div class="col-sm-1">
-                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img">
+                          <img src="Imagenes/rupia.png" class="img-responsive rupia-img
+                          visible-sm-inline visible-md-inline visible-lg-inline">
                           </div>
                           </div></center>
                     </div>
@@ -104,7 +108,8 @@
           
           
           <div class="col-md-4">
-            <img src="Imagenes/Link.png" class="img-responsive main-image-link">
+            <img src="Imagenes/Link.png" class="img-responsive main-image-link
+            visible-sm-inline visible-md-inline visible-lg-inline">
           </div>
 
           <div class="col-md-1">           
@@ -117,7 +122,8 @@
                 </div>
                 <label class="col-sm-8 col-form-label registrar-text">Registrate Gratis!</label>
                 <div class="col-sm-2">
-                  <img src="Imagenes/navi.png" class="img-responsive navi-img">
+                  <img src="Imagenes/navi.png" class="img-responsive navi-img
+                  visible-sm-inline visible-md-inline visible-lg-inline">
                 </div>
               </div>
 

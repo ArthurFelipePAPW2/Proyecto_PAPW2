@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html class="landing-bg">
   <head>
     <!-- Required meta tags -->
@@ -20,7 +20,7 @@
         <br>
       <div class="row">
         <div class="col-md-2 col-md-offset-5">
-              <img src="Imagenes/M_Logo.png" class="main-logo">
+              <center><a href="principal.php"></a><img src="Imagenes/M_Logo.png" class="main-logo"></center>
         </div>
       </div>
       <br>
@@ -34,17 +34,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand"><p><img src="Imagenes/triforce.png" class="triforce"></p></a>
+                <a href="principal.php" class="navbar-brand"><p><img src="Imagenes/triforce.png" class="triforce"></p></a>
               </div>
               <!-- Menu de opciones -->
-              <div class="collapse navbar-collapse" id="navbar-1">
-
-            
+              <div class="collapse navbar-collapse navbar-general" id="navbar-1">
               <!--Logueo -->
                <ul class="nav navbar-nav navbar-right">
                    <li>
                     <a data-toggle="modal" data-target="#loginModal">
-                      <span class="glyphicon glyphicon-log-in btn-login-nav"> LOGIN</span> 
+                      <span class="glyphicon glyphicon-log-in btn-login-nav"> <label>LOGIN</label></span> 
                     </a>
                    </li>
                 </ul>
@@ -70,7 +68,7 @@
                           <img src="Imagenes/rupia.png" class="img-responsive rupia-img
                           visible-sm-inline visible-md-inline visible-lg-inline">
                           </div>       
-                          <div class="col-sm-8">
+                          <div class="col-sm-8 Modal-Text">
                           <h4>Ingresa con tu cuenta</h4>
                           </div>
                           <div class="col-sm-1">
@@ -120,7 +118,7 @@
           <div class="form-group row">
                 <div class="col-sm-2">
                 </div>
-                <label class="col-sm-8 col-form-label registrar-text">Registrate Gratis!</label>
+                <center><label class="col-sm-8 col-form-label registrar-text">Regístrate Gratis!</label></center>
                 <div class="col-sm-2">
                   <img src="Imagenes/navi.png" class="img-responsive navi-img
                   visible-sm-inline visible-md-inline visible-lg-inline">
@@ -128,8 +126,7 @@
               </div>
 
           <hr>
-            <form>
-
+            <form class="form-index">
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
@@ -166,7 +163,7 @@
               </div>
               <div class="form-group row">
               <div class="col-md-2 col-md-offset-5">
-               <button type="submit" class="btn btn-primary sign-up-btn">Sign in</button>
+               <center><button type="submit" class="btn btn-primary sign-up-btn">Sign in</button></center>
               </div>
         </div>
           </form>

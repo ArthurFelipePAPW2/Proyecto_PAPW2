@@ -8,6 +8,11 @@
 }
 
 @font-face {
+  font-family: 'AmorE-Regular';
+  src: url("Fuentes/AmorE-Regular.ttf");
+}
+
+@font-face {
   font-family: 'Lines';
   src: url("Fuentes/Lines.ttf");
 }
@@ -38,17 +43,21 @@
 }
 
 /*FONDOS DE LAS PAGINAS*/
-.img-background, .landing-bg, .img-background2,.img-background3{
+.img-background, .landing-bg, .img-background2,.img-background3,.img-background4,.img-background5{
     height: 100%;
 }
 
-.img-background { 
-    background-image: url("Imagenes/fondo.jpg");
-    height: 100%; 
+.img-background,.img-background2,.img-background3,.img-background4,.img-background5{
+	height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color:black;
+}
+
+/*ESTOS ESTILOS PERTENECEN A LA LANDING PAGE*/
+.img-background { 
+    background-image: url("Imagenes/fondo.jpg");
     background-color: #0f1e25;
 }
 
@@ -156,11 +165,6 @@
 /*ESTOS ESTILOS PERTENECEN A LA PAGINA PRINCIPAL*/
 .img-background2 { 
     background-image: url("Imagenes/fondo-principal.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color:black;
     background-color: #0E283F;
 }
 
@@ -255,11 +259,6 @@
 /*ESTOS ESTILOS PERTENECEN A LA PAGINA RESENA*/
 .img-background3 { 
     background-image: url("Imagenes/fondo-resena.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color:black;
     background-color: #363636;
 }
 
@@ -453,4 +452,240 @@
 	display: inline-block;
 }
 
+/*ESTOS ESTILOS PERTENECEN A LA PAGINA PERFIL*/
+.img-background4 { 
+    background-image: url("Imagenes/fondo-perfil.jpg");
+    background-color: #3c3c54;
+}
 
+.img-perfil-pag img{
+	width: 300px;
+	height: auto;
+	margin-bottom: -25px;
+}
+
+.img-perfil-pag button{
+	position: relative;
+	margin-left: 230px;
+	background-color: #ff000000;
+	border: none;
+}
+
+.nombre-perfil{
+	background-color: #be9caab3;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-left: 10px solid #986d8ab3;
+	color: white;
+	font-family: Nozstudio;
+	font-size: 18px;
+}
+
+.descripcion-perfil{
+	color: white;
+	text-align: justify;
+    text-justify: inter-word;
+    background-color: #e0c0c1b0;;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.acerca-de-mi{
+	color: white;
+	font-size: 11px;
+	text-align: left;
+}
+
+.table-usuario{
+	color: white;
+	background-color: #e2bebe36;
+	border-radius: 15px 2px 2px 2px;
+}
+
+.table-usuario td:first-child{
+	background-color: red;
+	width: 15%;
+	background: linear-gradient(to left, rgb(81, 79, 100), rgb(46, 47, 68));
+	font-size: 18px;
+	font-family: AmorE-Regular;
+}
+
+.table-usuario td:nth-child(2){
+	width: 85%;
+}
+
+.table-usuario th{
+	font-family: AmorE-Regular;
+	font-size: 22px;
+}
+
+.table-usuario button{
+	width: 30px;
+	height: 30px;
+	background-color: #ff000000;
+	border: none;
+	color: white;
+}
+
+.send-data textarea{
+	resize:none;
+	width: 100%;
+	height: 200px;
+}
+
+/*ESTOS ESTILOS PERTENECEN A LA PAGINA ADMIN*/
+.img-background5 { 
+    background-image: url("Imagenes/fondo-admin.png");
+    background-color: #041111;
+}
+
+.img-perfil2{
+	height: 40px;
+	width: auto;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.table-solicitud{
+	background-color: #231f1f80;
+	color: white;
+	font-size: 12px;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+.table-solicitud caption{
+	background-color: #d4c5c580;
+	color: #1d5a4b;
+	font-size: 18px;
+	font-family: Nozstudio;
+	padding-left: 60px;
+}
+
+.table-solicitud th{
+	font-size: 14px;
+	font-family: Nozstudio;
+	text-align: center;
+}
+
+.table-solicitud td:first-child{
+	width: 25%;
+}
+
+.table-solicitud td:nth-child(3){
+	width: 20%;
+}
+
+.table-solicitud td:last-child{
+	width: 5%;
+}
+
+.eliminar-check {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+	cursor: pointer;
+}
+
+.eliminar-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.checkmark {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: #57714b;
+    border-radius:10px;
+}
+
+.eliminar-check:hover input ~ .checkmark {
+    background-color: #1d5a4b;
+    border-radius:10px;
+}
+
+.eliminar-check input:checked ~ .checkmark {
+    background-color: #1c594a;
+    border-radius:10px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.eliminar-check input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.eliminar-check .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.img-solicitud{
+	height: 100px;
+	width: auto;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.user-solicitud{
+	padding-left: 10px;
+	text-align:left;
+ 	font-family: Nozstudio;
+ 	color: white;
+ 	font-size: 20px;
+ 	background-color:#232121b8;
+ 	border-radius: 5px 5px 0px 0px;
+ 	margin: 0px;
+ 	margin-left: 7px;
+ 	margin-right: 8px;
+}
+
+.titulo-solicitud{
+	font-family: Nozstudio;
+	text-align: center;
+}
+
+.textarea-agregar-vdj{
+	resize:none;
+	width: 100%;
+	height: 120px;
+}
+
+.modificar-vdj-button{
+	background-color:#5e9aaf;
+	padding: 5px 0px 5px 0px;
+	border-radius: 40px 40px 40px 40px;
+	border:none;
+	font-size:18px;
+	color: white;
+	width:20%;
+}
+
+.crash{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 160px;
+}
+
+.aku{
+	position: fixed;
+	left: 35px;
+	bottom: 400px;
+	width: 100px;
+    transform: rotate(-18deg);
+}

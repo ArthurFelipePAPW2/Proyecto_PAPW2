@@ -256,6 +256,18 @@
     text-justify: inter-word;
 }
 
+
+.nav-button button{
+	background-color:#0293ca;
+	color:#0e283f;
+	border: 1px solid #0e283f;
+	padding: 20px 30px 20px 30px;
+	font-size: 20px;
+	color: white;
+	font-family: Nozstudio;
+	
+}
+
 /*ESTOS ESTILOS PERTENECEN A LA PAGINA RESENA*/
 .img-background3 { 
     background-image: url("Imagenes/fondo-resena.jpg");
@@ -414,6 +426,22 @@
 	background-color:#838383;
 	border:none;
 }
+
+@media only screen and (max-width: 768px) {
+   .down-page-comment{
+	position: fixed;
+	top: 55px;
+	right: 10px;
+	height: 50px;
+	width: 50px;
+	border-radius:50px;
+	color:white;
+	background-color:#838383;
+	border:none;
+	z-index: 1;
+}
+}
+
 
 .comentar input[type="radio"]{
 	width: 27px;

@@ -15,10 +15,10 @@
 </head>
  <body class="img-background2">
 
- 		<img src="Imagenes/celebi.png" class="img-responsive img-celebi">
-		<div class="sabias">
-			<center><h1 class="sabias-text">Sabías qué?</h1></center>
-			<p>En origen, el rosa Clefairy iba a ser la mascota de la serie pero finalmente fue Pikachu el diseño elegido, principalmente por su color amarillo, más memorable. El nombre del pokémon más famoso deriva de dos onomatopeyas japonesas: pika, el sonido que indica chispas, y chu, el ruido que hacen los ratones.</p>
+ 		<img src="Imagenes/celebi.png" class="img-responsive img-celebi visible-sm-inline visible-md-inline visible-lg-inline">
+		<div class="sabias visible-sm-inline visible-md-inline visible-lg-inline">
+			<center><h1 class="sabias-text visible-sm-inline visible-md-inline visible-lg-inline">Sabías qué?</h1></center>
+			<p class="visible-sm-inline visible-md-inline visible-lg-inline">En origen, el rosa Clefairy iba a ser la mascota de la serie pero finalmente fue Pikachu el diseño elegido, principalmente por su color amarillo, más memorable. El nombre del pokémon más famoso deriva de dos onomatopeyas japonesas: pika, el sonido que indica chispas, y chu, el ruido que hacen los ratones.</p>
 		</div>
 
 		<nav class="navbar navbar-inverse">
@@ -223,8 +223,8 @@ Modo de Juego:" id="password" name="password"></textarea>
 		<br><br>
 		<div class="container">
 	      	<div class="row">
-	        	<div class="col-md-8 col-md-offset-4">
-			        <div class="btn-group">
+	        	<div class="col-md-8 col-md-offset-1 visible-sm-inline visible-md-inline visible-lg-inline">
+			        <div class="btn-group nav-button">
 			          <button type="button" class="btn"><span class="glyphicon glyphicon-menu-left"></span></button>
 					  <button type="button" class="btn">1</button>
 					  <button type="button" class="btn">2</button>
@@ -235,6 +235,20 @@ Modo de Juego:" id="password" name="password"></textarea>
 					</div>
 				</div>
 			</div>
+
+      <div class="row">
+            <div class="col-md-8 col-md-offset-1 visible-xs-inline">
+              <div class="btn-group nav-button">
+                <button type="button" class="btn"><span class="glyphicon glyphicon-menu-left"></span></button>
+            <button type="button" class="btn">1</button>
+            <button type="button" class="btn">2</button>
+            <button type="button" class="btn">3</button>
+            <button type="button" class="btn">4</button>
+            <button type="button" class="btn">5</button>
+            <button type="button" class="btn"><span class="glyphicon glyphicon-menu-right"></span></button>
+          </div>
+        </div>
+      </div>
 		</div>
 		<br><br><br>
     <!-- Optional JavaScript -->

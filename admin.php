@@ -16,8 +16,8 @@
 <body class="img-background5">
 
 
-		<img src="Imagenes/crash.png" class="img-responsive crash">
-		<img src="Imagenes/aku.png" class="img-responsive aku">
+		<img src="Imagenes/crash.png" class="img-responsive crash visible-sm-inline visible-md-inline visible-lg-inline">
+		<img src="Imagenes/aku.png" class="img-responsive aku visible-sm-inline visible-md-inline visible-lg-inline">
 
 
 		<nav class="navbar navbar-inverse">

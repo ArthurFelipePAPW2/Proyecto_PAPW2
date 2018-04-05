@@ -15,7 +15,7 @@
 </head>
 <body class="img-background4">
 
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse my-bar3 my-def-bar">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">

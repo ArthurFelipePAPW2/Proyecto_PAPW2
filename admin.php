@@ -20,7 +20,7 @@
 		<img src="Imagenes/aku.png" class="img-responsive aku visible-sm-inline visible-md-inline visible-lg-inline">
 
 
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse my-bar4 my-def-bar">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">

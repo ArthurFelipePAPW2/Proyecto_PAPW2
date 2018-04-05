@@ -16,12 +16,12 @@
  <body class="img-background2">
 
  		<img src="Imagenes/celebi.png" class="img-responsive img-celebi visible-sm-inline visible-md-inline visible-lg-inline">
-		<div class="sabias visible-sm-inline visible-md-inline visible-lg-inline">
-			<center><h1 class="sabias-text visible-sm-inline visible-md-inline visible-lg-inline">Sabías qué?</h1></center>
-			<p class="visible-sm-inline visible-md-inline visible-lg-inline">En origen, el rosa Clefairy iba a ser la mascota de la serie pero finalmente fue Pikachu el diseño elegido, principalmente por su color amarillo, más memorable. El nombre del pokémon más famoso deriva de dos onomatopeyas japonesas: pika, el sonido que indica chispas, y chu, el ruido que hacen los ratones.</p>
-		</div>
+    <div class="sabias">
+      <h3>¿Sabías Qué?</h3>
+      <p>Satoshi Tajiri, uno de los creadores de Pokémon, contó que se inspiró en su infancia, cuando iba a los ríos a tratar de capturar insectos.</p>
+    </div>
 
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse my-bar my-def-bar">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">

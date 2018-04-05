@@ -25,7 +25,7 @@
       </div>
       <br>
         <header>
-          <nav class="navbar navbar-default">
+          <nav class="navbar navbar-default navbar-index">
             <div class="container-fluid">
               <!-- Logotipo De Mi Pagina -->
               <div class="navbar-header">

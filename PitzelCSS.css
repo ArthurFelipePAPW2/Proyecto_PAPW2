@@ -41,6 +41,25 @@
   font-family: 'VTCSundaykomix';
   src: url("Fuentes/VTCSundaykomix.ttf");
 }
+/*ESPECIFICACIONES DE LA BARRA DEFAULT*/
+.my-def-bar{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #0e283f;
+	border: none;
+}
+
+
+@media only screen and (min-width: 4000px) {
+.my-def-bar{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #0e283f;
+	border: none;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+}
 
 /*FONDOS DE LAS PAGINAS*/
 .img-background, .landing-bg, .img-background2,.img-background3,.img-background4,.img-background5{
@@ -81,6 +100,12 @@
 }
 }
 
+@media only screen and (min-width: 4000px) {
+.navbar-index{
+	margin-left: 35%;
+	margin-right: 35%;
+}
+}
 
 .registrar-text{
 	font-family: Aunchanted;
@@ -180,7 +205,19 @@
 	background-color: #1716168c;
 	padding-bottom: 20px;
 	padding-top: 20px;
-	border-radius: 5px 5px 5px 5px;
+	border-radius: 0px 5px 5px 0px;
+	border-left: solid 60px #c6c6c72b;
+}
+
+@media only screen and (min-width: 4000px) {
+.article-info{
+	background-color: #1716168c;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	margin-left: 30%;
+	margin-right: 30%;
+	width: 1300px;
+}
 }
 
 .img-info-vdj{
@@ -213,7 +250,6 @@
 	right: 0px;
 	position: fixed;
 	z-index: -1;
-	background-color: red;
 }
 
 .resena{
@@ -223,42 +259,25 @@
 
 .img-celebi{
 	position: fixed;
-	right: 10px;
-	bottom: 0px;
-	width: 280px;
-	z-index: 1;
-}
-
-.sabias{
-	background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(0, 167, 227));
-	position: fixed;
-	right: 0px;
-	top: 85px;
+	right: 30px;
+	bottom: 70px;
 	width: 330px;
-	height: 99%;
+	transform: rotate(-45deg);
 	z-index: 0;
 }
 
-.sabias-text{
-	font-family: Nozstudio;
-	font-size: 30px;
-	color: white;
-	
-	
+@media only screen and (min-width: 4000px) {
+.img-celebi{
+	position: fixed;
+	right: 300px;
+	bottom: 700px;
+	width: 1330px;
+	transform: rotate(-45deg);
 }
-
-.sabias p{
-	font-family: VTCSundaykomix;
-	color: white;
-	padding-left: 10px;
-	padding-right: 10px;
-	text-align: justify;
-    text-justify: inter-word;
 }
-
 
 .nav-button button{
-	background-color:#0293ca;
+	background-color:#f2f7f92e;
 	color:#0e283f;
 	border: 1px solid #0e283f;
 	padding: 20px 30px 20px 30px;
@@ -266,6 +285,59 @@
 	color: white;
 	font-family: Nozstudio;
 	
+}
+
+.sabias{
+	position: fixed;
+	z-index: 1;
+	right: 30px;
+	bottom: 70px;
+	width: 20%;
+	background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(39, 38, 38));
+	border-radius: 200px 200px 200px 200px;
+	transform: rotate(-25deg);
+	height: 30%;
+}
+
+.sabias p{
+	color: #eadede;
+}
+
+.sabias h3{
+	color: #fbf6eb;
+	font-family: VTCSundaykomix;
+	font-size: 40px;
+}
+
+@media only screen and (min-width: 4000px) {
+.sabias{
+	position: fixed;
+	width: 25%;
+	background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(39, 38, 38));
+	transform: rotate(0deg);
+	left: 100px;
+	bottom: 200px;
+	height: 80%;
+}
+}
+
+@media only screen and (min-width: 4000px) {
+.sabias p{
+	color: #eadede;
+	font-size: 90px;
+}
+}
+
+@media only screen and (min-width: 4000px) {
+.sabias h3{
+color: #fbf6eb;
+	font-family: VTCSundaykomix;
+	font-size: 120px;
+}
+}
+
+.my-bar{
+	background-color: #0e283f;
 }
 
 /*ESTOS ESTILOS PERTENECEN A LA PAGINA RESENA*/
@@ -366,9 +438,6 @@
 	font-family: Nozstudio;
 }
 
-.div-comentario{
-	background-color: red
-}
 
 .comentario{
 	padding-top: 10px;
@@ -397,7 +466,6 @@
 }
 
 .comentar input[type="submit"]{
-	background-color: red;
 	border: none;
 	background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(131, 131, 131));
 	border-radius: 10px;
@@ -480,6 +548,10 @@
 	display: inline-block;
 }
 
+.my-bar2{
+	background-color: #363636;
+}
+
 /*ESTOS ESTILOS PERTENECEN A LA PAGINA PERFIL*/
 .img-background4 { 
     background-image: url("Imagenes/fondo-perfil.jpg");
@@ -532,7 +604,6 @@
 }
 
 .table-usuario td:first-child{
-	background-color: red;
 	width: 15%;
 	background: linear-gradient(to left, rgb(81, 79, 100), rgb(46, 47, 68));
 	font-size: 18px;
@@ -560,6 +631,10 @@
 	resize:none;
 	width: 100%;
 	height: 200px;
+}
+
+.my-bar3{
+	background-color: #504d62;
 }
 
 /*ESTOS ESTILOS PERTENECEN A LA PAGINA ADMIN*/
@@ -710,10 +785,34 @@
 	width: 160px;
 }
 
+
+@media only screen and (min-width: 4000px) {
+.crash{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 1400px;
+}
+}
+
 .aku{
 	position: fixed;
 	left: 35px;
 	bottom: 400px;
 	width: 100px;
     transform: rotate(-18deg);
+}
+
+@media only screen and (min-width: 4000px) {
+.aku{
+	position: fixed;
+	left: 3300px;
+	bottom: 700px;
+	width: 800px;
+    transform: rotate(-18deg);
+}
+}
+
+.my-bar4{
+	background-color: #0e1818;
 }

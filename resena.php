@@ -18,7 +18,7 @@
 
 		<a href="#texto-comentar"><button class="down-page-comment"><span class="glyphicon glyphicon-comment"></span></button></a>
 
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse my-bar2 my-def-bar">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">

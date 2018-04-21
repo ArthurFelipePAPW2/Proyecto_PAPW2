@@ -3,10 +3,14 @@
 
 /*DECLARANDO LAS FUENTES LOCALES*/
 @font-face {
+  font-family: 'Alien';
+  src: url("Fuentes/Alien");
+}
+
+@font-face {
   font-family: 'Astron';
   src: url("Fuentes/Astron.ttf");
 }
-
 @font-face {
   font-family: 'AmorE-Regular';
   src: url("Fuentes/AmorE-Regular.ttf");
@@ -47,6 +51,8 @@ input[type="file"] {
 }
 
 
+/*ESPECIFICACIONES DE LA ALGUNOS INPUT FILE*/
+
 .custom-file-upload {
     border: none;
     display: inline-block;
@@ -66,10 +72,6 @@ input[type="file"] {
     font-size: 10px;
     border-radius: 5px;
     text-align: center;
-}
-
-.resize {
-    padding: 10px 10px;
 }
 
 
@@ -94,16 +96,45 @@ input[type="file"] {
 }
 
 /*FONDOS DE LAS PAGINAS*/
-.img-background, .landing-bg, .img-background2,.img-background3,.img-background4,.img-background5{
+.img-background, .landing-bg, .img-background2,.img-background3,.img-background4,.img-background5,.img-background6{
     height: 100%;
 }
 
-.img-background,.img-background2,.img-background3,.img-background4,.img-background5{
+.img-background,.img-background2,.img-background3,.img-background4,.img-background5,.img-background6{
 	height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color:black;
+}
+
+/*ESTOS ESTILOS PERTENECEN Al 404*/
+.img-background6 { 
+    background-image: url("Imagenes/404.jpg");
+    background-color: #0f1e25;
+}
+
+.img-background6 table,td,tr{
+	border: none;
+}
+
+.img-background6 h1{
+	font-size: 250px;
+	font-family: VTCSundaykomix;
+	-webkit-text-fill-color: #fdcce1;
+	-webkit-text-stroke: 5px #d4acbd;
+
+}
+
+.img-background6 h3{
+	padding-top: -50px;
+	height: 40px;
+	border-radius: 10px 10px 10px 10px;
+	font-size: 80px;
+	font-family: Aunchanted;
+	-webkit-text-fill-color: #636161;
+	background: linear-gradient(#fdcce1, #ffff0000);
+
 }
 
 /*ESTOS ESTILOS PERTENECEN A LA LANDING PAGE*/

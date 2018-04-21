@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/principal', function () {
+    return view('principal');
+});
+
+Route::get('/resena', function () {
+    return view('resena');
+});
+
+Route::get('/perfil', function () {
+    return view('perfil');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
 });

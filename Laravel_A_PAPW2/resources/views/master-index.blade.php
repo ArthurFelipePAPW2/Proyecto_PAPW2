@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="PitzelCSS.css">
+    <script src="funciones.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -80,12 +81,18 @@
                       <center>
                            <form class="form-inline">
                                <div class="form-group">
-                               <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm" placeholder="Email" id="email" name="email">
+                               <label class="sr-only" for="email">Email</label>
+                               <input type="text" class="form-control input-sm" placeholder="E-mail" id="email" name="email">
                                </div>
                                 <div class="form-group">
                                 <label class="sr-only" for="password">Password</label>
-                                <input type="password" class="form-control input-sm" placeholder="Password" id="password" name="password">
-                                </div>   
+                                  <div class="input-group">
+                                    <input type="password" class="form-control input-sm" id="passL" placeholder="Password">
+                                    <span class="input-group-addon look-pass-general look-pass-index">
+                                      <input type="checkbox" onclick="MostrarPassLogin()">
+                                    </span>                                
+                                  </div>
+                                </div>   <br><br>
                                <button type="button" class="btn btn-default btn-xs btn-login" data-dismiss="modal">Login</button> 
                             </form>
                       </center>
@@ -94,6 +101,28 @@
                 </div>
             </div>
 
+            <div id="rec-pass" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"><center>
+                        <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
+                          <div class="row">   
+                          <h4>Recupera tu contraseña</h4>
+                          </div></center>
+                    </div>
+                    <div class="modal-body">
+                      <center>
+                           <form class="form-inline">
+                               ¿Pregunta pregunta pregunta pregunta pregunta pregunta? <br><br><input type="text"><br><br>
+                               <button type="button" class="btn btn-default btn-xs btn-login" data-dismiss="modal">Enviar</button> 
+                            </form>
+                      </center>
+                    </div>                  
+                </div>
+                </div>
+            </div>
+
+
             <div class="container " style="margin-top:10px">
 
         <div class="row">
@@ -101,7 +130,7 @@
           
           <div class="col-md-4">
             <img src="Imagenes/Link.png" class="img-responsive main-image-link
-            visible-sm-inline visible-md-inline visible-lg-inline">
+            visible-sm-inline visible-md-inline visible-lg-inline"><br><br><center><button class="pass-lost" data-toggle="modal" data-target="#rec-pass">¿No recuerdas tu contraseña?</button></center>
           </div>
 
           <div class="col-md-1">           
@@ -138,7 +167,13 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Contraseña</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="pass" placeholder="Password">
+                  <div class="input-group">
+                    <input type="password" class="form-control" id="pass">
+                    <span class="input-group-addon look-pass-general look-pass-index">
+                      <input type="checkbox" onclick="MostrarPass()">
+                    </span>
+                    
+                </div>
                 </div>
               </div>
 
@@ -146,6 +181,18 @@
                 <label class="col-sm-2 col-form-label">Nacimiento</label>
                 <div class="col-sm-10">
                   <input type="date" class="form-control" id="date">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Pregunta</label>
+                <div class="col-sm-10">
+                 <select class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
                 </div>
               </div>
 

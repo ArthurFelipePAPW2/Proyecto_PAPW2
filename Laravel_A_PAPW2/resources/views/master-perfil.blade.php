@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="PitzelCSS.css">
+    <script src="funciones.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
@@ -56,8 +57,7 @@
 		</nav>
 
 		@include('Blades.General.general-peticion-vdj')
-		<br><br><br>	 
-						   			
+		<br>  			
 		<div id="cambiarfoto" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                 <div class="modal-content">
@@ -152,6 +152,31 @@
 							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td></form>
 						</tr>			
 					</table>
+
+					<table class="table table-responsive table-usuario">
+						<thead>
+						<th colspan="3">Seguridad</th>	
+						</thead>
+						<tr>
+							<td>Respuesta:</td>
+							<form>
+							<td><input type="text" value=@yield('preg') required></td>
+							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td></form>
+						</tr>	
+						<tr>
+							<td>Contraseña:
+								<span class="input-group-addon look-pass-general look-pass-perfil">
+								<input type="checkbox" onclick="MostrarPass()">
+								</span>
+							</td>
+							<form>
+							<td>			  
+								<input type="password" value=@yield('pass') required id="pass">
+							</td>
+							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td></form>
+						</tr>						
+					</table>
+
 				</div>
 			</div>
 		</div>

@@ -29,6 +29,14 @@
 "Pagina del usuario"
 @endsection
 
+@section('pass')
+"1234567890"
+@endsection
+
+@section('preg')
+"Manzana"
+@endsection
+
 @section('acerca-de-mi')
 No sé si hice los blades bien pero esto está jalando ptm :), felipe ni hace nada
 @endsection

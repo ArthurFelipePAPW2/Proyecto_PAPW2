@@ -52,7 +52,7 @@ Son 15 misiones en total que de acuerdo a la dificultad en la que juegues, los p
 @endsection
 
 @section('fecha') 
-Posteado el 2018-03-029
+Posteado el 2018-03-29
 @endsection
 
 @section('likes') 
@@ -89,7 +89,7 @@ Usuario
 @endsection
 
 @section('today')
-Hoy es 2018-03-029 
+Hoy es 2018-03-29 
 @endsection
 
 @section('own-title')
@@ -101,9 +101,9 @@ Hoy es 2018-03-029
 @endsection
 
 @section('own-rate')
-<div class="sin-rating"><input type="radio" name="ratio" required></div>
-<div class="sin-rating"><input type="radio" name="ratio" required></div>
-<div class="sin-rating"><input type="radio" name="ratio" required></div>
-<div class="sin-rating"><input type="radio" name="ratio" required></div>
-<div class="sin-rating"><input type="radio" name="ratio" required></div>
+<div class="rated-heart" id="corazon1"><input checked type="radio" name="ratio" required onclick="Evaluar(1)"></div>
+<div class="sin-rating" id="corazon2"><input type="radio" name="ratio" required onclick="Evaluar(2)"></div>
+<div class="sin-rating" id="corazon3"><input type="radio" name="ratio" required onclick="Evaluar(3)"></div>
+<div class="sin-rating" id="corazon4"><input type="radio" name="ratio" required onclick="Evaluar(4)"></div>
+<div class="sin-rating" id="corazon5"><input type="radio" name="ratio" required onclick="Evaluar(5)"></div>
 @endsection

@@ -617,7 +617,6 @@ color: #fbf6eb;
 }
 }
 
-
 .comentar input[type="radio"]{
 	width: 27px;
 	height: 30px;
@@ -635,17 +634,7 @@ color: #fbf6eb;
 	display: inline-block;
 }
 
-.sin-rating:active{
-	background-image: url("Imagenes/Full_Heart.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100%;
-	width: 30px;
-	height: 30px;
-	display: inline-block;
-}
-
-.con-rating:active{
+.rated-heart{
 	background-image: url("Imagenes/Full_Heart.png");
 	background-repeat: no-repeat;
 	background-position: center;

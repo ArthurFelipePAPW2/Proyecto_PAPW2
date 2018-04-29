@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class user extends Model
+class score extends Model
 {
-    protected $primaryKey = 'id-user';
+    protected $primaryKey = 'id-score';
 }

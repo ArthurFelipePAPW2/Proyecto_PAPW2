@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class user extends Model
+class useful extends Model
 {
-    protected $primaryKey = 'id-user';
+    protected $primaryKey = 'id-useful';
 }

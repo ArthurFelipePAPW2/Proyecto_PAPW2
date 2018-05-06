@@ -43,3 +43,5 @@ Route::post('/agregarcuriosidad', 'DidYouKnowController@store');
 Route::post('/BajaUser', 'BajaUser@store');
 
 Route::post('/AltaUser', 'AltaUser@store');
+
+Route::post('/BorrarCuriosidad', 'BorrarCuriosidadController@store');

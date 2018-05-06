@@ -130,7 +130,8 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                            {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+                            {{Form::open(array('url' => 'BorrarCuriosidad','method' => 'post'))}}
+                            {{ Form::hidden('admin', 1) }} 
                                <div class="form-group"> 
                                	     {{ Form::label('Curiosidad','Selecciona la curiosidad a Borrar') }}
 								     {{ Form::select('curiosidad', array(

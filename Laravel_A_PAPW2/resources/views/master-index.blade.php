@@ -71,22 +71,7 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                           <form class="form-inline">
-                               <div class="form-group">
-                               <label class="sr-only" for="email">Email</label>
-                               <input type="text" class="form-control input-sm" placeholder="E-mail" id="email" name="email">
-                               </div>
-                                <div class="form-group">
-                                <label class="sr-only" for="password">Password</label>
-                                  <div class="input-group">
-                                    <input type="password" class="form-control input-sm" id="passL" placeholder="Password">
-                                    <span class="input-group-addon look-pass-general look-pass-index">
-                                      <input type="checkbox" onclick="MostrarPassLogin()">
-                                    </span>                                
-                                  </div>
-                                </div>   <br><br>
-                               <button type="button" class="btn btn-default btn-xs btn-login" data-dismiss="modal">Login</button> 
-                            </form>
+                           @yield('login')
                       </center>
                     </div>                  
                 </div>
@@ -141,67 +126,9 @@
               </div>
 
           <hr>
-            <form class="form-index">
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Nombre</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="name" placeholder="Nombre">
-                </div>
-              </div>
-              
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="email" placeholder="Email">
-                </div>
-              </div>
 
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Contraseña</label>
-                <div class="col-sm-10">
-                  <div class="input-group">
-                    <input type="password" class="form-control" id="pass">
-                    <span class="input-group-addon look-pass-general look-pass-index">
-                      <input type="checkbox" onclick="MostrarPass()">
-                    </span>
-                    
-                </div>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Nacimiento</label>
-                <div class="col-sm-10">
-                  <input type="date" class="form-control" id="date">
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Pregunta</label>
-                <div class="col-sm-10">
-                 <select class="form-control">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Avatar</label>
-                <div class="col-sm-10">
-                  <label for="file-upload" class="custom-file-upload-index">Subir Imagen</label>
-                <input id="file-upload" type="file" id="avatar">
-
-                </div>
-              </div>
-              <div class="form-group row">
-              <div class="col-md-2 col-md-offset-5">
-               <center><button type="submit" class="btn btn-primary sign-up-btn">Sign in</button></center>
-              </div>
-        </div>
-          </form>
+          @yield('formulario')
+           
           </div>
 
         </div>

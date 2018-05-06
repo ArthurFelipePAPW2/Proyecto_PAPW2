@@ -57,7 +57,8 @@
 		@include('Blades.Resena.resena-comentario')
 		@include('Blades.Resena.resena-comentario')
 		@include('Blades.Resena.resena-comentario')
-		@include('Blades.Resena.resena-comentar')
+
+		@yield('formulario')
 					   		   
 		@include('Blades.General.general-js')	
 		<script type="text/javascript" src="{!! asset('funciones.js') !!}"></script>	

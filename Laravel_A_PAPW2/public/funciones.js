@@ -1,4 +1,4 @@
-function MostrarPass() {
+ function MostrarPass() {
     var x = document.getElementById("pass");
     if (x.type === "password") {
         x.type = "text";

@@ -32,11 +32,7 @@
             <li><a href="#">Link 3</a></li> 
             <li><a href="#">Link 4</a></li>         
           </ul>
-          <form class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" class="form-control search-bar" placeholder="Buscar"><button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></span></button>
-            </div>
-          </form>
+          @include('Blades.General.general-search') 
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

@@ -80,30 +80,46 @@ La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, adema
 Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno 
 @endsection
 
-@section('own-img')
-<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">
-@endsection
 
-@section('own-user')
-Usuario
-@endsection
+@section('formulario')
+<div class="container resena comentar">
+	<div class="row">
+		<div class="col-md-2">
+			<center><img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario"><p class="me-user-comentario">Usuario</p><br></center>
+		</div>
+		<div class="col-md-10">
+			<p class="fecha-comentario">Hoy es 2018-03-29 </p>
+			<div class="row">
 
-@section('today')
-Hoy es 2018-03-29 
-@endsection
+				{{Form::open(array('url' => '/','method' => 'post'))}}
+				{{ Form::text('titulo-comentario', null, array('placeholder'=>'Titulo de tu comentario','id' => 'texto-comentar','required')) }}
+				<br>
+				<textarea placeholder="¿Qué te pareció este juego?" required></textarea>
+				{{ Form::textarea('comentario-texto', null, array('placeholder'=>'¿Qué te pareció este juego?','required')) }}
+				<br>
+				<div class="rated-heart" id="corazon1">
+					{{ Form::radio('rate', '1',null, ['onClick' => 'Evaluar(1)']) }}
+				</div>
+				<div class="sin-rating" id="corazon2">
+					{{ Form::radio('rate', '2',null, ['onClick' => 'Evaluar(2)']) }}
+				</div>
+				<div class="sin-rating" id="corazon3">
+					{{ Form::radio('rate', '3',null, ['onClick' => 'Evaluar(3)']) }}
+				</div>
+				<div class="sin-rating" id="corazon4">
+					{{ Form::radio('rate', '4',null, ['onClick' => 'Evaluar(4)']) }}
+				</div>
+				<div class="sin-rating" id="corazon5">
+					{{ Form::radio('rate', '5',null, ['onClick' => 'Evaluar(5)']) }}
+				</div>
+				
+				{{ Form::submit('Comentar') }}
 
-@section('own-title')
-<input type="text" name="titulo-comentario" placeholder="Titulo de tu comentario" id="texto-comentar" required>
-@endsection
+			{{Form::close()}}
 
-@section('own-review')
-<textarea placeholder="¿Qué te pareció este juego?" required></textarea>
-@endsection
 
-@section('own-rate')
-<div class="rated-heart" id="corazon1"><input checked type="radio" name="ratio" required onclick="Evaluar(1)"></div>
-<div class="sin-rating" id="corazon2"><input type="radio" name="ratio" required onclick="Evaluar(2)"></div>
-<div class="sin-rating" id="corazon3"><input type="radio" name="ratio" required onclick="Evaluar(3)"></div>
-<div class="sin-rating" id="corazon4"><input type="radio" name="ratio" required onclick="Evaluar(4)"></div>
-<div class="sin-rating" id="corazon5"><input type="radio" name="ratio" required onclick="Evaluar(5)"></div>
+			</div>
+		</div>
+	</div>
+</div><br>
 @endsection

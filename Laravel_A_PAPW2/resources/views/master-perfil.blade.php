@@ -87,7 +87,7 @@
 					<center>
 						<div class="img-perfil-pag">@yield('img')<button data-toggle="modal" data-target="#cambiarfoto"><span class="glyphicon glyphicon-pencil"></span></button></div>
 						<br>
-						<p class="nombre-perfil">@yield('nombre')</p>
+						<p class="nombre-perfil">Nombre de User</p>
 						<p class="acerca-de-mi">Acerca de mi</p>
 						<p class="descripcion-perfil">@yield('acerca-de-mi')</p>
 					</center>
@@ -98,32 +98,28 @@
 						<th colspan="3">Informacion Básica</th>		
 						</thead>		
 						<tr>
-							<td>Usuario:</td>
-							<form>
-							<td><input type="text" value=@yield('nombre') required></td>
-							<td><button type="submit"><span class="glyphicon glyphicon-pencil"></span></button></td>
-						</form>
+							<td>Nombre:</td>
+							@yield('form-nombre')
+						</tr>
+						<tr>
+							<td>Apellido:</td>
+							@yield('form-apellido')
 						</tr>
 						<tr>
 							<td>Edad:</td>
 							<form>
-							<td><input type="text" value=@yield('edad') required></td>
-							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td>
+							<td>Edad del Usuario</td>
+							<td></td>
 							</form>
 						</tr>
 						<tr>
 							<td>País:</td>
-							<form>
-							<td><input type="text" value=@yield('pais') required></td>
-							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td>
-							</form>
+							<td>País del Usuario</td>
+							<td></td>
 						</tr>
 						<tr>
 							<td>Ciudad/Estado:</td>
-							<form>
-							<td><input type="text" value=@yield('ciudad') required></td>
-							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td>
-							</form>
+							@yield('form-ciudad')
 						</tr>					
 					</table><br>
 					<table class="table table-responsive table-usuario">
@@ -132,15 +128,11 @@
 						</thead>
 						<tr>
 							<td>Correo:</td>
-							<form>
-							<td><input type="email" value=@yield('correo') required></td>
-							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td></form>
+							@yield('form-correo')
 						</tr>
 						<tr>
 							<td>Página Web:</td>
-							<form>
-							<td><input type="text" value=@yield('pagina') required></td>
-							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td></form>
+							@yield('form-correo')
 						</tr>			
 					</table>
 
@@ -150,9 +142,7 @@
 						</thead>
 						<tr>
 							<td>Respuesta:</td>
-							<form>
-							<td><input type="text" value=@yield('preg') required></td>
-							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td></form>
+							@yield('form-pregunta')
 						</tr>	
 						<tr>
 							<td>Contraseña:
@@ -160,11 +150,7 @@
 								<input type="checkbox" onclick="MostrarPass()">
 								</span>
 							</td>
-							<form>
-							<td>			  
-								<input type="password" value=@yield('pass') required id="pass">
-							</td>
-							<td><button><span class="glyphicon glyphicon-pencil"></span></button></td></form>
+							@yield('form-contrasena')
 						</tr>						
 					</table>
 

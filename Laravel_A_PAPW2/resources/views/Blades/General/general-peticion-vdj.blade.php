@@ -13,23 +13,24 @@
                       <center>
                            <form>
                                <div class="form-group">
-                               <label class="sr-only">Titulo</label><input type="text" class="form-control input-sm" placeholder="Nombre del videojuego" id="vdj" name="vdj">
+                                {{ Form::text('username', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}
                                </div>
                                 <div class="form-group send-data">
-                                <label class="sr-only" for="password">Datos extra</label>
-                                <textarea class="form-control input-sm" placeholder="Por favor rellene la mayor cantidad de datos posibles.
+                                   {{ Form::textarea('username', null, array('placeholder'=>'Por favor rellene la mayor cantidad de datos posibles.
 
 Plataforma:
 Productor(es):
 Desarrollador:
 Género(s):
 Distribuidora(s):
-Modo de Juego:" id="password" name="password"></textarea>
-                
-                                </div><div class="form-group">
-                               <label class="sr-only">Titulo</label><input type="text" class="form-control input-sm" placeholder="Link de Trailer/informacion" id="vdj" name="vdj">
+Modo de Juego:','class' => 'form-control input-sm','required')) }}
+             
+                                </div>
+                                <div class="form-group">
+                                  {{ Form::text('username', null, array('placeholder'=>'Link de Trailer / Información adicional','class' => 'form-control input-sm','required')) }}
                                </div> 
-                               <button type="button" class="btn btn-default btn-xs btn-login" data-dismiss="modal">Enviar</button> 
+
+                               {{Form::button('Enviar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}
                             </form>
                       </center>
                     </div>                  

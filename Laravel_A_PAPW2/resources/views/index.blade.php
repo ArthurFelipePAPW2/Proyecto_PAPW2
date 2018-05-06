@@ -3,7 +3,11 @@
 
 @section('formulario')
 
-{{Form::open(array('class' => 'form-index','url' => '/Bienvenido','method' => 'post'))}}
+{{Form::open(array('class' => 'form-index','url' => 'registrar','method' => 'post','files' => true))}}
+@foreach($errors->all() as $error)
+<p class="alert alert-danger">{{$error}}</p>
+@endforeach
+
 <div class="form-group row">
             {{Form::label('Nombre','Nombre',array('class' => 'col-sm-2 col-form-label'))}}
     <div class="col-sm-5">
@@ -80,6 +84,14 @@
 </div>
 
 <div class="form-group row">
+            {{Form::label('Respuesta','Respuesta',array('class' => 'col-sm-2 col-form-label'))}}
+    <div class="col-sm-10">
+            {{ Form::text('answer', null, array('placeholder'=>'Ingrese una respuesta','class' => 'form-control','required')) }}
+       
+    </div>
+</div>
+
+<div class="form-group row">
    	{{ Form::label('Avatar','Avatar',array('class' => 'col-sm-2 col-form-label')) }}
    	<div class="col-sm-10">
    		{{ Form::label('file-upload','Subir Imagen',array('class' => 'custom-file-upload-index')) }}
@@ -96,7 +108,7 @@
 @endsection
 
 @section('login')
-{{Form::open(array('class' => 'form-inline','url' => '/Bienvenido','method' => 'post'))}}
+{{Form::open(array('class' => 'form-inline','url' => 'login','method' => 'post'))}}
    <div class="form-group">
      {{ Form::email('email', null, array('placeholder'=>'E-mail','class' => 'form-control input-sm','required')) }}
    </div>

@@ -24,7 +24,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a href="/principal" class="navbar-brand"><p><img src="Imagenes/triforce.png" class="triforce"></p></a>
+                <a href="/registrar" class="navbar-brand"><p><img src="Imagenes/triforce.png" class="triforce"></p></a>
               </div>
               <!-- Menu de opciones -->
               <div class="collapse navbar-collapse navbar-general" id="navbar-1">

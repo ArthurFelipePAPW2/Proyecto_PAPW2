@@ -34,7 +34,7 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                           {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+                           {{Form::open(array('url' => 'registrarvdj','method' => 'post','files' => true))}}
                                <div class="form-group">
                                	{{ Form::text('nombre', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}
                                </div> 
@@ -171,7 +171,8 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                            {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+                            {{ Form::open(array('url' => 'agregarcuriosidad','method' => 'post')) }}
+                            {{ Form::hidden('admin', 1) }}   
                                <div class="form-group">
 
                                 {{ Form::textarea('descripcion', null, array('placeholder'=>'¿Sabías Qué?...','required','class'=>'textarea-agregar-vdj')) }}    
@@ -200,10 +201,11 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                           {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+                           {{Form::open(array('url' => 'AltaUser','method' => 'post'))}}
+                           {{ Form::hidden('admin', 1) }} 
                                <div class="form-group">
                                	      {{ Form::label('usuario','Ingresa el Id del usuario') }}
-								     {{ Form::text('modo', null, array('placeholder'=>'Id User','class' => 'form-control input-sm','required')) }}     
+								     {{ Form::text('user', null, array('placeholder'=>'Id User','class' => 'form-control input-sm','required')) }}     
 								  </div>  
 								<div class="form-group">
 										{{ Form::password('password', array('class' => 'form-control input-sm','id'=>'pass','placeholder' =>'Ingresa tu contraseña','required')) }}
@@ -233,10 +235,11 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                          {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+                          {{Form::open(array('url' => 'BajaUser','method' => 'post'))}}
+                          {{ Form::hidden('admin', 1) }}  
                                <div class="form-group">
                                	      {{ Form::label('usuario','Ingresa el Id del usuario') }}
-								     {{ Form::text('modo', null, array('placeholder'=>'Id User','class' => 'form-control input-sm','required')) }}     
+								     {{ Form::text('user', null, array('placeholder'=>'Id User','class' => 'form-control input-sm','required')) }}     
 								  </div>  
 								<div class="form-group">
 										{{ Form::password('password', array('class' => 'form-control input-sm','id'=>'pass','placeholder' =>'Ingresa tu contraseña','required')) }}

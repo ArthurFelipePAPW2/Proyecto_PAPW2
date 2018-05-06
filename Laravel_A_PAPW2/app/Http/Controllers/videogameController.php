@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Http\Requests\LoginFormRequest;
-use DB;
-
-class LoginController extends Controller
+use App\Http\Requests\VideogameFormRequest;
+use App\videogame;
+class videogameController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,21 +35,8 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $email = $request->get('email');
-        $password = $request->get('password');
-
-        $result =  DB::table('users')->where([
-            ['email-user', '=', $email],
-            ['pass-user', '=', $password],
-            ['active', '=', 1],
-            ])->first();
-
-
-        if($result != NULL){
-            return redirect('/principal')->with('status','Bienvenido');
-        }else{
-            return back()->withInput();
-        }
+         
+    
     }
 
     /**

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Http\Requests\LoginFormRequest;
-use DB;
+use App\Http\Requests\DidYouKnowFormRequest;
+use App\diduknow;
 
-class LoginController extends Controller
+class DidYouKnowController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,23 +34,20 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DidYouKnowFormRequest  $request)
     {
-        $email = $request->get('email');
-        $password = $request->get('password');
+        
+        $descripcion = $request->get('descripcion');
+        $admin = $request->get('admin');
 
-        $result =  DB::table('users')->where([
-            ['email-user', '=', $email],
-            ['pass-user', '=', $password],
-            ['active', '=', 1],
-            ])->first();
+        $curiosidad = new diduknow(array(
+                        "description" => $descripcion,
+                        "id-administrador" => $admin
+        ));
 
+        $curiosidad->save();
 
-        if($result != NULL){
-            return redirect('/principal')->with('status','Bienvenido');
-        }else{
-            return back()->withInput();
-        }
+        return redirect('/admin')->with('status','enviado');
     }
 
     /**

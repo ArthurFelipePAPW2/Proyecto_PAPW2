@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\Http\Requests\LoginFormRequest;
 use DB;
-
-class LoginController extends Controller
+class BajaUser extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,18 +34,20 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $email = $request->get('email');
+        $user = $request->get('user');
         $password = $request->get('password');
+        $admin = $request->get('admin');
 
-        $result =  DB::table('users')->where([
-            ['email-user', '=', $email],
-            ['pass-user', '=', $password],
-            ['active', '=', 1],
+        $result =  DB::table('administradors')->where([
+            ['pass-administrador', '=', $password],
+            ['id-administrador', '=', $admin],
             ])->first();
 
-
         if($result != NULL){
-            return redirect('/principal')->with('status','Bienvenido');
+            DB::table('users')
+            ->where('id-user', '=' , $user)
+            ->update(['active' => 0]);
+            return back();
         }else{
             return back()->withInput();
         }

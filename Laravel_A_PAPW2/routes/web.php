@@ -35,3 +35,11 @@ Route::get('/admin', function () {
 Route::post('/registrar','UsersController@store');
 
 Route::post('/login','LoginController@store');
+
+Route::post('/registrarvdj','videogameController@store');
+
+Route::post('/agregarcuriosidad', 'DidYouKnowController@store');
+
+Route::post('/BajaUser', 'BajaUser@store');
+
+Route::post('/AltaUser', 'AltaUser@store');

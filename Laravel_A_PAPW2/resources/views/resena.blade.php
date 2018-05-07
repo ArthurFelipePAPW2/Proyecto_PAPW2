@@ -1,85 +1,109 @@
 @extends('master-resena')
 @section('title','Gamers')
 
-@section('titulo')
-Halo 5: Guardians
+@section('comentarios')
+<div class="container resena comentario">
+			<div class="row">
+				<div class="col-md-2">
+					<center>
+						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
+						<p class="name-user-comentario">@yield('nombre-user')</p><br>
+						<div class="btn-group btn-util">
+				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+						</div>
+					</center>
+				</div>
+				<div class="col-md-10">
+					<p class="fecha-comentario">Posteado el 2018-03-29</p>
+					<p class="likes-comentario">[Likes: 50 | Dislikes: 10)]</p>
+					<div class="row">
+						<h3 class="titulo-comentario">Buen Juego @yield('user-rate')
+							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
+							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
+	  					</h3>
+
+						<p class="text-comentario">
+							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
+							Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno 
+						</p>
+					</div>
+				</div>
+			</div>
+		</div><br>
 @endsection
 
-@section('img')
-<img src="Imagenes/titulo.jpg" class="img-responsive img-resena img-rounded">
+
+@section('resenas')
+<div class="container resena">
+	      	<div class="row">
+	        	<div class="col-md-12 article-info-resena">
+	        		<div class="col-md-6">
+	        			<img src="Imagenes/titulo.jpg" class="img-responsive img-resena img-rounded">
+  					</div>
+  					<div class="col-md-6">
+  						<div class="table-responsive">
+							<table class="table table-info">
+							 <tr>
+							 	<td>Titulo</td>
+							 	<td>Halo 5: Guardians</td>
+							 </tr>
+							 <tr>
+							 	<td>Plataforma:</td>
+							 	<td>Xbox One</td>
+							 </tr>
+							 <tr>
+							 	<td>Productor(es):</td>
+							 	<td>Josh Holmes</td>
+							 </tr>
+							 <tr>
+							 	<td>Desarrollador:</td>
+							 	<td>343 Industries)</td>
+							 </tr>
+							<tr>
+							 	<td>Género(s):</td>
+							 	<td>First Person Shooter</td>
+							 </tr>
+							 <tr>
+							 	<td>Distribuidora(s):</td>
+							 	<td>Microsoft Studios</td>
+							 </tr>
+							 <tr>
+							 	<td>Modo de Juego:</td>
+							 	<td>Multijugador y un Jugador</td>
+							 </tr>
+							 <tr>
+							 	<td>Calificación:</td>
+							 	<td>
+							 		<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+									<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+									<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+									<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
+									<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
+  								</td>
+							 </tr>
+							</table>
+						</div>
+  					</div>	  					
+  				</div>
+            </div>  
+        </div>
+       	   	<!--Fin de reseña-->
+		<div class="container resena">
+		       	<div class="row">
+				    <div class="col-md-12 article-info-sinopsis">
+				        <p class="text-descripcion">Descripcion</p>
+				        <p> Hablando de la campaña de publicidad previa al juego, nos hicieron creer que jugaríamos dos campañas diferentes con los anuncios de “Busca la verdad”, pero eso no tiene nada que ver con lo que vemos en el juego final. La única diferencia entre ambos personajes, son sus motivos para luchar, sus acompañantes y la habilidad que tiene Locke de escanear el ambiente para descubrir objetos útiles en el entorno. Fuera de ello, ambos son súper soldados que se controlan igual. <br><br>
+
+						Son 15 misiones en total que de acuerdo a la dificultad en la que juegues, los puedes pasar en 7-10 horas. </p>
+			  		</div>
+			  	</div>
+		</div>
+		<br>
 @endsection
-
-@section('plataforma')
-Xbox One
-@endsection
-
-@section('productor')
-Josh Holmes
-@endsection
-
-@section('desarrollador')
-343 Industries
-@endsection
-
-@section('genero')
-First Person Shooter
-@endsection
-
-@section('distribuidora')
-Microsoft Studios
-@endsection
-
-@section('modo')
-Multijugador y un Jugador
-@endsection
-
-@section('calificacion')
-<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-@endsection
-
-@section('descripcion') 
-<p> Hablando de la campaña de publicidad previa al juego, nos hicieron creer que jugaríamos dos campañas diferentes con los anuncios de “Busca la verdad”, pero eso no tiene nada que ver con lo que vemos en el juego final. La única diferencia entre ambos personajes, son sus motivos para luchar, sus acompañantes y la habilidad que tiene Locke de escanear el ambiente para descubrir objetos útiles en el entorno. Fuera de ello, ambos son súper soldados que se controlan igual. <br><br>
-
-Son 15 misiones en total que de acuerdo a la dificultad en la que juegues, los puedes pasar en 7-10 horas. </p>
-@endsection
-
-@section('img-user') 
-<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">
-@endsection
-
-@section('fecha') 
-Posteado el 2018-03-29
-@endsection
-
-@section('likes') 
-50
-@endsection
-
-@section('dislikes') 
-10
-@endsection
-
-@section('titulo-comentario')
-Buen Juego
-@endsection
-
-@section('user-rate')
-<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-@endsection
-
-@section('texto-comentario')
-La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno 
-@endsection
-
 
 @section('formulario')
 <div class="container resena comentar">
@@ -94,7 +118,6 @@ Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de rel
 				{{Form::open(array('url' => '/','method' => 'post'))}}
 				{{ Form::text('titulo-comentario', null, array('placeholder'=>'Titulo de tu comentario','id' => 'texto-comentar','required')) }}
 				<br>
-				<textarea placeholder="¿Qué te pareció este juego?" required></textarea>
 				{{ Form::textarea('comentario-texto', null, array('placeholder'=>'¿Qué te pareció este juego?','required')) }}
 				<br>
 				<div class="rated-heart" id="corazon1">

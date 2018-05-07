@@ -53,16 +53,20 @@
 		<br>
 
 		@include('Blades.General.general-peticion-vdj')
-		@include('Blades.Resena.resena-review')
-		@include('Blades.Resena.resena-comentario')
-		@include('Blades.Resena.resena-comentario')
-		@include('Blades.Resena.resena-comentario')
+
+		@yield('resenas')
+		
+		@yield('comentarios')
+		@yield('comentarios')
+		@yield('comentarios')
+		@yield('comentarios')
+		@yield('comentarios')
+		@yield('comentarios')
 
 		@yield('formulario')
 					   		   
 		@include('Blades.General.general-js')	
-		<script type="text/javascript" src="{!! asset('funciones.js') !!}"></script>	
-		<script type="text/javascript" src="{!! asset('js/jquery.min.js') !!}"></script>			 	  
+					 	  
    
   </body>
 </html>

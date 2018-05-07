@@ -6,11 +6,7 @@
 
  <body class="img-background2">
 
-    <img src="Imagenes/celebi.png" class="img-responsive img-celebi visible-sm-inline visible-md-inline visible-lg-inline">
-    <div class="sabias">
-      <h3>¿Sabías Qué?</h3>
-      <p>@yield('sabias')</p>
-    </div>
+  @yield('sabias')  
 
 <nav class="navbar navbar-inverse my-bar1" my-def-bar">
       <div class="container-fluid">
@@ -51,11 +47,13 @@
     </nav>
 
    @include('Blades.General.general-peticion-vdj') 
-   @include('Blades.Principal.principal-review')
-   @include('Blades.Principal.principal-review')
-   @include('Blades.Principal.principal-review')
-   @include('Blades.Principal.principal-review')
 
+   @yield('game')
+   @yield('game')
+   @yield('game')
+   @yield('game')
+   @yield('game')
+   @yield('game')
 
 
 <br><br>

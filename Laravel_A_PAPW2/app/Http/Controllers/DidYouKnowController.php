@@ -47,7 +47,7 @@ class DidYouKnowController extends Controller
 
         $curiosidad->save();
 
-        return redirect('/admin')->with('status','enviado');
+        return redirect('/admin');
     }
 
     /**

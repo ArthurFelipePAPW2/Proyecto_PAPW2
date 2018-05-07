@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserFormRequest;
 use App\User;
+use App\diduknow;
 
 class UsersController extends Controller
 {
@@ -63,7 +64,17 @@ class UsersController extends Controller
 
         $user->save();
 
-        return redirect('/principal')->with('status','Bienvenido');
+        $curiosidad = diduknow::all();
+        $filtered = $curiosidad->where('active', 1);
+
+        if((count($curiosidad->where('active', 1)) == 0)){
+            return view::make('/principal');
+        }
+        else{
+             
+        $filtered->all()->random()->texto;
+            return view::make('/principal')->with('curiosidad',$filtered);
+        }
     }
 
     /**

@@ -11,13 +11,24 @@
 |
 */
 use Illuminate\Support\Facades\Input;
-
+use App\diduknow;
 Route::get('/', function () {
     return view('index');
 });
 
 Route::get('/principal', function () {
-    return view('principal');
+
+    	$curiosidad = diduknow::all();
+        
+        if((count($curiosidad->where('active', 1)) == 0)){
+			$curiosidad = NULL;
+        }else{
+        	$curiosidad = $curiosidad->where('active', 1);
+        	$curiosidad = $curiosidad->random();
+        }
+
+        return view('/principal')->with('curiosidad',$curiosidad);
+
 });
 
 Route::get('/resena', function () {

@@ -12,8 +12,26 @@
 */
 use Illuminate\Support\Facades\Input;
 use App\diduknow;
+use App\city;
+use App\security;
+
 Route::get('/', function () {
-    return view('index');
+
+    $ciudades = city::all();
+
+    $ciudades = $ciudades->pluck('name-city','id-city');
+
+    $ciudades->all();
+
+    $pregunta = security::all();
+
+    $pregunta = $pregunta->pluck('question','id-security');
+
+    $pregunta->all();
+
+    $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
+
+    return view('index')->with($arreglo);
 });
 
 Route::get('/principal', function () {

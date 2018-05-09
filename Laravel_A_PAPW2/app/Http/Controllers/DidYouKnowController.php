@@ -37,11 +37,11 @@ class DidYouKnowController extends Controller
     public function store(DidYouKnowFormRequest  $request)
     {
         
-        $descripcion = $request->get('descripcion');
+        $descripcion = $request->get('texto');
         $admin = $request->get('admin');
 
         $curiosidad = new diduknow(array(
-                        "description" => $descripcion,
+                        "texto" => $descripcion,
                         "id-administrador" => $admin
         ));
 

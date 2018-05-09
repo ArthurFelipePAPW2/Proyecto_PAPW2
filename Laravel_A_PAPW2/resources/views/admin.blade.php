@@ -176,7 +176,7 @@
                             {{ Form::hidden('admin', 1) }}   
                                <div class="form-group">
 
-                                {{ Form::textarea('descripcion', null, array('placeholder'=>'¿Sabías Qué?...','required','class'=>'textarea-agregar-vdj')) }}    
+                                {{ Form::textarea('texto', null, array('placeholder'=>'¿Sabías Qué?...','required','class'=>'textarea-agregar-vdj')) }}    
                             	</div>                                               
                                   {{Form::button('Agregar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}           
                             {{Form::close()}}

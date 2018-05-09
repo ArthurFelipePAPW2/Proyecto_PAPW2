@@ -58,28 +58,16 @@
 <div class="form-group row">
     {{ Form::label('Ciudad','Ciudad',array('class' => 'col-sm-2 col-form-label')) }}
     <div class="col-sm-10">
-    {{ Form::select('ciudad', array(
-    '1' => 'Ciudad1', 
-    '2' => 'Ciudad2',
-    '3' => 'Ciudad3',
-    '4' => 'Ciudad4',
-    '5' => 'Ciudad5',
-    '6' => 'Ciudad6'),
-  'null',['class'=>'form-control'])}}
+    {{ Form::select('ciudad', $ciudades, 'null',['class'=>'form-control'])}}
     </div>
 </div>
 
 <div class="form-group row">
     {{ Form::label('Pregunta','Pregunta',array('class' => 'col-sm-2 col-form-label')) }}
     <div class="col-sm-10">
-    {{ Form::select('pregunta', array(
-		'1' => 'Pregunta1', 
-		'2' => 'Pregunta2',
-		'3' => 'Pregunta3',
-		'4' => 'Pregunta4',
-		'5' => 'Pregunta5',
-		'6' => 'Pregunta6'),
-	'null',['class'=>'form-control'])}}
+    {{ Form::select('pregunta', $pregunta,'null',['class'=>'form-control'])
+
+}}
     </div>
 </div>
 

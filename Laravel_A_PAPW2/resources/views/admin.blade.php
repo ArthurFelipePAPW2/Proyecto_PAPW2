@@ -34,12 +34,13 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                           {{Form::open(array('url' => 'registrarvdj','method' => 'post','files' => true))}}
+                           {{ Form::open(array('url' => 'registrarvdj','method' => 'post','files' => true)) }}
+                           {{ Form::hidden('administrador', 1) }} 
                                <div class="form-group">
                                	{{ Form::text('nombre', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}
                                </div> 
-                               <div class="form-group">
-                               	{{ Form::text('plataforma', null, array('placeholder'=>'Plataforma','class' => 'form-control input-sm','required')) }}          
+                               <div class="form-group"> 
+                                 {{ Form::select('plataforma[]', $platform,  null, ['class' => 'form-control input-sm', 'multiple' => 'multiple']) }}        
                                </div> 
                                <div class="form-group">
                                	{{ Form::text('productor', null, array('placeholder'=>'Productor','class' => 'form-control input-sm','required')) }}     
@@ -48,10 +49,7 @@
                                	{{ Form::text('desarrollador', null, array('placeholder'=>'Desarrollador','class' => 'form-control input-sm','required')) }}     
                                </div>
                                <div class="form-group">
-                               	{{ Form::text('genero', null, array('placeholder'=>'Genero','class' => 'form-control input-sm','required')) }}     
-                               </div>
-                               <div class="form-group">
-                               	{{ Form::text('productor', null, array('placeholder'=>'Productor','class' => 'form-control input-sm','required')) }}     
+                               	{{ Form::select('genero[]', $genero,null,  ['class' => 'form-control input-sm', 'multiple' => 'multiple']) }}     
                                </div>
                                <div class="form-group">
                                	{{ Form::text('distribiudora', null, array('placeholder'=>'Distribiudora','class' => 'form-control input-sm','required')) }}     

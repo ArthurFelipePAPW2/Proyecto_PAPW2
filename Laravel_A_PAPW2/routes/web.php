@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Input;
 use App\diduknow;
 use App\city;
 use App\security;
+use App\platform;
+use App\gender;
 
 Route::get('/', function () {
 
@@ -68,12 +70,27 @@ Route::get('/perfil', function () {
     $pregunta->all();
 
     $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
-    
+
     return view('perfil')->with($arreglo);
 });
 
 Route::get('/admin', function () {
-    return view('admin');
+
+    $platform = platform::all();
+
+    $platform = $platform->pluck('name-platform','id-platform');
+
+    $platform->all();
+
+    $genero = gender::all();
+
+    $genero = $genero->pluck('name-gender','id-gender');
+
+    $genero->all();
+
+    $arreglo = compact(['platform',$platform],['genero',$genero]);
+
+    return view('admin')->with($arreglo);
 });
 
 Route::post('/registrar','UsersController@store');

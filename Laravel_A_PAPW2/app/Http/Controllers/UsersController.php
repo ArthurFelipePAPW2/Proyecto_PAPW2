@@ -64,17 +64,7 @@ class UsersController extends Controller
 
         $user->save();
 
-        $curiosidad = diduknow::all();
-        $filtered = $curiosidad->where('active', 1);
-
-        if((count($curiosidad->where('active', 1)) == 0)){
-            return view::make('/principal');
-        }
-        else{
-             
-        $filtered->all()->random()->texto;
-            return view::make('/principal')->with('curiosidad',$filtered);
-        }
+         return redirect('/principal');
     }
 
     /**

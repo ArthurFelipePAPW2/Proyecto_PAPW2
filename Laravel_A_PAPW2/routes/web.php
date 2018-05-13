@@ -54,7 +54,22 @@ Route::get('/resena', function () {
 });
 
 Route::get('/perfil', function () {
-    return view('perfil');
+
+    $ciudades = city::all();
+
+    $ciudades = $ciudades->pluck('name-city','id-city');
+
+    $ciudades->all();
+
+    $pregunta = security::all();
+
+    $pregunta = $pregunta->pluck('question','id-security');
+
+    $pregunta->all();
+
+    $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
+    
+    return view('perfil')->with($arreglo);
 });
 
 Route::get('/admin', function () {

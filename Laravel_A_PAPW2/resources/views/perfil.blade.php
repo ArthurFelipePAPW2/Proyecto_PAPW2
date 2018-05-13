@@ -35,14 +35,7 @@ No sé si hice los blades bien pero esto está jalando ptm :), felipe ni hace na
 @section('form-ciudad')
 {{Form::open(array('class' => 'form-index','url' => '/Modify','method' => 'post'))}}
 	<td>
-		{{ Form::select('ciudad', array(
-    '1' => 'Ciudad1', 
-    '2' => 'Ciudad2',
-    '3' => 'Ciudad3',
-    '4' => 'Ciudad4',
-    '5' => 'Ciudad5',
-    '6' => 'Ciudad6'),
-  'null',['class'=>'form-control'])}}
+		{{ Form::select('ciudad',$ciudades,'null',['class'=>'form-control'])}}
 	</td>
 	<td>
 		{{ Form::button('<span class="glyphicon glyphicon-pencil"></span>', array('type' => 'submit')) }}
@@ -76,14 +69,7 @@ No sé si hice los blades bien pero esto está jalando ptm :), felipe ni hace na
 @section('form-pregunta')
 {{Form::open(array('class' => 'form-index','url' => '/Modify','method' => 'post'))}}
 	<td>
-		{{ Form::select('pregunta', array(
-    '1' => 'Pregunta1', 
-    '2' => 'Pregunta2',
-    '3' => 'Pregunta3',
-    '4' => 'Pregunta4',
-    '5' => 'Pregunta5',
-    '6' => 'Pregunta6'),
-  'null',['class'=>'form-control'])}}
+		{{ Form::select('pregunta',$pregunta,'null',['class'=>'form-control'])}}
 <br>
 		{{ Form::text('respuesta', 'Respuesta del Usuario', array('required')) }}
 	</td>

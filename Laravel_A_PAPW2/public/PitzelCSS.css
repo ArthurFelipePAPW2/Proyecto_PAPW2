@@ -665,6 +665,7 @@ color: #fbf6eb;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
+	z-index: 5;
 }
 
 .favorito{

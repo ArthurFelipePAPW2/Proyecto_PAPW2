@@ -18,12 +18,12 @@
                                 <div class="form-group send-data">
                                    {{ Form::textarea('username', null, array('placeholder'=>'Por favor rellene la mayor cantidad de datos posibles.
 
-Plataforma:
-Productor(es):
-Desarrollador:
-Género(s):
-Distribuidora(s):
-Modo de Juego:','class' => 'form-control input-sm','required')) }}
+                                    Plataforma: 
+                                    Productor(es):
+                                    Desarrollador:
+                                    Género(s):
+                                    Distribuidora(s):
+                                    Modo de Juego:','class' => 'form-control input-sm','required')) }}
              
                                 </div>
                                 <div class="form-group">

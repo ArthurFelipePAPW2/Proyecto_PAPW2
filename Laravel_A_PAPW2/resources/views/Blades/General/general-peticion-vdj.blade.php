@@ -11,27 +11,27 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                           <form>
-                               <div class="form-group">
-                                {{ Form::text('username', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}
+                           {{ Form::open(array('url' => 'EnviarSugerencia','method' => 'post'))}}  
+                                                       <div class="form-group">
+                                {{ Form::text('vg_name', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}
                                </div>
                                 <div class="form-group send-data">
-                                   {{ Form::textarea('username', null, array('placeholder'=>'Por favor rellene la mayor cantidad de datos posibles.
+                                   {{ Form::textarea('content', null, array('placeholder'=>'Por favor rellene la mayor cantidad de datos posibles.
 
-                                    Plataforma: 
-                                    Productor(es):
-                                    Desarrollador:
-                                    Género(s):
-                                    Distribuidora(s):
-                                    Modo de Juego:','class' => 'form-control input-sm','required')) }}
+Plataforma: 
+Productor(es):
+Desarrollador:
+Género(s):
+Distribuidora(s):
+Modo de Juego:','class' => 'form-control input-sm','required')) }}
              
                                 </div>
                                 <div class="form-group">
-                                  {{ Form::text('username', null, array('placeholder'=>'Link de Trailer / Información adicional','class' => 'form-control input-sm','required')) }}
+                                  {{ Form::text('link', null, array('placeholder'=>'Link de Trailer / Información adicional','class' => 'form-control input-sm','required')) }}
                                </div> 
 
                                {{Form::button('Enviar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}
-                            </form>
+                            {{Form::close()}}
                       </center>
                     </div>                  
                 </div>

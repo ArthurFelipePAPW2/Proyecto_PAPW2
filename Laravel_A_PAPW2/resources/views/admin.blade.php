@@ -36,21 +36,28 @@
 @endsection
 
 @section('peticion')
+@foreach($suggestion as $sugerencia)
+{{ $suggestion }}
+{{--
 <tr>
-		<td class="titulo-solicitud">Videojuego1</td>	
-		<td>Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción Descripción</td>
-		<td>
-			<center><p class="user-solicitud">Bob1</p><img src="Imagenes/fondo.jpg" class="img-responsive img-solicitud"></center>
-		</td>
-		<td>
-			<center>
-			{{Form::open(array('url' => '/Modify','method' => 'post'))}}
-				{{ Form::hidden('peticion', '1') }}
-				{{ Form::button('<span class="glyphicon glyphicon-remove"></span>', array('type' => 'submit', 'class'=>'enviar-peticion')) }}
-			{{Form::close()}}
-	</center>
-	</td>
-</tr>		
+    <td class="titulo-solicitud">{{ $sugerencia->{'game-suggested'} }}</td> 
+    <td>
+      {{ $sugerencia->{'reason'} }}
+    </td>
+    <td>
+      <center><p class="user-solicitud">Bob1</p><img src="Imagenes/fondo.jpg" class="img-responsive img-solicitud"></center>
+    </td>
+    <td>
+      <center>
+      {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+        {{ Form::hidden('peticion', '1') }}
+        {{ Form::button('<span class="glyphicon glyphicon-remove"></span>', array('type' => 'submit', 'class'=>'enviar-peticion')) }}
+      {{Form::close()}}
+  </center>
+  </td>
+</tr>
+--}}
+@endforeach		
 @endsection
 
 @section('agregar-vdj')

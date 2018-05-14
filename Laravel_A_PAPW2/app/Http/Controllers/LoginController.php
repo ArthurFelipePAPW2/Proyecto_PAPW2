@@ -48,7 +48,7 @@ class LoginController extends Controller
 
 
         if($result != NULL){
-            return redirect('/principal');
+            return redirect('/articles');
         }else{
             return back()->withInput();
         }

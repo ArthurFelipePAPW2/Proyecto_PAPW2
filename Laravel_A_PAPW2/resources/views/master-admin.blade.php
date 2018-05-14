@@ -71,7 +71,7 @@
 
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
-		          <img src="Imagenes/valor.png" class="img-responsive img-perfil2 img-rounded">	        
+		          <img src="Imagenes/PG_NES.png" class="img-responsive img-perfil2 img-rounded">	        
 		        </li>
 		      </ul>
 		<br><br><br>	 
@@ -103,12 +103,6 @@
 						<th>Eliminar</th>		
 						</thead>
 						@yield('peticion')
-            @yield('peticion')
-            @yield('peticion')
-            @yield('peticion')
-            @yield('peticion')
-            @yield('peticion')
-            @yield('peticion')
 					</table>
 				</div>
 			</div>

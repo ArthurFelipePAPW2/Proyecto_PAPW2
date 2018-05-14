@@ -19,6 +19,7 @@ use App\gender;
 use App\country;
 use App\distributor;
 use App\videogame;
+use App\suggestion;
 
 Route::get('/', function () {
 
@@ -62,41 +63,7 @@ Route::get('/perfil', function () {
     return view('perfil')->with($arreglo);
 });
 
-Route::get('/admin', function () {
-
-    $platform = platform::all();
-
-    $platform = $platform->pluck('name-platform','id-platform');
-
-    $platform->all();
-
-    $genero = gender::all();
-
-    $genero = $genero->pluck('name-gender','id-gender');
-
-    $genero->all();
-
-    $paises = country::all();
-
-    $paises = $paises->pluck('name-country','id-country');
-
-    $paises->all();
-
-    $distributor = distributor::all();
-
-    $distributor = $distributor->pluck('name-distributor','id-distributor');
-
-    $distributor->all();
-    
-    $arreglo = compact(
-        ['platform',$platform],
-        ['genero',$genero],
-        ['paises',$paises],
-        ['distributor',$distributor]
-    );
-
-    return view('admin')->with($arreglo);
-});
+Route::get('/admin', 'LoadSuggestions@store');
 
 Route::post('/registrar','UsersController@store');
 
@@ -114,4 +81,6 @@ Route::post('/BorrarCuriosidad', 'BorrarCuriosidadController@store');
 
 Route::post('/AgregarDistribuidora', 'DistributorController@store');
 
-Route::resource('articles','ArticlesController');
+Route::resource('/articles','ArticlesController');
+
+Route::post('/EnviarSugerencia', 'SendSuggestionController@store');

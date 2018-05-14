@@ -71,7 +71,7 @@
 
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
-		          <img src="Imagenes/PG_NES.png" class="img-responsive img-perfil2 img-rounded">	        
+		          <img src="Imagenes/controller.png" class="img-responsive img-perfil2 img-rounded">	        
 		        </li>
 		      </ul>
 		<br><br><br>	 

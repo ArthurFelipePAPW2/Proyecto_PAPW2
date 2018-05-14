@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UserFormRequest;
-use App\User;
+use App\videogame;
 use App\diduknow;
-
-class UsersController extends Controller
+class ArticlesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,18 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $curiosidad = diduknow::all();
+        
+        if((count($curiosidad->where('active', 1)) == 0)){
+            $curiosidad = NULL;
+        }else{
+            $curiosidad = $curiosidad->where('active', 1);
+            $curiosidad = $curiosidad->random();
+        } 
+
+        $videojuegos = videogame::paginate(1);
+
+        return view('principal',compact(['videojuegos'],['curiosidad']));
     }
 
     /**
@@ -26,7 +35,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('index');
+        //
     }
 
     /**
@@ -35,36 +44,9 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserFormRequest $request)
+    public function store(Request $request)
     {
-
-    $nombre = $request->get('username');
-    $apellido = $request->get('apellido');
-    $email = $request->get('email');
-    $password = $request->get('password');
-    $genero = $request->get('genero');
-    $nacimiento = $request->get('date');
-    $pregunta = $request->get('pregunta');
-    $ciudad = $request->get('ciudad');
-    $answer = $request->get('answer');
-    $avatar = base64_encode(file_get_contents($request->file('imagen')->path()));
-
-        $user = new User(array(
-                        "name-user" => $nombre,
-                        "last-name-user" => $apellido,
-                        "email-user" => $email,
-                        "pass-user" => $password,
-                        "gender" => $genero,
-                        "avatar" => $avatar,
-                        "birthday" => $nacimiento,
-                        "answer" => $answer,
-                        "id-city" => $ciudad,
-                        "id-security" => $pregunta
-        ));
-
-        $user->save();
-
-         return redirect('/articles');
+        //
     }
 
     /**

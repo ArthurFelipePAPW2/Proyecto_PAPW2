@@ -8,7 +8,7 @@
 
   @yield('sabias')  
 
-<nav class="navbar navbar-inverse my-bar1" my-def-bar">
+<nav class="navbar navbar-inverse my-bar1 my-def-bar">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -49,44 +49,6 @@
    @include('Blades.General.general-peticion-vdj') 
 
    @yield('game')
-   @yield('game')
-   @yield('game')
-   @yield('game')
-   @yield('game')
-   @yield('game')
-
-
-<br><br>
-    <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-1 visible-sm-inline visible-md-inline visible-lg-inline">
-              <div class="btn-group nav-button">
-                <button type="button" class="btn"><span class="glyphicon glyphicon-menu-left"></span></button>
-            <button type="button" class="btn">1</button>
-            <button type="button" class="btn">2</button>
-            <button type="button" class="btn">3</button>
-            <button type="button" class="btn">4</button>
-            <button type="button" class="btn">5</button>
-            <button type="button" class="btn"><span class="glyphicon glyphicon-menu-right"></span></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-            <div class="col-md-8 col-md-offset-1 visible-xs-inline">
-              <div class="btn-group nav-button">
-                <button type="button" class="btn"><span class="glyphicon glyphicon-menu-left"></span></button>
-            <button type="button" class="btn">1</button>
-            <button type="button" class="btn">2</button>
-            <button type="button" class="btn">3</button>
-            <button type="button" class="btn">4</button>
-            <button type="button" class="btn">5</button>
-            <button type="button" class="btn"><span class="glyphicon glyphicon-menu-right"></span></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br><br><br>
 
     @include('Blades.General.general-js')
 

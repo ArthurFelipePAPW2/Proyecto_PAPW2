@@ -14,7 +14,7 @@ class UpdateDiduknow extends Migration
     public function up()
     {
         Schema::table('did-u-know', function($table) {
-              $table->boolean('active', 1)->default(1)->after('id-administrador');
+              //$table->boolean('active', 1)->default(1)->after('id-administrador');
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateDiduknow extends Migration
     public function down()
     {
           Schema::table('did-u-know', function($table) {
-            $table->dropColumn('active');
+           // $table->dropColumn('active');
         });
     }
 }

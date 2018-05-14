@@ -1,6 +1,40 @@
 @extends('master-admin')
 @section('title','Gamer')
 
+@section('agregar-distribuidora')
+<div id="AgregarCuriosidad" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"><center>
+                        <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
+                          <div class="row">                        
+                            <div class="col-sm-12 Modal-Text">
+                            <h4>Agregar Distribuidora</h4>
+                            </div>
+                          </div></center>
+                    </div>
+                    <div class="modal-body">
+                      <center>
+                            {{Form::open(array('url' => 'AgregarDistribuidora','method' => 'post'))}}
+                               <div class="form-group"> 
+                     {{ Form::label('Distribuidora','Ingrese una distribuidora') }}
+                     {{ Form::text('distribuidora',null, array('class'=>'form-control', 'placeholder'=>'Agregue una distribuidora')) }}
+                  </div>  
+                <div class="form-group">
+                     {{ Form::label('Pais','Seleccione un pais') }}
+                       {{ Form::select('pais', $paises,null,['class'=>'form-control'])}}
+                               </div>        
+                                {{Form::button('Agregar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}          
+                             
+                            {{Form::close()}}
+                      
+                      </center>
+                    </div>                  
+                </div>
+                </div>
+            </div>
+@endsection
+
 @section('peticion')
 <tr>
 		<td class="titulo-solicitud">Videojuego1</td>	
@@ -45,14 +79,14 @@
                                <div class="form-group">
                                	{{ Form::text('productor', null, array('placeholder'=>'Productor','class' => 'form-control input-sm','required')) }}     
                                </div>
-                               <div class="form-group">
-                               	{{ Form::text('desarrollador', null, array('placeholder'=>'Desarrollador','class' => 'form-control input-sm','required')) }}     
+                                <div class="form-group">
+                                {{ Form::select('desarrolladora', $distributor,null,['class'=>'form-control input-sm'])}}
                                </div>
                                <div class="form-group">
                                	{{ Form::select('genero[]', $genero,null,  ['class' => 'form-control input-sm', 'multiple' => 'multiple']) }}     
                                </div>
                                <div class="form-group">
-                               	{{ Form::text('distribiudora', null, array('placeholder'=>'Distribiudora','class' => 'form-control input-sm','required')) }}     
+                                {{ Form::select('distribuidora', $distributor,null,['class'=>'form-control input-sm'])}}
                                </div>
                                <div class="form-group">
                             	{{ Form::text('modo', null, array('placeholder'=>'Modo','class' => 'form-control input-sm','required')) }}     

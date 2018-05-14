@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\VideogameFormRequest;
 use App\videogame;
 use App\distributor;
+use App\havegender;
+use App\forplatform;
+use DB;
 
-$nombreGenero = 'App\have-gender';
-use nombreGenero;
 
 
 class videogameController extends Controller
@@ -44,48 +45,46 @@ class videogameController extends Controller
         $nombre = $request->get('nombre');
         $plataforma = $request->get('plataforma');
         $productor = $request->get('productor');
-        $desarrollador = $request->get('desarrollador');
+        $desarrollador = $request->get('desarrolladora');
         $genero = $request->get('genero');
-        $distribiudora = $request->get('distribiudora');
+        $distribuidora = $request->get('distribuidora');
         $modo = $request->get('modo');
         $descripcion = $request->get('descripcion');
         $admin = $request->get('administrador'); 
         $imagen = base64_encode(file_get_contents($request->file('imagen')->path()));
 
-        $videogame = new videogame(array(
+        $videogames = new videogame(array(
                         "name-videogame" => $nombre,
                         "cover" => $imagen,
                         "description" => $descripcion,
-                        "id-administrador" => $admin            
+                        "mode" => $modo,
+                        "id-administrador" => $admin, 
+                        "id-distributor" => $distribuidora,
+                        "id-developer" => $desarrollador,
+                        "productor" => $productor           
         ));
 
-        $videogame->save();
+        $videogames->save();
 
-        $last_videogame = $nombreGenero::max('id-videogame');
+        $last_videogame = DB::table('videogames')->max('id-videogame');
 
-        foreach ($genero as $generos) {
-            $genero = new `have-gender`(array(
+        for($x=0;$x < count($genero);$x++){
+            $generos = new havegender(array(
                         "id-videogame" => $last_videogame,
-                        "id-gender" => $genero        
+                        "id-gender" => $genero[$x]        
         ));
-
-        $genero->save();
+        $generos->save();
         }
 
-        $productor = new distributor(array(
-                        "name-videogame" => $nombre,
-                        "cover" => $imagen,
-                        "description" => $descripcion,
-                        "id-administrador" => $admin            
+         for($x=0;$x < count($plataforma);$x++){
+             $plataformas = new forplatform(array(
+                        "id-videogame" => $last_videogame,
+                        "id-platform" => $plataforma[$x]       
         ));
+        $plataformas->save();
+        }
 
-        $videogame->save();
-
-
-
-
-        
-
+           return redirect('/admin');
 
     }
 

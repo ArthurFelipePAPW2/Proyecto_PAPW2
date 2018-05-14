@@ -87,3 +87,4 @@ $('#left-arrow').click(function(){
         $('.slide').first().fadeIn(300).addClass('active');
     }
 });
+

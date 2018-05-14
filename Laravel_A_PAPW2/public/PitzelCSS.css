@@ -367,8 +367,8 @@ input[type="file"] {
 }
 
 .img-heart{
-	width: 10%;
-	height: 10%;
+	width: 17%;
+	height: 17%;
 	display: inline-block;
 	padding-top: 25px;
 }
@@ -379,6 +379,20 @@ input[type="file"] {
 	right: 0px;
 	position: fixed;
 	z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+.title-vdj{
+	text-align: center;
+}
+
+.img-heart{
+	width: 10%;
+	height: 10%;
+	display: inline-block;
+	padding-top: 25px;
+	margin-bottom: 15px;
+}
 }
 
 .resena{
@@ -405,15 +419,14 @@ input[type="file"] {
 }
 }
 
-.nav-button button{
-	background-color:#f2f7f92e;
-	color:#0e283f;
-	border: 1px solid #0e283f;
-	padding: 20px 30px 20px 30px;
-	font-size: 20px;
-	color: white;
-	font-family: Nozstudio;
-	
+.pagination a{
+	width: 50px;
+	height: 50px;
+}
+
+.pagination span{
+	width: 50px;
+	height: 50px;
 }
 
 .sabias{

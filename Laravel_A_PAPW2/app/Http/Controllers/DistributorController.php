@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UserFormRequest;
-use App\User;
-use App\diduknow;
+use App\Http\Requests\DistributorFormRequest;
+use App\distributor;
 
-class UsersController extends Controller
+class DistributorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +25,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('index');
+        //
     }
 
     /**
@@ -35,36 +34,19 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserFormRequest $request)
+    public function store(DistributorFormRequest $request)
     {
+        $distribuidora = $request->get('distribuidora');
+        $pais = $request->get('pais');
 
-    $nombre = $request->get('username');
-    $apellido = $request->get('apellido');
-    $email = $request->get('email');
-    $password = $request->get('password');
-    $genero = $request->get('genero');
-    $nacimiento = $request->get('date');
-    $pregunta = $request->get('pregunta');
-    $ciudad = $request->get('ciudad');
-    $answer = $request->get('answer');
-    $avatar = base64_encode(file_get_contents($request->file('imagen')->path()));
-
-        $user = new User(array(
-                        "name-user" => $nombre,
-                        "last-name-user" => $apellido,
-                        "email-user" => $email,
-                        "pass-user" => $password,
-                        "gender" => $genero,
-                        "avatar" => $avatar,
-                        "birthday" => $nacimiento,
-                        "answer" => $answer,
-                        "id-city" => $ciudad,
-                        "id-security" => $pregunta
+        $distributor = new distributor(array(
+                        "name-distributor" => $distribuidora,
+                        "id-country" => $pais
         ));
 
-        $user->save();
+        $distributor->save();
 
-         return redirect('/articles');
+         return redirect('/admin');
     }
 
     /**

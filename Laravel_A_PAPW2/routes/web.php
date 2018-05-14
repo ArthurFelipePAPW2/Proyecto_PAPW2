@@ -16,6 +16,9 @@ use App\city;
 use App\security;
 use App\platform;
 use App\gender;
+use App\country;
+use App\distributor;
+use App\videogame;
 
 Route::get('/', function () {
 
@@ -34,21 +37,6 @@ Route::get('/', function () {
     $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
 
     return view('index')->with($arreglo);
-});
-
-Route::get('/principal', function () {
-
-    	$curiosidad = diduknow::all();
-        
-        if((count($curiosidad->where('active', 1)) == 0)){
-			$curiosidad = NULL;
-        }else{
-        	$curiosidad = $curiosidad->where('active', 1);
-        	$curiosidad = $curiosidad->random();
-        }
-
-        return view('/principal')->with('curiosidad',$curiosidad);
-
 });
 
 Route::get('/resena', function () {
@@ -88,7 +76,24 @@ Route::get('/admin', function () {
 
     $genero->all();
 
-    $arreglo = compact(['platform',$platform],['genero',$genero]);
+    $paises = country::all();
+
+    $paises = $paises->pluck('name-country','id-country');
+
+    $paises->all();
+
+    $distributor = distributor::all();
+
+    $distributor = $distributor->pluck('name-distributor','id-distributor');
+
+    $distributor->all();
+    
+    $arreglo = compact(
+        ['platform',$platform],
+        ['genero',$genero],
+        ['paises',$paises],
+        ['distributor',$distributor]
+    );
 
     return view('admin')->with($arreglo);
 });
@@ -106,3 +111,7 @@ Route::post('/BajaUser', 'BajaUser@store');
 Route::post('/AltaUser', 'AltaUser@store');
 
 Route::post('/BorrarCuriosidad', 'BorrarCuriosidadController@store');
+
+Route::post('/AgregarDistribuidora', 'DistributorController@store');
+
+Route::resource('articles','ArticlesController');

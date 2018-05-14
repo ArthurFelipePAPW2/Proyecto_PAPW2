@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateUsers extends Migration
+class UpdateVideogames extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table) {
-            //$table->boolean('active', 1)->after('id-security');
+        Schema::table('videogames', function($table) {
+            $table->string('productor', 255)->after('id-developer');
         });
     }
 
@@ -25,8 +25,6 @@ class UpdateUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function($table) {
-            //$table->dropColumn('active');
-        });
+        //
     }
 }

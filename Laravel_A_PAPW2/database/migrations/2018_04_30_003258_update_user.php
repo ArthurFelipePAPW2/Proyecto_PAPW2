@@ -14,7 +14,7 @@ class UpdateUser extends Migration
     public function up()
     {
         Schema::table('users', function($table) {
-            $table->string('answer', 100)->after('birthday');
+           // $table->string('answer', 100)->after('birthday');
         });
     }
 
@@ -25,8 +25,6 @@ class UpdateUser extends Migration
      */
     public function down()
     {
-        Schema::table('users', function(Blueprint $table) {
-            $table->dropColumn('answer');
-        });
+       
     }
 }

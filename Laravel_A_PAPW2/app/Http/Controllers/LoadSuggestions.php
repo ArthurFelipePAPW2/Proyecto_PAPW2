@@ -42,7 +42,7 @@ class LoadSuggestions extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminFormRequest $request)
     {
         $platform = platform::all();
 
@@ -70,9 +70,9 @@ class LoadSuggestions extends Controller
 
         $suggestion = suggestion::all();
 
-        $suggestion = $suggestion->pluck('game-suggested','reason');
+        //$suggestion = $suggestion->pluck('game-suggested','reason');
 
-        $suggestion->all();
+        //$suggestion->all();
         
         $arreglo = compact(
             ['platform',$platform],
@@ -82,9 +82,9 @@ class LoadSuggestions extends Controller
             ['suggestion',$suggestion]
         );
 
-        dd($suggestion);
+        //dd($suggestion);
 
-        //return view('admin')->with($arreglo);
+        return view('admin')->with($arreglo);
 
     }
 

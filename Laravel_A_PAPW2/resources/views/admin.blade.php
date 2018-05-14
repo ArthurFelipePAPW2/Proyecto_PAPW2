@@ -37,8 +37,6 @@
 
 @section('peticion')
 @foreach($suggestion as $sugerencia)
-{{ $suggestion }}
-{{--
 <tr>
     <td class="titulo-solicitud">{{ $sugerencia->{'game-suggested'} }}</td> 
     <td>
@@ -56,7 +54,6 @@
   </center>
   </td>
 </tr>
---}}
 @endforeach		
 @endsection
 

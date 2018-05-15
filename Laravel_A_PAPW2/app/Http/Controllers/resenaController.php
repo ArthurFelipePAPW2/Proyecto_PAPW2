@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\videogame;
+use App\review;
+use App\score;
 use Carbon\Carbon;
 use Session;
 
@@ -25,8 +27,21 @@ class resenaController extends Controller
 
         $fecha =  Carbon::now();
 
-        $arreglo = compact(['InfoDeResena',$InfoDeResena],['user',$user],['fecha',$fecha]);
+        $Comentarios = review::where([
+            ['id-videogame','=', $articulo]
+        ])->get();
 
+        $Scores = score::where([
+            ['id-videogame','=', $articulo]
+        ])->get();
+
+        $arreglo = compact(
+            ['InfoDeResena',$InfoDeResena],
+            ['user',$user],
+            ['fecha',$fecha],
+            ['Comentarios',$Comentarios],
+            ['Scores',$Scores]
+        );
         return view('resena')->with($arreglo);
     }
 

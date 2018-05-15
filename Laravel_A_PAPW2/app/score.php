@@ -8,4 +8,5 @@ class score extends Model
 {
     protected $primaryKey = 'id-score';
     protected $fillable = ['id-user','id-videogame','points'];
+
 }

@@ -5,13 +5,16 @@
 
 <div class="slider-comments container slide active">
 
-@for($x=0;$x<5;$++)
+@for($x=1; $x <= count($Comentarios) ; $x++)
 <div class="container resena comentario">
 			<div class="row">
 				<div class="col-md-2">
 					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
+						<img src="data:;base64,{{ $Comentarios[$x-1]->Usuario->{'avatar'} }}" class="img-responsive img-rounded img-comentario">					
+						<p class="name-user-comentario">
+							{{ $Comentarios[$x-1]->Usuario->{'name-user'} }}
+						</p>
+						<br>
 						<div class="btn-group btn-util">
 				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
 							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
@@ -19,20 +22,28 @@
 					</center>
 				</div>
 				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
+					<p class="fecha-comentario">Posteado el {{ $Comentarios[$x-1]->{'created_at'} }}</p>
 					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
 					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
+						<h3 class="titulo-comentario">{{ $Comentarios[$x-1]->{'titulo'} }}
+							@foreach($Scores as $puntuacion)
+								@if($Comentarios[$x-1]->Usuario->{'id-user'} == $puntuacion->{'id-user'})
+
+									@for($y=1; $y<=$puntuacion->{'points'}; $y++)
+									<img src="../Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+									@endfor
+
+									@for($y=1; $y<=(5-$puntuacion->{'points'}); $y++)
+									<img src="../Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
+									@endfor
+
+								@endif
+							@endforeach				
+							
 	  					</h3>
 
 						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno 
+							{{ $Comentarios[$x-1]->{'text-review'} }}
 						</p>
 					</div>
 				</div>
@@ -40,6 +51,12 @@
 		</div>
 
 		<br>
+				@if($x % 5 === 0)
+		</div>
+		
+		<div class="slider-comments container slide ">
+		@endif
+		@endfor
 </div>
 
 <div class="container next-comment">
@@ -195,4 +212,59 @@
 <button class="botonFavorito Nofavorito"></button>
 {{Form::close()}} 
 -->
+@endsection
+
+@section('modificar-review')
+<button class="Modificar-review" data-toggle="modal" data-target="#modifyreview">
+	<span class="glyphicon glyphicon-pencil"></span>
+</button>
+		<div id="modifyreview" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"><center>
+                        <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
+                          <div class="row">                        
+	                          <div class="col-sm-12 Modal-Text">
+	                          <h4>Modificar Review</h4>
+	                          </div>
+                          </div></center>
+                    </div>
+                    <div class="modal-body">
+                      <center>
+                            {{ Form::open(array('url' => 'agregarcuriosidad','method' => 'post')) }}
+                            {{ Form::hidden('user', 1) }}   
+                           <div class="form-group">
+
+                         {{ Form::text('texto', null, array('required','class'=>'form-control')) }}    
+                        </div> 
+                         <div class="form-group">
+
+                         {{ Form::textarea('texto', null, array('required','class'=>'textarea-agregar-vdj')) }}    
+                        </div>   
+
+                        <div class="form-group radios-modal">
+
+                        <div class="rated-heart" id="corazon1">
+							{{ Form::radio('rate', '1',null, ['onClick' => 'Evaluar(1)','checked']) }}
+						</div>
+						<div class="sin-rating" id="corazon2">
+							{{ Form::radio('rate', '2',null, ['onClick' => 'Evaluar(2)']) }}
+						</div>
+						<div class="sin-rating" id="corazon3">
+							{{ Form::radio('rate', '3',null, ['onClick' => 'Evaluar(3)']) }}
+						</div>
+						<div class="sin-rating" id="corazon4">
+							{{ Form::radio('rate', '4',null, ['onClick' => 'Evaluar(4)']) }}
+						</div>
+						<div class="sin-rating" id="corazon5">
+							{{ Form::radio('rate', '5',null, ['onClick' => 'Evaluar(5)']) }}
+						</div>  
+                        </div>                                                    
+                                  {{Form::button('Agregar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}           
+                            {{Form::close()}}
+                      </center>
+                    </div>                  
+                </div>
+                </div>
+            </div>
 @endsection

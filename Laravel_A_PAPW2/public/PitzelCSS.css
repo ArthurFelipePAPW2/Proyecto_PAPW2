@@ -384,6 +384,10 @@ input[type="file"] {
     text-justify: inter-word;
 }
 
+.radios-modal input[type="radio"]{
+	opacity:0;
+}
+
 .img-heart{
 	width: 17%;
 	height: 17%;
@@ -582,6 +586,7 @@ color: #fbf6eb;
 
 .btn-util button{
 	padding: 10px 20px 10px 20px;
+	margin-bottom: 50px;
 }
 
 .titulo-comentario{
@@ -652,6 +657,19 @@ color: #fbf6eb;
 .down-page-comment{
 	position: fixed;
 	bottom: 10px;
+	right: 10px;
+	height: 50px;
+	width: 50px;
+	border-radius:50px;
+	color:white;
+	background-color:#838383;
+	border:none;
+	z-index: 5;
+}
+
+.Modificar-review{
+	position: fixed;
+	bottom: 70px;
 	right: 10px;
 	height: 50px;
 	width: 50px;

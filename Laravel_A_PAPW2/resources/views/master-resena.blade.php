@@ -15,6 +15,8 @@
 
 		@yield('botonfav')
 
+		@yield('modificar-review')
+
 		<nav class="navbar navbar-inverse my-bar2 my-def-bar">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->

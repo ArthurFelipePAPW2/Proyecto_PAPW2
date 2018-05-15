@@ -7,6 +7,7 @@ use App\Http\Requests\reviewFormRequest;
 use App\review;
 use App\score;
 use Session;
+use DB;
 
 class reviewController extends Controller
 {
@@ -44,6 +45,12 @@ class reviewController extends Controller
         $user = Session::get('User')->{'id-user'};
         $videogame = $request->get('videogame');
 
+        $result =  DB::table('reviews')->where([
+            ['id-user', '=', $user],
+            ['id-videogame', '=', $videogame]
+            ])->first();    
+
+        if($result == NULL){
             $review = new review(array(
                             "id-user" => $user,
                             "id-videogame" => $videogame,
@@ -60,7 +67,7 @@ class reviewController extends Controller
             ));
 
         $score->save();
-       
+        }
 
          return back();
     }

@@ -7,6 +7,7 @@ use App\Http\Requests\UserFormRequest;
 use App\User;
 use App\diduknow;
 use DB;
+use Session;
 
 class UsersController extends Controller
 {
@@ -63,6 +64,8 @@ class UsersController extends Controller
                         "id-security" => $pregunta
         ));
 
+        Session::put('User',$user);
+                    
         $user->save();
 
          return redirect('/articles');
@@ -143,5 +146,57 @@ class UsersController extends Controller
         }else{
             return back()->withInput();
         }
+    }
+
+    public function ActualizarNombre(Request $request)
+    {
+            user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['name-user' => $request->get('nombre')]);
+
+            return back();
+    }
+
+     public function ActualizarApellido(Request $request)
+    {
+            user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['last-name-user' => $request->get('apellido')]);
+
+            return back();
+    }
+
+     public function ActualizarCiudad(Request $request)
+    {
+            user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['id-city' => $request->get('ciudad')]);
+
+            return back();
+    }
+
+     public function ActualizarCorreo(Request $request)
+    {
+            user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['correo-contacto-user' => $request->get('correo')]);
+
+            return back();
+    }
+
+     public function ActualizarWeb(Request $request)
+    {
+            user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['pagina-web-user' => $request->get('pagina')]);
+
+           return back();
+    }
+
+     public function ActualizarImagen(Request $request)
+    {   
+            $avatar = base64_encode(file_get_contents($request->file('imagen')->path()));
+
+            user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['avatar' => $avatar]);
+
+            Session::get('User')->{'avatar'} = $avatar;
+
+            return back();
     }
 }

@@ -22,7 +22,7 @@
             <div class="row">
               <div class="col-md-9 article-info">
                 <div class="col-md-5">
-                  <a href="/resena">
+                  <a href="/resena/{{$videogame->{'id-videogame'} }}">
                     <center>
                     <img src="data:;base64,{{ $videogame->{'cover'} }}" class="img-responsive img-info-vdj img-rounded"></center>
                   </a>

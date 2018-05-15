@@ -22,12 +22,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Link 1</a></li> 
-            <li><a href="#">Link 2</a></li> 
-            <li><a href="#">Link 3</a></li> 
-            <li><a href="#">Link 4</a></li>         
-          </ul>
+
           @include('Blades.General.general-search') 
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -35,8 +30,6 @@
                <img src="data:;base64,{{ Session::get('User')->{'avatar'} }}" class="img-responsive img-perfil img-rounded"> 
               <ul class="dropdown-menu">
                 <li><a href="/perfil/{{ Session::get('User')->{'id-user'} }}">Perfil</a></li>
-                <li><a href="#">Configurar Cuenta</a></li>
-                <li><a href="#">Alguna Cosa</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a data-toggle="modal" data-target="#sendvdj">Enviar Sugerencia</a></li>
               </ul>

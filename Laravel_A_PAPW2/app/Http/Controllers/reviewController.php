@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\city;
-use App\security;
-use App\user;
+use App\Http\Requests\reviewFormRequest;
+use App\review;
+use App\score;
 use Session;
 
-class perfilController extends Controller
+class reviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,33 +36,33 @@ class perfilController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $usuario)
+    public function store(reviewFormRequest $request)
     {
-        $ciudades = city::all();
+        $titulo = $request->get('titulo-comentario');
+        $comentario = $request->get('comentario-texto');
+        $rate = $request->get('rate');
+        $user = Session::get('User')->{'id-user'};
+        $videogame = $request->get('videogame');
 
-        $ciudades = $ciudades->pluck('name-city','id-city');
+            $review = new review(array(
+                            "id-user" => $user,
+                            "id-videogame" => $videogame,
+                            "titulo" => $titulo,
+                            "text-review" => $comentario
+            ));
 
-        $ciudades->all();
+        $review->save();
 
-        $pregunta = security::all();
+            $score = new score(array(
+                            "points" => $rate,
+                            "id-user" => $user,
+                            "id-videogame" => $videogame
+            ));
 
-        $pregunta = $pregunta->pluck('question','id-security');
+        $score->save();
+       
 
-        $pregunta->all();
-
-        if(Session::get('User')->{'id-user'} == $usuario){
-            $InfoDePerfil = user::all()->where('id-user','=',Session::get('User')->{'id-user'})->first();
-
-            $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta],['InfoDePerfil',$InfoDePerfil]);
-
-        }else{
-
-            $InfoDePerfil = user::all()->where('id-user','=',$usuario)->first();
-
-            $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta],['InfoDePerfil',$InfoDePerfil]);
-        }
-
-        return view('perfil')->with($arreglo);
+         return back();
     }
 
     /**

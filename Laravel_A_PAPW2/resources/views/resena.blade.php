@@ -5,6 +5,7 @@
 
 <div class="slider-comments container slide active">
 
+@for($x=0;$x<5;$++)
 <div class="container resena comentario">
 			<div class="row">
 				<div class="col-md-2">
@@ -36,277 +37,9 @@
 					</div>
 				</div>
 			</div>
-		</div><br>
+		</div>
 
-		<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno 
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
-
-		<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno Texto de relleno 
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
-</div>
-
-<div class="slider-comments container slide">
-
-<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
-
-		<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
-
-		<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
-</div>
-
-<div class="slider-comments container slide">
-
-<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
-
-		<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3  
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
-
-		<div class="container resena comentario">
-			<div class="row">
-				<div class="col-md-2">
-					<center>
-						<img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario">					
-						<p class="name-user-comentario">Mofin</p><br>
-						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-						</div>
-					</center>
-				</div>
-				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el 2018-03-29</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
-					<div class="row">
-						<h3 class="titulo-comentario">Buen Juego
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-							<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
-	  					</h3>
-
-						<p class="text-comentario">
-							La verdad es un buen juego, de hecho jamas lo he jugado pero se ve bonito, ademas me recuerda a la infancia, donde jugaba en la clase de tic a el Halo y por eso ahora no se programar, es muy triste pero es la verdad. <br><br>
-							3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3   
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><br>
+		<br>
 </div>
 
 <div class="container next-comment">
@@ -409,19 +142,20 @@
 <div class="container resena comentar">
 	<div class="row">
 		<div class="col-md-2">
-			<center><img src="Imagenes/Anon.jpg" class="img-responsive img-rounded img-comentario"><p class="me-user-comentario">Usuario</p><br></center>
+			<center><img src="data:;base64,{{ $user->{'avatar'} }}" class="img-responsive img-rounded img-comentario"><p class="me-user-comentario"><p class="name-user-comentario">{{ $user->{'name-user'} }}</p><br></center>
 		</div>
 		<div class="col-md-10">
-			<p class="fecha-comentario">Hoy es 2018-03-29 </p>
+			<p class="fecha-comentario">Hoy es {{ $fecha }}</p>
 			<div class="row">
 
-				{{Form::open(array('url' => '/','method' => 'post'))}}
+				{{Form::open(array('url' => 'SendReview','method' => 'post'))}}
+				{{Form::hidden('videogame',$InfoDeResena->{'id-videogame'})}}
 				{{ Form::text('titulo-comentario', null, array('placeholder'=>'Titulo de tu comentario','id' => 'texto-comentar','required')) }}
 				<br>
 				{{ Form::textarea('comentario-texto', null, array('placeholder'=>'¿Qué te pareció este juego?','required')) }}
 				<br>
 				<div class="rated-heart" id="corazon1">
-					{{ Form::radio('rate', '1',null, ['onClick' => 'Evaluar(1)']) }}
+					{{ Form::radio('rate', '1',null, ['onClick' => 'Evaluar(1)','checked']) }}
 				</div>
 				<div class="sin-rating" id="corazon2">
 					{{ Form::radio('rate', '2',null, ['onClick' => 'Evaluar(2)']) }}

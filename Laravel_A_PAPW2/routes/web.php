@@ -39,3 +39,19 @@ Route::post('/EnviarSugerencia', 'SendSuggestionController@store');
 Route::get('/perfil/{usuario}', 'perfilController@store')->where(['usuario' => '[0-9]+']);
 
 Route::get('/resena/{articulo}', 'resenaController@index')->where(['articulo' => '[0-9]+']);
+
+Route::post('/ModifyName', 'UsersController@ActualizarNombre');
+
+Route::post('/ModifyLastName', 'UsersController@ActualizarApellido');
+
+Route::post('/ModifyCity', 'UsersController@ActualizarCiudad');
+
+Route::post('/ModifyEmail', 'UsersController@ActualizarCorreo');
+
+Route::post('/ModifyWeb', 'UsersController@ActualizarWeb');
+
+Route::post('/ModifySecurity', 'UsersController@ActualizarSeguridad');
+
+Route::post('/ModifyImage', 'UsersController@ActualizarImagen');
+
+Route::post('/SendReview', 'reviewController@store');

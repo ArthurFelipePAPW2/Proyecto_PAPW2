@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\videogame;
+use Carbon\Carbon;
+use Session;
 
 class resenaController extends Controller
 {
@@ -19,9 +21,13 @@ class resenaController extends Controller
             ['active','=','1']
         ])->first();
 
-        $arreglo = compact(['InfoDeResena',$InfoDeResena]);
+        $user = Session::get('User');
 
-         return view('resena')->with($arreglo);
+        $fecha =  Carbon::now();
+
+        $arreglo = compact(['InfoDeResena',$InfoDeResena],['user',$user],['fecha',$fecha]);
+
+        return view('resena')->with($arreglo);
     }
 
     /**

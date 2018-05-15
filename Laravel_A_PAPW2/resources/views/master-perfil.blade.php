@@ -24,25 +24,15 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav">
-		        <li><a href="#">Link 1</a></li>	
-		        <li><a href="#">Link 2</a></li>	
-		        <li><a href="#">Link 3</a></li>	
-		        <li><a href="#">Link 4</a></li>	        
-		      </ul>
-		      <form class="navbar-form navbar-left">
-		        <div class="form-group">
-		          <input type="text" class="form-control search-bar" placeholder="Buscar"><button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></span></button>
-		        </div>
-		      </form>
+
+		      @include('Blades.General.general-search') 
+		      
 		      <ul class="nav navbar-nav navbar-right">
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 		         <img src="data:;base64,{{ Session::get('User')->{'avatar'} }}" class="img-responsive img-perfil img-rounded">
 		          <ul class="dropdown-menu">
 		          	<li><a href="/perfil/{{ Session::get('User')->{'id-user'} }}">Perfil</a></li>
-		            <li><a href="#">Configurar Cuenta</a></li>
-		            <li><a href="#">Alguna Cosa</a></li>
 		            <li role="separator" class="divider"></li>
 		            <li><a data-toggle="modal" data-target="#sendvdj">Enviar Sugerencia</a></li>
 		          </ul>
@@ -67,14 +57,7 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                           <form> 
-							<div class="form-group input-div">
-                               <label for="file-upload" class="custom-file-upload"></label>
-								<input id="file-upload" type="file">
-
-                               </div>        
-                               <button type="button" class="btn btn-default btn-xs btn-login" data-dismiss="modal">Cambiar</button> 
-                            </form>
+                           @yield('form-img')
                       </center>
                     </div>                  
                 </div>
@@ -109,16 +92,11 @@
 							@yield('form-apellido')
 						</tr>
 						<tr>
-							<td>Edad:</td>
+							<td>Fecha de Nacimiento:</td>
 							<form>
-							<td>Edad del Usuario</td>
+							<td>@yield('fecha')</td>
 							<td></td>
 							</form>
-						</tr>
-						<tr>
-							<td>País:</td>
-							<td>País del Usuario</td>
-							<td></td>
 						</tr>
 						<tr>
 							<td>Ciudad/Estado:</td>
@@ -135,11 +113,9 @@
 						</tr>
 						<tr>
 							<td>Página Web:</td>
-							@yield('form-correo')
+							@yield('form-pagina')
 						</tr>			
 					</table>
-
-					@yield('table-security')
 
 				</div>
 			</div>

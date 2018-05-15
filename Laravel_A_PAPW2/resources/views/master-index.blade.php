@@ -9,7 +9,7 @@
         <br>
       <div class="row">
         <div class="col-md-2 col-md-offset-5">
-              <center><a href="principal.php"></a><img src="Imagenes/M_Logo.png" class="main-logo"></center>
+              <center><a href="/"><img src="Imagenes/M_Logo.png" class="main-logo"></a></center>
         </div>
       </div>
       <br>
@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a href="/articles" class="navbar-brand"><p><img src="Imagenes/triforce.png" class="triforce"></p></a>
+               <img src="Imagenes/triforce.png" class="triforce navbar-brand">
               </div>
               <!-- Menu de opciones -->
               <div class="collapse navbar-collapse navbar-general" id="navbar-1">

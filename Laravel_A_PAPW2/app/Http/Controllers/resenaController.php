@@ -3,18 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\diduknow;
-use DB;
-class BorrarCuriosidadController extends Controller
+use App\videogame;
+
+class resenaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($articulo)
     {
-        //
+        $InfoDeResena = videogame::where([
+            ['id-videogame','=', $articulo],
+            ['active','=','1']
+        ])->first();
+
+        $arreglo = compact(['InfoDeResena',$InfoDeResena]);
+
+         return view('resena')->with($arreglo);
     }
 
     /**
@@ -35,23 +42,7 @@ class BorrarCuriosidadController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $request->get('curiosidad');
-        $admin = $request->get('admin');
-        $password = $request->get('password');
-
-        $result =  DB::table('administradors')->where([
-            ['pass-administrador', '=', $password],
-            ['id-administrador', '=', $admin],
-            ])->first();
-
-        if($result != NULL){
-            DB::table('did-u-know')
-            ->where('id-did-u-know', '=' , $id)
-            ->update(['active' => 0]);
-            return back();
-        }else{
-            return back()->withInput();
-        }
+         
     }
 
     /**

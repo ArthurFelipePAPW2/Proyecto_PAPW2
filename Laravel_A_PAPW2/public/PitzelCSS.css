@@ -160,6 +160,21 @@ input[type="file"] {
 
 }
 
+@media only screen and (max-width: 768px) {
+.img-background6 h1{
+ 	font-size: 170px;
+}
+
+.img-background6 h3{
+	font-size: 30px;
+}
+
+.img-background6 { 
+	height: 10px; 
+}
+
+}
+
 /*ESTOS ESTILOS PERTENECEN A LA LANDING PAGE*/
 .img-background { 
     background-image: url("Imagenes/fondo.jpg");
@@ -219,8 +234,11 @@ input[type="file"] {
 }
 
 .triforce{
-	margin-top: -70px;
-	width: 160px;
+	width: 120px;
+	height: 120px;
+	margin-top: -33px;
+	margin-left: -20px;
+	position: absolute;
 }
 
 .navi-img{

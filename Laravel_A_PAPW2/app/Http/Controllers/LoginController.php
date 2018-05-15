@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\LoginFormRequest;
 use DB;
-
+use Session;
 class LoginController extends Controller
 {
     /**
@@ -40,16 +40,28 @@ class LoginController extends Controller
         $email = $request->get('email');
         $password = $request->get('password');
 
-        $result =  DB::table('users')->where([
+        $result =  DB::table('administradors')->where([
+            ['email-administrador', '=', $email],
+            ['pass-administrador', '=', $password]
+            ])->first();      
+
+        if($result != NULL){
+             Session::put('Admin',$result);
+             return redirect('/admin');
+        }else{
+
+            $result =  DB::table('users')->where([
             ['email-user', '=', $email],
             ['pass-user', '=', $password],
             ['active', '=', 1],
             ])->first();
 
-
-        if($result != NULL){
-            return redirect('/articles');
-        }else{
+                if($result != NULL){
+                     Session::put('User',$result);
+                     return redirect('/articles');
+                }else{
+                    return back()->withInput();
+                }
             return back()->withInput();
         }
     }

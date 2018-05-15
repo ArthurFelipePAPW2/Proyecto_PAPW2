@@ -334,38 +334,48 @@
 	      	<div class="row">
 	        	<div class="col-md-12 article-info-resena">
 	        		<div class="col-md-6">     					
-	        			<img src="Imagenes/titulo.jpg" class="img-responsive img-resena img-rounded">
+	        			<img src="data:;base64,{{ $InfoDeResena->{'cover'} }}" class="img-responsive img-resena img-rounded">
 	        		</div>
   					<div class="col-md-6">
   						<div class="table-responsive">
 							<table class="table table-info">
 							 <tr>
 							 	<td>Titulo</td>
-							 	<td>Halo 5: Guardians</td>
+							 	<td>{{ $InfoDeResena->{'name-videogame'} }}</td>
 							 </tr>
 							 <tr>
 							 	<td>Plataforma:</td>
-							 	<td>Xbox One</td>
+							 	<td>
+							 		@foreach($InfoDeResena->ForPlatforms as $plataforma)
+							 		&raquo;
+							 			{{ $plataforma->{'name-platform'} }} <br>
+							 		@endforeach
+							 </td>
 							 </tr>
 							 <tr>
 							 	<td>Productor(es):</td>
-							 	<td>Josh Holmes</td>
+							 	<td>{{ $InfoDeResena->{'productor'} }}</td>
 							 </tr>
 							 <tr>
 							 	<td>Desarrollador:</td>
-							 	<td>343 Industries)</td>
+							 	<td>{{ $InfoDeResena->developer->{'name-distributor'} }}</td>
 							 </tr>
 							<tr>
 							 	<td>Género(s):</td>
-							 	<td>First Person Shooter</td>
+							 	<td>
+							 		@foreach($InfoDeResena->ForGenres as $genero)
+							 		&raquo;
+							 			{{ $genero->{'name-gender'} }} <br>
+							 		@endforeach
+							 	</td>
 							 </tr>
 							 <tr>
 							 	<td>Distribuidora(s):</td>
-							 	<td>Microsoft Studios</td>
+							 	<td>{{ $InfoDeResena->distributor->{'name-distributor'} }}</td>
 							 </tr>
 							 <tr>
 							 	<td>Modo de Juego:</td>
-							 	<td>Multijugador y un Jugador</td>
+							 	<td>{{ $InfoDeResena->{'mode'} }}</td>
 							 </tr>
 							 <tr>
 							 	<td>Calificación:</td>
@@ -388,9 +398,7 @@
 		       	<div class="row">
 				    <div class="col-md-12 article-info-sinopsis">
 				        <p class="text-descripcion">Descripcion</p>
-				        <p> Hablando de la campaña de publicidad previa al juego, nos hicieron creer que jugaríamos dos campañas diferentes con los anuncios de “Busca la verdad”, pero eso no tiene nada que ver con lo que vemos en el juego final. La única diferencia entre ambos personajes, son sus motivos para luchar, sus acompañantes y la habilidad que tiene Locke de escanear el ambiente para descubrir objetos útiles en el entorno. Fuera de ello, ambos son súper soldados que se controlan igual. <br><br>
-
-						Son 15 misiones en total que de acuerdo a la dificultad en la que juegues, los puedes pasar en 7-10 horas. </p>
+				        <p> {{ $InfoDeResena->{'description'} }}</p>
 			  		</div>
 			  	</div>
 		</div>

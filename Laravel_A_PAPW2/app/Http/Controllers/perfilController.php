@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-class AltaUser extends Controller
+use App\city;
+use App\security;
+use App\user;
+use Session;
+
+class perfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,25 +36,33 @@ class AltaUser extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $usuario)
     {
-        $user = $request->get('user');
-        $password = $request->get('password');
-        $admin = $request->get('admin');
+        $ciudades = city::all();
 
-        $result =  DB::table('administradors')->where([
-            ['pass-administrador', '=', $password],
-            ['id-administrador', '=', $admin],
-            ])->first();
+        $ciudades = $ciudades->pluck('name-city','id-city');
 
-        if($result != NULL){
-            DB::table('users')
-            ->where('id-user', '=' , $user)
-            ->update(['active' => 1]);
-            return back();
+        $ciudades->all();
+
+        $pregunta = security::all();
+
+        $pregunta = $pregunta->pluck('question','id-security');
+
+        $pregunta->all();
+
+        if(Session::get('User')->{'id-user'} == $usuario){
+            $InfoDePerfil = Session::get('User');
+
+            $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta],['InfoDePerfil',$InfoDePerfil]);
+
         }else{
-            return back()->withInput();
+
+            $InfoDePerfil = user::all()->where('id-user','=',$usuario)->first();
+
+            $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta],['InfoDePerfil',$InfoDePerfil]);
         }
+
+        return view('perfil')->with($arreglo);
     }
 
     /**

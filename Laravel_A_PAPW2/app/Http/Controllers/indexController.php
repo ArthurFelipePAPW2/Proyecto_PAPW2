@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-class BajaUser extends Controller
+use App\city;
+use App\security;
+
+class indexController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,21 @@ class BajaUser extends Controller
      */
     public function index()
     {
-        //
+    $ciudades = city::all();
+
+    $ciudades = $ciudades->pluck('name-city','id-city');
+
+    $ciudades->all();
+
+    $pregunta = security::all();
+
+    $pregunta = $pregunta->pluck('question','id-security');
+
+    $pregunta->all();
+
+    $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
+
+    return view('index')->with($arreglo);
     }
 
     /**
@@ -34,23 +50,7 @@ class BajaUser extends Controller
      */
     public function store(Request $request)
     {
-        $user = $request->get('user');
-        $password = $request->get('password');
-        $admin = $request->get('admin');
-
-        $result =  DB::table('administradors')->where([
-            ['pass-administrador', '=', $password],
-            ['id-administrador', '=', $admin],
-            ])->first();
-
-        if($result != NULL){
-            DB::table('users')
-            ->where('id-user', '=' , $user)
-            ->update(['active' => 0]);
-            return back();
-        }else{
-            return back()->withInput();
-        }
+        //
     }
 
     /**

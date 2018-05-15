@@ -11,57 +11,8 @@
 |
 */
 use Illuminate\Support\Facades\Input;
-use App\diduknow;
-use App\city;
-use App\security;
-use App\platform;
-use App\gender;
-use App\country;
-use App\distributor;
-use App\videogame;
-use App\suggestion;
 
-Route::get('/', function () {
-
-    $ciudades = city::all();
-
-    $ciudades = $ciudades->pluck('name-city','id-city');
-
-    $ciudades->all();
-
-    $pregunta = security::all();
-
-    $pregunta = $pregunta->pluck('question','id-security');
-
-    $pregunta->all();
-
-    $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
-
-    return view('index')->with($arreglo);
-});
-
-Route::get('/resena', function () {
-    return view('resena');
-});
-
-Route::get('/perfil', function () {
-
-    $ciudades = city::all();
-
-    $ciudades = $ciudades->pluck('name-city','id-city');
-
-    $ciudades->all();
-
-    $pregunta = security::all();
-
-    $pregunta = $pregunta->pluck('question','id-security');
-
-    $pregunta->all();
-
-    $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
-
-    return view('perfil')->with($arreglo);
-});
+Route::get('/','indexController@index');
 
 Route::get('/admin', 'LoadSuggestions@store');
 
@@ -73,14 +24,18 @@ Route::post('/registrarvdj','videogameController@store');
 
 Route::post('/agregarcuriosidad', 'DidYouKnowController@store');
 
-Route::post('/BajaUser', 'BajaUser@store');
+Route::post('/BajaUser', 'UsersController@destroy');
 
-Route::post('/AltaUser', 'AltaUser@store');
+Route::post('/AltaUser', 'UsersController@update');
 
-Route::post('/BorrarCuriosidad', 'BorrarCuriosidadController@store');
+Route::post('/BorrarCuriosidad', 'DidYouKnowController@destroy');
 
 Route::post('/AgregarDistribuidora', 'DistributorController@store');
 
 Route::resource('/articles','ArticlesController');
 
 Route::post('/EnviarSugerencia', 'SendSuggestionController@store');
+
+Route::get('/perfil/{usuario}', 'perfilController@store')->where(['usuario' => '[0-9]+']);
+
+Route::get('/resena/{articulo}', 'resenaController@index')->where(['articulo' => '[0-9]+']);

@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">P I T Z E L </a>
+          <a class="navbar-brand" href="/articles">P I T Z E L </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,9 +32,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-               @include('Blades.General.general-img-user') 
+               <img src="data:;base64,{{ Session::get('User')->{'avatar'} }}" class="img-responsive img-perfil img-rounded"> 
               <ul class="dropdown-menu">
-                <li><a href="/perfil">Perfil</a></li>
+                <li><a href="/perfil/{{ Session::get('User')->{'id-user'} }}">Perfil</a></li>
                 <li><a href="#">Configurar Cuenta</a></li>
                 <li><a href="#">Alguna Cosa</a></li>
                 <li role="separator" class="divider"></li>

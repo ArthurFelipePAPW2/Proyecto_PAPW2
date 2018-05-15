@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserFormRequest;
 use App\User;
 use App\diduknow;
+use DB;
 
 class UsersController extends Controller
 {
@@ -73,7 +74,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
     }
@@ -84,7 +85,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
     }
@@ -96,9 +97,25 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = $request->get('user');
+        $password = $request->get('password');
+        $admin = $request->get('admin');
+
+        $result =  DB::table('administradors')->where([
+            ['pass-administrador', '=', $password],
+            ['id-administrador', '=', $admin],
+            ])->first();
+
+        if($result != NULL){
+            DB::table('users')
+            ->where('id-user', '=' , $user)
+            ->update(['active' => 1]);
+            return back();
+        }else{
+            return back()->withInput();
+        }
     }
 
     /**
@@ -107,8 +124,24 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $user = $request->get('user');
+        $password = $request->get('password');
+        $admin = $request->get('admin');
+
+        $result =  DB::table('administradors')->where([
+            ['pass-administrador', '=', $password],
+            ['id-administrador', '=', $admin],
+            ])->first();
+
+        if($result != NULL){
+            DB::table('users')
+            ->where('id-user', '=' , $user)
+            ->update(['active' => 0]);
+            return back();
+        }else{
+            return back()->withInput();
+        }
     }
 }

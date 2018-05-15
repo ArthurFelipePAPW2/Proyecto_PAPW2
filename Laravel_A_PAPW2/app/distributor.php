@@ -8,4 +8,6 @@ class distributor extends Model
 {
     protected $primaryKey = 'id-distributor';
     protected $fillable = ['name-distributor','id-country'];
+
+
 }

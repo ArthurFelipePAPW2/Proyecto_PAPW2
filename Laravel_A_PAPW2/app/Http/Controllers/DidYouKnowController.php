@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\DidYouKnowFormRequest;
 use App\diduknow;
+use DB;
 
 class DidYouKnowController extends Controller
 {
@@ -90,8 +91,24 @@ class DidYouKnowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->get('curiosidad');
+        $admin = $request->get('admin');
+        $password = $request->get('password');
+
+        $result =  DB::table('administradors')->where([
+            ['pass-administrador', '=', $password],
+            ['id-administrador', '=', $admin],
+            ])->first();
+
+        if($result != NULL){
+            DB::table('did-u-know')
+            ->where('id-did-u-know', '=' , $id)
+            ->update(['active' => 0]);
+            return back();
+        }else{
+            return back()->withInput();
+        }
     }
 }

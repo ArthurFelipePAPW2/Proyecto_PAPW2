@@ -61,3 +61,5 @@ Route::post('/ModifyReview', 'reviewController@edit');
 Route::post('/AgregarFavorito', 'favouriteController@store');
 
 Route::post('/BorrarFavorito', 'favouriteController@destroy');
+
+Route::get('/salir', 'LoginController@logout');

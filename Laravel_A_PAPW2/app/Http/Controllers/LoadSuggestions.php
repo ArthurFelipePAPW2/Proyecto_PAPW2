@@ -13,6 +13,7 @@ use App\country;
 use App\distributor;
 use App\videogame;
 use App\suggestion;
+use Session;
 
 class LoadSuggestions extends Controller
 {
@@ -44,6 +45,10 @@ class LoadSuggestions extends Controller
      */
     public function store(AdminFormRequest $request)
     {
+        if(Session::get('Admin') == NUll){
+
+            return redirect('/');
+        }else{
         $platform = platform::all();
 
         $platform = $platform->pluck('name-platform','id-platform');
@@ -69,10 +74,6 @@ class LoadSuggestions extends Controller
         $distributor->all();
 
         $suggestion = suggestion::all();
-
-        //$suggestion = $suggestion->pluck('game-suggested','reason');
-
-        //$suggestion->all();
         
         $arreglo = compact(
             ['platform',$platform],
@@ -82,10 +83,8 @@ class LoadSuggestions extends Controller
             ['suggestion',$suggestion]
         );
 
-        //dd($suggestion);
-
         return view('admin')->with($arreglo);
-
+    }
     }
 
     /**

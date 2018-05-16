@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateReview extends Migration
+class UpdateSuggestion extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class UpdateReview extends Migration
      */
     public function up()
     {
-        Schema::table('reviews', function($table) {
-            $table->string('titulo', 50)->after('id-videogame');
-        });
-
-         Schema::table('videogames', function($table) {
-            $table->dropColumn('titulo');
+        Schema::table('suggestions', function($table) {
+            $table->string('link', 100)->after('reason');
         });
     }
 

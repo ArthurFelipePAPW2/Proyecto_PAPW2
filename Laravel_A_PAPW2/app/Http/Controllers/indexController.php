@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\city;
 use App\security;
+use Session;
 
 class indexController extends Controller
 {
@@ -15,6 +16,8 @@ class indexController extends Controller
      */
     public function index()
     {
+      
+      
     $ciudades = city::all();
 
     $ciudades = $ciudades->pluck('name-city','id-city');

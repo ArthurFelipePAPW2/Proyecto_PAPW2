@@ -926,7 +926,7 @@ color: #fbf6eb;
 .table-solicitud{
 	background-color: #231f1f80;
 	color: white;
-	font-size: 12px;
+	font-size: 15px;
 	text-align: justify;
 	text-justify: inter-word;
 }
@@ -966,6 +966,16 @@ color: #fbf6eb;
 	height: 100px;
 	width: auto;
 	border-radius: 0px 0px 5px 5px;
+}
+
+.table-solicitud a{
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.table-solicitud a:hover{
+	color: #efe8e8;
 }
 
 .user-solicitud{

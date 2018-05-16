@@ -40,11 +40,13 @@ class SendSuggestionController extends Controller
         $name = $request->get('vg_name');
         $content = $request->get('content');
         $link = $request->get('link');
+        $user = $request->get('user');
 
         $sugerencia = new suggestion(array(
                         "game-suggested" => $name,
                         "reason" => $content,
-                        "id-user" => 1,
+                        "id-user" => $user,
+                        "link" => $link,
                         "id-administrador" => 1
         ));
 

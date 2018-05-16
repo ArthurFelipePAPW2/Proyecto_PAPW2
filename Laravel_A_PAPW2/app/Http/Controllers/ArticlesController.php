@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\videogame;
 use App\diduknow;
+use Session;
+
 class ArticlesController extends Controller
 {
     /**
@@ -14,6 +16,10 @@ class ArticlesController extends Controller
      */
     public function index()
     {
+        if(Session::get('User') == NUll){
+
+            return redirect('/');
+        }else{
         $curiosidad = diduknow::all();
         
         if((count($curiosidad->where('active', 1)) == 0)){
@@ -26,6 +32,7 @@ class ArticlesController extends Controller
         $videojuegos = videogame::paginate(1);
 
         return view('principal',compact(['videojuegos'],['curiosidad']));
+    }
     }
 
     /**

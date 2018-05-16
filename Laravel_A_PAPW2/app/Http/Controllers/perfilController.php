@@ -39,37 +39,51 @@ class perfilController extends Controller
      */
     public function store(Request $request, $usuario)
     {
-        $ciudades = city::all();
 
-        $ciudades = $ciudades->pluck('name-city','id-city');
+        if(Session::get('User') == NUll){
 
-        $ciudades->all();
-
-        $pregunta = security::all();
-
-        $pregunta = $pregunta->pluck('question','id-security');
-
-        $pregunta->all();
-
-        $favoritos = favourite::where('id-user','=',$usuario)->get();
-
-        if(Session::get('User')->{'id-user'} == $usuario){
-            $InfoDePerfil = user::all()->where('id-user','=',Session::get('User')->{'id-user'})->first();
+            return redirect('/');
 
         }else{
 
-            $InfoDePerfil = user::all()->where('id-user','=',$usuario)->first();
+            $ciudades = city::all();
+
+            $ciudades = $ciudades->pluck('name-city','id-city');
+
+            $ciudades->all();
+
+            $pregunta = security::all();
+
+            $pregunta = $pregunta->pluck('question','id-security');
+
+            $pregunta->all();
+
+            $favoritos = favourite::where('id-user','=',$usuario)->get();
+            if(Session::get('Admin')==NULL){
+                if(Session::get('User')->{'id-user'} == $usuario){
+                    $InfoDePerfil = user::all()->where('id-user','=',Session::get('User')->{'id-user'})->first();
+
+                }else{
+
+                    $InfoDePerfil = user::all()->where('id-user','=',$usuario)->first();
+
+                    if( $InfoDePerfil == NULL){
+                        return redirect('/articles');
+                    }
+                }
+            }else{
+                 $InfoDePerfil = user::all()->where('id-user','=',$usuario)->first();
+            }
+
+            $arreglo = compact(
+                ['ciudades',$ciudades],
+                ['pregunta',$pregunta],
+                ['InfoDePerfil',$InfoDePerfil],
+                ['favoritos',$favoritos]
+            );
+
+            return view('perfil')->with($arreglo);
         }
-
-
-        $arreglo = compact(
-            ['ciudades',$ciudades],
-            ['pregunta',$pregunta],
-            ['InfoDePerfil',$InfoDePerfil],
-            ['favoritos',$favoritos]
-        );
-
-        return view('perfil')->with($arreglo);
     }
 
     /**

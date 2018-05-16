@@ -1,8 +1,12 @@
 @extends('master-perfil')
 @section('title','Gamer')
 
-@section('img')
-<img src="data:;base64,{{ $InfoDePerfil->{'avatar'} }}" class="img-rounded img-responsive">
+@section('fotito')
+@if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
+<div class="img-perfil-pag"><img src="data:;base64,{{ $InfoDePerfil->{'avatar'} }}" class="img-rounded img-responsive"><button data-toggle="modal" data-target="#cambiarfoto"><span class="glyphicon glyphicon-pencil"></span></button></div>
+@else
+<div class="img-perfil-pag"><img src="data:;base64,{{ $InfoDePerfil->{'avatar'} }}" class="img-rounded img-responsive"><button></button></div>
+@endif
 @endsection
 
 @section('nombre-perfil')
@@ -53,13 +57,33 @@
 @endsection
 
 @section('form-img')
-{{Form::open(array('class' => 'form-index','url' => 'ModifyImage','method' => 'post','files' => true))}}
-<div class="form-group input-div">
-	{{ Form::label('file-upload','.',array('class' => 'custom-file-upload')) }}
-   	{{ Form::file('imagen',array('id' => 'file-upload','required')) }}
-</div>        
-{{ Form::submit('Cambiar Foto',array('class' => "btn btn-default btn-xs btn-login")) }}
-{{Form::close()}}
+@if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
+<div id="cambiarfoto" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"><center>
+                        <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
+                          <div class="row">                        
+	                          <div class="col-sm-12 Modal-Text">
+	                          <h4>Cambiar Foto De Perfil</h4>
+	                          </div>
+                          </div></center>
+                    </div>
+                    <div class="modal-body">
+                      <center>
+						{{Form::open(array('class' => 'form-index','url' => 'ModifyImage','method' => 'post','files' => true))}}
+						<div class="form-group input-div">
+							{{ Form::label('file-upload','.',array('class' => 'custom-file-upload')) }}
+						   	{{ Form::file('imagen',array('id' => 'file-upload','required')) }}
+						</div>        
+						{{ Form::submit('Cambiar Foto',array('class' => "btn btn-default btn-xs btn-login")) }}
+						{{Form::close()}}
+						</center>
+                    </div>                  
+                </div>
+                </div>
+            </div>
+            @endif
 @endsection
 
 @section('form-ciudad')

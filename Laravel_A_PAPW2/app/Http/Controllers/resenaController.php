@@ -19,11 +19,18 @@ class resenaController extends Controller
      */
     public function index($articulo)
     {
+         if(Session::get('User') == NUll){
 
+            return redirect('/');
+        }else{
         $InfoDeResena = videogame::where([
             ['id-videogame','=', $articulo],
             ['active','=','1']
         ])->first();
+
+        if($InfoDeResena == NULL){
+             return redirect('/articles');
+        }
 
         $user = Session::get('User');
 
@@ -101,6 +108,7 @@ class resenaController extends Controller
         );
 
         return view('resena')->with($arreglo);
+    }
     }
 
     /**

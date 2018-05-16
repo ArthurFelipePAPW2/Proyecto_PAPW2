@@ -49,7 +49,7 @@ class LoginController extends Controller
              Session::put('Admin',$result);
              return redirect('/admin');
         }else{
-
+            
             $result =  DB::table('users')->where([
             ['email-user', '=', $email],
             ['pass-user', '=', $password],
@@ -83,9 +83,9 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+       
     }
 
     /**
@@ -106,8 +106,15 @@ class LoginController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        
+    }
+
+     public function logout()
+    {
+       Session::flush();
+       return redirect('/');
+
     }
 }

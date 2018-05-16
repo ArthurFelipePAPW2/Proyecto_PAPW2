@@ -35,6 +35,7 @@
 		          	<li><a href="/perfil/{{ Session::get('User')->{'id-user'} }}">Perfil</a></li>
 		            <li role="separator" class="divider"></li>
 		            <li><a data-toggle="modal" data-target="#sendvdj">Enviar Sugerencia</a></li>
+		            <li><a href="/salir">Salir</a></li>
 		          </ul>
 		        </li>
 		      </ul>
@@ -44,34 +45,16 @@
 
 		@include('Blades.General.general-peticion-vdj')
 		<br>  			
-		<div id="cambiarfoto" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header"><center>
-                        <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
-                          <div class="row">                        
-	                          <div class="col-sm-12 Modal-Text">
-	                          <h4>Cambiar Foto De Perfil</h4>
-	                          </div>
-                          </div></center>
-                    </div>
-                    <div class="modal-body">
-                      <center>
+		
                            @yield('form-img')
-                      </center>
-                    </div>                  
-                </div>
-                </div>
-            </div>
-
-
-
 
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
 					<center>
-						<div class="img-perfil-pag">@yield('img')<button data-toggle="modal" data-target="#cambiarfoto"><span class="glyphicon glyphicon-pencil"></span></button></div>
+
+						@yield('fotito')
+
 						<br>
 						<p class="nombre-perfil">@yield('nombre-perfil')</p>
 						<p class="acerca-de-mi">Acerca de mi</p>

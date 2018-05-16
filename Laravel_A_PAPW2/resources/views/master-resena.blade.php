@@ -41,6 +41,7 @@
 		            <li><a href="/perfil/{{ Session::get('User')->{'id-user'} }}">Perfil</a></li>
 		            <li role="separator" class="divider"></li>
 		            <li><a data-toggle="modal" data-target="#sendvdj">Enviar Sugerencia</a></li>
+		            <li><a href="/salir">Salir</a></li>
 		          </ul>
 		        </li>
 		      </ul>

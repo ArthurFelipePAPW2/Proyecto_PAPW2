@@ -40,10 +40,13 @@
 <tr>
     <td class="titulo-solicitud">{{ $sugerencia->{'game-suggested'} }}</td> 
     <td>
-      {{ $sugerencia->{'reason'} }}
+      {{ $sugerencia->{'reason'} }} <br><br>
+      <a href="{{ $sugerencia->{'link'} }}">Ver el trailer del juego</a>
     </td>
     <td>
-      <center><p class="user-solicitud">Bob1</p><img src="Imagenes/fondo.jpg" class="img-responsive img-solicitud"></center>
+      <center><p class="user-solicitud">{{ $sugerencia->Usuario->{'name-user'} }}</p>
+      <img src="data:;base64,{{ $sugerencia->Usuario->{'avatar'} }}" class="img-responsive img-solicitud">
+      </center>
     </td>
     <td>
       <center>
@@ -73,7 +76,7 @@
                     <div class="modal-body">
                       <center>
                            {{ Form::open(array('url' => 'registrarvdj','method' => 'post','files' => true)) }}
-                           {{ Form::hidden('administrador', 1) }} 
+                           {{ Form::hidden('administrador', Session::get('Admin')->{'id-administrador'}) }} 
                                <div class="form-group">
                                	{{ Form::text('nombre', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}
                                </div> 
@@ -167,7 +170,7 @@
                     <div class="modal-body">
                       <center>
                             {{Form::open(array('url' => 'BorrarCuriosidad','method' => 'post'))}}
-                            {{ Form::hidden('admin', 1) }} 
+                            {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
                                <div class="form-group"> 
                                	     {{ Form::label('Curiosidad','Selecciona la curiosidad a Borrar') }}
 								     {{ Form::select('curiosidad', array(
@@ -209,7 +212,7 @@
                     <div class="modal-body">
                       <center>
                             {{ Form::open(array('url' => 'agregarcuriosidad','method' => 'post')) }}
-                            {{ Form::hidden('admin', 1) }}   
+                            {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }}   
                                <div class="form-group">
 
                                 {{ Form::textarea('texto', null, array('placeholder'=>'¿Sabías Qué?...','required','class'=>'textarea-agregar-vdj')) }}    
@@ -239,7 +242,7 @@
                     <div class="modal-body">
                       <center>
                            {{Form::open(array('url' => 'AltaUser','method' => 'post'))}}
-                           {{ Form::hidden('admin', 1) }} 
+                           {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
                                <div class="form-group">
                                	      {{ Form::label('usuario','Ingresa el Id del usuario') }}
 								     {{ Form::text('user', null, array('placeholder'=>'Id User','class' => 'form-control input-sm','required')) }}     
@@ -273,7 +276,7 @@
                     <div class="modal-body">
                       <center>
                           {{Form::open(array('url' => 'BajaUser','method' => 'post'))}}
-                          {{ Form::hidden('admin', 1) }}  
+                          {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }}  
                                <div class="form-group">
                                	      {{ Form::label('usuario','Ingresa el Id del usuario') }}
 								     {{ Form::text('user', null, array('placeholder'=>'Id User','class' => 'form-control input-sm','required')) }}     

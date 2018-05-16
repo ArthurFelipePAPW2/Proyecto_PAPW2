@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\city;
-use App\security;
-use App\user;
 use App\favourite;
-use Session;
-
-class perfilController extends Controller
+class favouriteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,39 +32,19 @@ class perfilController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $usuario)
+    public function store(Request $request)
     {
-        $ciudades = city::all();
+        $user = $request->get('usuario');
+        $videogame = $request->get('videogame');
 
-        $ciudades = $ciudades->pluck('name-city','id-city');
+        $Favorito = new favourite(array(
+                        "id-user" => $user,
+                        "id-videogame" => $videogame                   
+        ));
+                    
+        $Favorito->save();
 
-        $ciudades->all();
-
-        $pregunta = security::all();
-
-        $pregunta = $pregunta->pluck('question','id-security');
-
-        $pregunta->all();
-
-        $favoritos = favourite::where('id-user','=',$usuario)->get();
-
-        if(Session::get('User')->{'id-user'} == $usuario){
-            $InfoDePerfil = user::all()->where('id-user','=',Session::get('User')->{'id-user'})->first();
-
-        }else{
-
-            $InfoDePerfil = user::all()->where('id-user','=',$usuario)->first();
-        }
-
-
-        $arreglo = compact(
-            ['ciudades',$ciudades],
-            ['pregunta',$pregunta],
-            ['InfoDePerfil',$InfoDePerfil],
-            ['favoritos',$favoritos]
-        );
-
-        return view('perfil')->with($arreglo);
+         return back();
     }
 
     /**
@@ -112,8 +87,15 @@ class perfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $user = $request->get('usuario');
+        $videogame = $request->get('videogame');
+
+        favourite::where([
+            ['id-user','=',$user],['id-videogame','=',$videogame]
+        ])->delete();               
+
+         return back();
     }
 }

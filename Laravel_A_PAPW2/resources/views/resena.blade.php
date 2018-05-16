@@ -22,7 +22,7 @@
 					</center>
 				</div>
 				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el {{ $Comentarios[$x-1]->{'created_at'} }}</p>
+					<p class="fecha-comentario">Posteado el {{ $Comentarios[$x-1]->{'updated_at'} }}</p>
 					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
 					<div class="row">
 						<h3 class="titulo-comentario">{{ $Comentarios[$x-1]->{'titulo'} }}
@@ -130,11 +130,15 @@
 							 <tr>
 							 	<td>Calificación:</td>
 							 	<td>
-							 		<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-									<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-									<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
-									<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
-									<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
+							 		@for($x=0; $x< $CorazonesLlenos; $x++)
+							 		<img src="../Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
+									@endfor
+									@for($x=0; $x< $CorazonesMedios; $x++)
+									<img src="../Imagenes/Half_Heart.png" class="img-responsive img-heart-resena">
+									@endfor
+									@for($x=0; $x< (5-$CantidadDeCorazonesEnviados); $x++)
+							 		<img src="../Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
+									@endfor
   								</td>
 							 </tr>
 							</table>
@@ -199,22 +203,28 @@
 @endsection
 
 @section('botonfav')
-<!-- Felipe aca cargas el boton correspondiente, con una consulta en la base de datos, ningun controlador esta creado -->
+@if($Favorito != NULL)
 
-{{Form::open(array('url' => 'AgregarFavorito','method' => 'post'))}}
-{{ Form::hidden('usuario', 1) }} 
-<button class="botonFavorito favorito"></button>
-{{Form::close()}}
+	{{Form::open(array('url' => 'BorrarFavorito','method' => 'post'))}}
+	{{ Form::hidden('usuario', $user->{'id-user'}) }}
+	{{ Form::hidden('videogame', $InfoDeResena->{'id-videogame'}) }} 
+	<button class="botonFavorito favorito"></button>
+	{{Form::close()}}
 
-<!-- 
-{{Form::open(array('url' => 'BorrarFavorito','method' => 'post'))}}
-{{ Form::hidden('usuario', 1) }} 
-<button class="botonFavorito Nofavorito"></button>
-{{Form::close()}} 
--->
+@else
+
+	{{Form::open(array('url' => 'AgregarFavorito','method' => 'post'))}}
+	{{ Form::hidden('usuario', $user->{'id-user'}) }} 
+	{{ Form::hidden('videogame', $InfoDeResena->{'id-videogame'}) }} 
+	<button class="botonFavorito Nofavorito"></button>
+	{{Form::close()}} 
+
+@endif
+
 @endsection
 
 @section('modificar-review')
+@if($MiReview != NULL)
 <button class="Modificar-review" data-toggle="modal" data-target="#modifyreview">
 	<span class="glyphicon glyphicon-pencil"></span>
 </button>
@@ -231,40 +241,43 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                            {{ Form::open(array('url' => 'agregarcuriosidad','method' => 'post')) }}
-                            {{ Form::hidden('user', 1) }}   
+                            {{ Form::open(array('url' => 'ModifyReview','method' => 'post')) }}
+                            {{ Form::hidden('user', $user->{'id-user'}) }}   
+                            {{ Form::hidden('videogame', $InfoDeResena->{'id-videogame'} ) }}   
                            <div class="form-group">
 
-                         {{ Form::text('texto', null, array('required','class'=>'form-control')) }}    
+                         {{ Form::text('titulo', $MiReview->{'titulo'}, array('required','class'=>'form-control')) }}    
                         </div> 
                          <div class="form-group">
 
-                         {{ Form::textarea('texto', null, array('required','class'=>'textarea-agregar-vdj')) }}    
+                         {{ Form::textarea('texto', $MiReview->{'text-review'}, array('required','class'=>'textarea-agregar-vdj')) }}    
                         </div>   
 
                         <div class="form-group radios-modal">
+                        	
+	                        	<div class="rated-heart" id="corazon1-modificar">
+								{{ Form::radio('rate', '1',null, ['onClick' => 'EvaluarMoficiar(1)','checked']) }}
+							 	</div>
+							 	<div class="sin-rating" id="corazon2-modificar">
+								{{ Form::radio('rate', '2',null, ['onClick' => 'EvaluarMoficiar(2)']) }}
+								</div>
+								<div class="sin-rating" id="corazon3-modificar">
+									{{ Form::radio('rate', '3',null, ['onClick' => 'EvaluarMoficiar(3)']) }}
+								</div>
+								<div class="sin-rating" id="corazon4-modificar">
+									{{ Form::radio('rate', '4',null, ['onClick' => 'EvaluarMoficiar(4)']) }}
+								</div>
+								<div class="sin-rating" id="corazon5-modificar">
+									{{ Form::radio('rate', '5',null, ['onClick' => 'EvaluarMoficiar(5)']) }}
+								</div>  
 
-                        <div class="rated-heart" id="corazon1">
-							{{ Form::radio('rate', '1',null, ['onClick' => 'Evaluar(1)','checked']) }}
-						</div>
-						<div class="sin-rating" id="corazon2">
-							{{ Form::radio('rate', '2',null, ['onClick' => 'Evaluar(2)']) }}
-						</div>
-						<div class="sin-rating" id="corazon3">
-							{{ Form::radio('rate', '3',null, ['onClick' => 'Evaluar(3)']) }}
-						</div>
-						<div class="sin-rating" id="corazon4">
-							{{ Form::radio('rate', '4',null, ['onClick' => 'Evaluar(4)']) }}
-						</div>
-						<div class="sin-rating" id="corazon5">
-							{{ Form::radio('rate', '5',null, ['onClick' => 'Evaluar(5)']) }}
-						</div>  
                         </div>                                                    
-                                  {{Form::button('Agregar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}           
+                                  {{Form::button('Modificar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}           
                             {{Form::close()}}
                       </center>
                     </div>                  
                 </div>
                 </div>
             </div>
+ @endif
 @endsection

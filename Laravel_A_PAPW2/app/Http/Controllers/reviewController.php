@@ -89,9 +89,29 @@ class reviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Request $request)
+    {   
+        $score = $request->get('rate');
+        $titulo = $request->get('titulo');
+        $texto = $request->get('texto');
+        $videogame = $request->get('videogame');
+        $user = $request->get('user');
+
+        review::where([
+            ['id-user', '=' , $user],
+            ['id-videogame','=', $videogame]
+        ])->update([
+            'titulo' => $request->get('titulo'),
+            'text-review' => $request->get('texto')
+        ]);
+
+        score::where([
+            ['id-user', '=' , $user],
+            ['id-videogame','=', $videogame]
+        ])->update(['points' => $request->get('rate')]);
+
+        return back();
+        
     }
 
     /**

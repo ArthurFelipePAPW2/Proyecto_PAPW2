@@ -386,6 +386,7 @@ input[type="file"] {
 
 .radios-modal input[type="radio"]{
 	opacity:0;
+	transform: scale(2);
 }
 
 .img-heart{
@@ -872,9 +873,32 @@ color: #fbf6eb;
 	color: white;
 }
 
+.table-favorite{
+	color: white;
+	background-color: #e2bebe36;
+	border-radius: 15px 2px 2px 2px;
+	border:none;
+}
+
+.table-favorite th{
+	font-family: AmorE-Regular;
+	font-size: 22px;
+}
+
+.table-favorite td{
+	background-color: #38384d;
+}
+
 .nombre-apellido{
 	 padding-right: -50px;
 }
+
+.miniaturas-perfil{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px; 
+	display: inline;
+} 
 
 .send-data textarea{
 	resize:none;

@@ -55,3 +55,9 @@ Route::post('/ModifySecurity', 'UsersController@ActualizarSeguridad');
 Route::post('/ModifyImage', 'UsersController@ActualizarImagen');
 
 Route::post('/SendReview', 'reviewController@store');
+
+Route::post('/ModifyReview', 'reviewController@edit');
+
+Route::post('/AgregarFavorito', 'favouriteController@store');
+
+Route::post('/BorrarFavorito', 'favouriteController@destroy');

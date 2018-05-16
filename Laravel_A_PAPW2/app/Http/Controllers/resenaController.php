@@ -7,8 +7,9 @@ use App\videogame;
 use App\review;
 use App\score;
 use Carbon\Carbon;
+use App\favourite;
 use Session;
-
+use DB;
 class resenaController extends Controller
 {
     /**
@@ -18,6 +19,7 @@ class resenaController extends Controller
      */
     public function index($articulo)
     {
+
         $InfoDeResena = videogame::where([
             ['id-videogame','=', $articulo],
             ['active','=','1']
@@ -35,13 +37,69 @@ class resenaController extends Controller
             ['id-videogame','=', $articulo]
         ])->get();
 
+        $MiReview = review::where([
+            ['id-videogame','=', $articulo],
+            ['id-user','=', $user->{'id-user'}]
+        ])->first();
+
+        $Favorito = favourite::where([
+            ['id-videogame','=', $articulo],
+            ['id-user','=', $user->{'id-user'}]
+        ])->first();
+
+        $PuntuacionJuego = score::where([
+            ['id-videogame','=', $articulo]
+        ])->get();
+
+        $sumatoria = 0;
+
+        for($i = 0;$i< count($PuntuacionJuego);$i++){
+            $sumatoria = $sumatoria + $PuntuacionJuego[$i]->{'points'};
+        }
+
+        $Promedio = $sumatoria/count($PuntuacionJuego);
+
+        if($sumatoria % count($PuntuacionJuego) == 0){
+        $Corazones = explode(".",$Promedio);
+
+        $CorazonesLlenos = $Corazones[0];
+
+
+        $CorazonesMedios = 0;
+
+        $CantidadDeCorazonesEnviados = $CorazonesLlenos + $CorazonesMedios;
+
+        }else{
+        $Corazones = explode(".",$Promedio);
+
+        $CorazonesLlenos = $Corazones[0];
+
+
+        $CorazonesMedios = 0;
+
+
+        if($Corazones[1] > .5){
+            $CorazonesMedios = 1;
+        }
+
+        $CantidadDeCorazonesEnviados = $CorazonesLlenos + $CorazonesMedios;
+        }
+
+        
+
         $arreglo = compact(
             ['InfoDeResena',$InfoDeResena],
             ['user',$user],
             ['fecha',$fecha],
             ['Comentarios',$Comentarios],
-            ['Scores',$Scores]
+            ['Scores',$Scores],
+            ['MiReview',$MiReview],
+            ['Favorito',$Favorito],
+            ['CorazonesLlenos',$CorazonesLlenos],
+            ['CorazonesMedios',$CorazonesMedios],
+            ['CantidadDeCorazonesEnviados',$CantidadDeCorazonesEnviados]
         );
+
         return view('resena')->with($arreglo);
     }
 

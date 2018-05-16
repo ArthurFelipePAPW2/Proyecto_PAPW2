@@ -102,7 +102,8 @@
 							<td>Ciudad/Estado:</td>
 							@yield('form-ciudad')
 						</tr>					
-					</table><br>
+					</table>
+					<br>
 					<table class="table table-responsive table-usuario">
 						<thead>
 						<th colspan="3">Informacion de Contacto</th>	
@@ -115,6 +116,15 @@
 							<td>Página Web:</td>
 							@yield('form-pagina')
 						</tr>			
+					</table>
+					<br>
+					<table class="table table-responsive table-favorite">
+						<thead>
+						<th colspan="10">Mis Titulos Favoritos</th>	
+						</thead>
+					
+							@yield('favoritos-user')
+									
 					</table>
 
 				</div>

@@ -63,3 +63,7 @@ Route::post('/AgregarFavorito', 'favouriteController@store');
 Route::post('/BorrarFavorito', 'favouriteController@destroy');
 
 Route::get('/salir', 'LoginController@logout');
+
+Route::get('/search', 'busquedaController@index');
+
+Route::get('/search2', 'busquedaController@BusquedaEspecifica');

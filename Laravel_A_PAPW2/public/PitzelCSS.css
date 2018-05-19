@@ -45,7 +45,17 @@
   font-family: 'VTCSundaykomix';
   src: url("Fuentes/VTCSundaykomix.ttf");
 }
+/*BARRA DE BUSQUEDA*/
+.search-bar{
+	width: 80%;
+	display: inline;
+}
 
+.boton-buscar{
+	display: inline;
+}
+
+/*INPUTS FILES*/
 input[type="file"] {
     display: none;
 }
@@ -119,11 +129,11 @@ input[type="file"] {
 }
 
 /*FONDOS DE LAS PAGINAS*/
-.img-background, .landing-bg, .img-background2,.img-background3,.img-background4,.img-background5,.img-background6{
+.landing-bg{
     height: 100%;
 }
 
-.img-background,.img-background2,.img-background3,.img-background4,.img-background5,.img-background6{
+.img-background,.img-background2,.img-background3,.img-background4,.img-background5,.img-background6,.img-background7,.img-background8{
 	height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -766,7 +776,6 @@ color: #fbf6eb;
 	background-color: #c4c4cc61;
 }
 
-/*PARA CAMBIAR EL RATING SE CAMBIA ENTRE LA CLASE SIN/CON-RATING, LA PSEUDOCLASE DE ACTIVE NO ES NECESARIA, SOLO PRUEBAS*/
 .sin-rating{
 	background-image: url("Imagenes/Empty_Heart.png");
 	background-repeat: no-repeat;
@@ -1056,3 +1065,112 @@ color: #fbf6eb;
 	height: 30px;
 	vertical-align: center;
 }
+
+/*ESTOS SON LOS ESTILOS DE LA PAGINA DE BUSQUEDAS*/
+.img-background7 { 
+    background-image: url("Imagenes/fondo-busqueda.jpg");
+    background-color: #192637;
+}
+
+.my-bar5{
+	background-color: #192637;
+}
+
+.img-busqueda-perfil{
+	width: 80%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.ver-mas{
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+
+.ver-mas:hover{
+	font-size: 20px;
+	color: #e7e7e7;
+	text-decoration: none;
+}
+
+.img-hollow{
+	position: fixed;
+	right: 30px;
+	bottom: 1px;
+	width: 300px;
+	z-index: 0;
+}
+
+.img-hollow2{
+	position: fixed;
+	right: 50px;
+	bottom: 300px;
+	width: 50px;
+	z-index: 0;
+	transform: rotate(-20);
+}
+
+.img-hollow3{
+	position: fixed;
+	right: 100px;
+	bottom: 500px;
+	width: 40px;
+	z-index: 0;
+	transform: rotate(20);
+}
+
+.img-hollow4{
+	position: fixed;
+	right: 300px;
+	bottom: 400px;
+	width: 30px;
+	z-index: 0;
+	transform:  rotate(40);
+}
+
+.cuadro-busqueda{
+	background-color: #dae3ec61;
+	border: solid #dae3ec26 1px;
+}
+
+.titulo-busqueda{
+	color: white;
+	font-family: Nozstudio;
+}
+
+/*ESTOS ESTILOS PERTENECEN A LA PAGINA DE RESULTADOS*/
+.img-background8 { 
+    background-image: url("Imagenes/fondo-resultados.png");
+    background-color: #271638;
+}
+
+.my-bar6{
+	background-color: #271638;
+}
+
+.resultados-tabla{
+	background-color: #7f60932b;
+	color: white;
+}
+
+.img-shantae{
+	position: fixed;
+	right: 10px;
+	width: 300px;
+	bottom: 0px;
+	z-index: 0;
+}
+
+.busqueda-avanzada{
+	background-color: #765e9270;
+	align-items: center;
+	vertical-align: middle;
+}
+
+.text-avanzado{
+	color: white;
+	font-family: Lines;
+	font-size: 24px;
+}
+

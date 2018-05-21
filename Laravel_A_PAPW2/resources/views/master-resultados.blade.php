@@ -4,9 +4,9 @@
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('title')</title>
-	<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../PitzelCSS.css">
-	<script src="../funciones.js"></script>
+	<link rel="stylesheet" href="../../../../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../../PitzelCSS.css">
+	<script src="../../../../funciones.js"></script>
   </head>
 <body class="img-background8">
 
@@ -42,13 +42,15 @@
 		</nav>
 		<br>
 
-		<img src="Imagenes/shantae.png" class="img-responsive img-shantae visible-sm-inline visible-md-inline visible-lg-inline">
+		<img src="../../../../Imagenes/shantae.png" class="img-responsive img-shantae visible-sm-inline visible-md-inline visible-lg-inline">
+
 
 
 					@yield('busqueda-avanzada')
 
-
 		<br> <br>
+		@yield('buscador')
+		<br>
 					@yield('resultados')
 		<br> <br>
 

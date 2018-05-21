@@ -64,6 +64,6 @@ Route::post('/BorrarFavorito', 'favouriteController@destroy');
 
 Route::get('/salir', 'LoginController@logout');
 
-Route::get('/search', 'busquedaController@index');
+Route::post('/search', 'busquedaController@index');
 
-Route::get('/search2', 'busquedaController@BusquedaEspecifica');
+Route::get('/search2/{modo}/{busqueda}', 'busquedaController@BusquedaEspecifica')->where(['busqueda' => '[0-9a-zA-Z]+'],['modo' => '[a-zA-Z]+']);

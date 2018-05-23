@@ -46,6 +46,8 @@ Route::post('/ModifyLastName', 'UsersController@ActualizarApellido');
 
 Route::post('/ModifyCity', 'UsersController@ActualizarCiudad');
 
+Route::post('/ModifyPass', 'UsersController@ActualizarContra');
+
 Route::post('/ModifyEmail', 'UsersController@ActualizarCorreo');
 
 Route::post('/ModifyWeb', 'UsersController@ActualizarWeb');
@@ -71,3 +73,5 @@ Route::get('/search2/{modo}/{busqueda}', 'busquedaController@BusquedaEspecifica'
 Route::get('/AgregarUseful/{user}/{videogame}', 'usefulController@create')->where(['user' => '[0-9]+'],['videogame' => '[0-9]+']);
 
 Route::get('/BorrarUseful/{user}/{videogame}', 'usefulController@destroy')->where(['user' => '[0-9]+'],['videogame' => '[0-9]+']);
+
+Route::post('/Lost-password','indexController@show');

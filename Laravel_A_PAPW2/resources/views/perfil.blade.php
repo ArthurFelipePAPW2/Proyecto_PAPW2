@@ -1,6 +1,33 @@
 @extends('master-perfil')
 @section('title','Gamer')
 
+@section('form-pass')
+@if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
+<br>
+<table class="table table-responsive table-usuario">
+	<thead>
+	<th colspan="3">Cambiar mi contraseña</th>	
+	</thead>	
+	<tr>
+	<td>
+		Password:		
+		<span class="input-group-addon look-pass-general look-pass-perfil">
+            {{ Form::checkbox('', '', true, ['onClick' => 'MostrarPass()']) }}
+        </span>  
+	</td>
+	{{Form::open(array('class' => 'form-index','url' => 'ModifyPass','method' => 'post'))}}
+	<td>
+		{{ Form::password('pass', array('id'=>'pass','required')) }}
+	</td>
+	<td>
+		{{ Form::button('<span class="glyphicon glyphicon-pencil"></span>', array('type' => 'submit')) }}
+	</td>
+	{{Form::close()}}	
+	</tr>			
+</table>
+@endif
+@endsection
+
 @section('fotito')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 <div class="img-perfil-pag"><img src="data:;base64,{{ $InfoDePerfil->{'avatar'} }}" class="img-rounded img-responsive"><button data-toggle="modal" data-target="#cambiarfoto"><span class="glyphicon glyphicon-pencil"></span></button></div>

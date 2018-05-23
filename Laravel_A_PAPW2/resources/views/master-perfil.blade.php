@@ -100,6 +100,7 @@
 							@yield('form-pagina')
 						</tr>			
 					</table>
+					@yield('form-pass')
 					<br>
 					<table class="table table-responsive table-favorite">
 						<thead>

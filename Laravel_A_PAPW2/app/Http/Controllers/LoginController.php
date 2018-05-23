@@ -40,9 +40,14 @@ class LoginController extends Controller
         $email = $request->get('email');
         $password = $request->get('password');
 
+        $user_pass =  $password;
+        $salt = md5($user_pass);
+        $pasword_encriptado = crypt($user_pass, $salt);
+
+
         $result =  DB::table('administradors')->where([
             ['email-administrador', '=', $email],
-            ['pass-administrador', '=', $password]
+            ['pass-administrador', '=', $pasword_encriptado]
             ])->first();      
 
         if($result != NULL){
@@ -52,7 +57,7 @@ class LoginController extends Controller
             
             $result =  DB::table('users')->where([
             ['email-user', '=', $email],
-            ['pass-user', '=', $password],
+            ['pass-user', '=', $pasword_encriptado],
             ['active', '=', 1],
             ])->first();
 

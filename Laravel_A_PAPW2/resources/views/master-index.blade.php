@@ -77,27 +77,25 @@
                 </div>
             </div>
 
-            <div id="rec-pass" class="modal fade" role="dialog">
+            @yield('alert')
+
+            <div id="ing-mail-pass" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header"><center>
                         <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
                           <div class="row">   
-                          <h4>Recupera tu contraseña</h4>
+                          <h4>¿Cuál es tu E-mail?</h4>
                           </div></center>
                     </div>
                     <div class="modal-body">
                       <center>
-                           <form class="form-inline">
-                               ¿Pregunta pregunta pregunta pregunta pregunta pregunta? <br><br><input type="text"><br><br>
-                               <button type="button" class="btn btn-default btn-xs btn-login" data-dismiss="modal">Enviar</button> 
-                            </form>
+                           @yield('lost-ing-mail')
                       </center>
                     </div>                  
                 </div>
                 </div>
             </div>
-
 
             <div class="container " style="margin-top:10px">
 
@@ -106,7 +104,7 @@
           
           <div class="col-md-4">
             <img src="Imagenes/Link.png" class="img-responsive main-image-link
-            visible-sm-inline visible-md-inline visible-lg-inline"><br><br><center><button class="pass-lost" data-toggle="modal" data-target="#rec-pass">¿No recuerdas tu contraseña?</button></center>
+            visible-sm-inline visible-md-inline visible-lg-inline"><br><br><center><button class="pass-lost" data-toggle="modal" data-target="#ing-mail-pass">¿No recuerdas tu contraseña?</button></center>
           </div>
 
           <div class="col-md-1">           

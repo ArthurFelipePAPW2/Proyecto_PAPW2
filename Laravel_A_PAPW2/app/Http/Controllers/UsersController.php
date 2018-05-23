@@ -51,18 +51,23 @@ class UsersController extends Controller
     $answer = $request->get('answer');
     $avatar = base64_encode(file_get_contents($request->file('imagen')->path()));
 
-        $user = new User(array(
+    $user_pass =  $password;
+    $salt = md5($user_pass);
+    $pasword_encriptado = crypt($user_pass, $salt);
+
+
+    $user = new User(array(
                         "name-user" => $nombre,
                         "last-name-user" => $apellido,
                         "email-user" => $email,
-                        "pass-user" => $password,
+                        "pass-user" => $pasword_encriptado,
                         "gender" => $genero,
                         "avatar" => $avatar,
                         "birthday" => $nacimiento,
                         "answer" => $answer,
                         "id-city" => $ciudad,
                         "id-security" => $pregunta
-        ));
+    ));
 
         Session::put('User',$user);
                     
@@ -146,6 +151,18 @@ class UsersController extends Controller
         }else{
             return back()->withInput();
         }
+    }
+
+    public function ActualizarContra(Request $request){
+   
+        $user_pass = $request->get('pass');;
+        $salt = md5($user_pass);
+        $pasword_encriptado = crypt($user_pass, $salt);
+
+        user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['pass-user' => $pasword_encriptado]);
+
+            return back();
     }
 
     public function ActualizarNombre(Request $request)

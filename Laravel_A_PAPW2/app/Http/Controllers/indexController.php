@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\city;
 use App\security;
+use App\user;
 use Session;
+use DB;
 
 class indexController extends Controller
 {
@@ -30,7 +32,11 @@ class indexController extends Controller
 
     $pregunta->all();
 
-    $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta]);
+    $msg = NULL;
+
+    $user = NULL;
+
+    $arreglo = compact(['ciudades',$ciudades],['pregunta',$pregunta],['msg',$msg],['user',$user]);
 
     return view('index')->with($arreglo);
     }
@@ -62,9 +68,61 @@ class indexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+
+    $ciudades = city::all();
+
+    $ciudades = $ciudades->pluck('name-city','id-city');
+
+    $ciudades->all();
+
+    $pregunta = security::all();
+
+    $pregunta = $pregunta->pluck('question','id-security');
+
+    $pregunta->all();
+
+    $msg = NULL;
+
+    $user = user::where([
+        ['email-user','=', $request->get('email2')],
+        ['id-security','=', $request->get('pregunta2')],
+        ['answer','=', $request->get('respuesta2')]
+    ])->first();
+
+    if($user == NULL){
+            $msg = 'falso';
+    }else{
+            $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $tamanocaracters = strlen($caracteres);
+            $NuevaContrasena = '';
+            for ($i = 0; $i < 8; $i++) {
+                $NuevaContrasena .= $caracteres[rand(0, $tamanocaracters - 1)];
+            }
+
+            DB::table('users')
+            ->where('id-user', '=' , $user->{'id-user'})
+            ->update(['pass-user' => $NuevaContrasena]);
+
+            $user = user::where([
+                ['email-user','=', $request->get('email2')],
+                ['id-security','=', $request->get('pregunta2')],
+                ['answer','=', $request->get('respuesta2')]
+            ])->first();
+
+            $msg = 'verdadero';
+    }
+
+    $arreglo = compact(
+        ['ciudades',$ciudades],
+        ['pregunta',$pregunta],
+        ['msg',$msg],
+        ['user',$user]
+    );
+
+        return view('index')->with($arreglo);
+
     }
 
     /**

@@ -7,9 +7,9 @@
 
    <h3>¿Sabías Qué?</h3>
  	 @if($curiosidad)
-		<p> {{ $curiosidad->texto }}</p>
+		<p class="text-curiosidad"> {{ $curiosidad->texto }}</p>
 			@else
-		<p>Whoops! Acá debería ir una curiosidad, seguramente a nuestros administradores les dio flojera agregar alguna, ¡Por qué no esperas a que se tomen un café y agreguen alguna? Por mientras, diviertete en nuestro sitio web!</p>
+		<p class="text-curiosidad">Whoops! Acá debería ir una curiosidad, seguramente a nuestros administradores les dio flojera agregar alguna, ¡Por qué no esperas a que se tomen un café y agreguen alguna? Por mientras, diviertete en nuestro sitio web!</p>
 	@endif
 
 </div>
@@ -32,15 +32,10 @@
                   <div class="col-md-8">
                      	<h2 class="title-vdj">{{ $videogame->{'name-videogame'} }}</h2>
                   </div>  
-                  <div class="col-md-4"> <center>
-                    	<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart">
-  					<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart">
-  					<img src="Imagenes/Full_Heart.png" class="img-responsive img-heart">
-  					<img src="Imagenes/Half_Heart.png" class="img-responsive img-heart">
-  					<img src="Imagenes/Empty_Heart.png" class="img-responsive img-heart">  </center>      
+                  <div class="col-md-4"> <center><p class='resena-productor'>by {{ $videogame->{'productor'} }}</p></center>      
                   </div>  
                 </div>  
-                <div class="row">
+                <div class="row texto-caja">
                   <p class="text-vdj">{{ $videogame->{'description'} }}</p>
                 </div>
               </div>

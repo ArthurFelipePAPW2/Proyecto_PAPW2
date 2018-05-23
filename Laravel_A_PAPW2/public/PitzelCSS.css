@@ -378,7 +378,6 @@ input[type="file"] {
 }
 
 .img-info-vdj{
-	height: 200px;
 	width: auto;
 }
 
@@ -392,6 +391,13 @@ input[type="file"] {
 	color: white;
 	text-align: justify;
     text-justify: inter-word;
+    font-size: 17px;
+}
+
+.texto-caja{
+	height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .radios-modal input[type="radio"]{
@@ -412,6 +418,12 @@ input[type="file"] {
 	right: 0px;
 	position: fixed;
 	z-index: -1;
+}
+
+.resena-productor{
+	color: white;
+	font-family: VTCSundaykomix;
+	font-size: 14px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -450,6 +462,10 @@ input[type="file"] {
 	width: 1330px;
 	transform: rotate(-45deg);
 }
+}
+
+.text-curiosidad{
+	font-family: VTCSundaykomix;
 }
 
 .pagination a{

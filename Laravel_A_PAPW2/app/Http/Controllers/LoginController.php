@@ -47,7 +47,7 @@ class LoginController extends Controller
 
         $result =  DB::table('administradors')->where([
             ['email-administrador', '=', $email],
-            ['pass-administrador', '=', $pasword_encriptado]
+            ['pass-administrador', '=', $password]
             ])->first();      
 
         if($result != NULL){

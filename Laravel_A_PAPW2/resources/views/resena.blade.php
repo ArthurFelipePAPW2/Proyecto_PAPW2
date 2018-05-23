@@ -10,14 +10,22 @@
 			<div class="row">
 				<div class="col-md-2">
 					<center>
-						<img src="data:;base64,{{ $Comentarios[$x-1]->Usuario->{'avatar'} }}" class="img-responsive img-rounded img-comentario">					
+						<a href="/perfil/{{ $Comentarios[$x-1]->Usuario->{'id-user'} }}"><img src="data:;base64,{{ $Comentarios[$x-1]->Usuario->{'avatar'} }}" class="img-responsive img-rounded img-comentario">	</a>			
 						<p class="name-user-comentario">
 							{{ $Comentarios[$x-1]->Usuario->{'name-user'} }}
 						</p>
 						<br>
 						<div class="btn-group btn-util">
-				        	<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-							<button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+							{{Form::open(array('url' => 
+							"AgregarUseful/".$user->{'id-user'}."/".$InfoDeResena->{'id-videogame'},'method' => 'get'))}}
+				        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
+				        	{{ Form::close() }}		
+
+				        	<!-- {{Form::open(array('url' => 
+							"BorrarUseful/".$user->{'id-user'}."/".$InfoDeResena->{'id-videogame'},'method' => 'get'))}}
+				        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
+				        	{{ Form::close() }}	 -->
+
 						</div>
 					</center>
 				</div>

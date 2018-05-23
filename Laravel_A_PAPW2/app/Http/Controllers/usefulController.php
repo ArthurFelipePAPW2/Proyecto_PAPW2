@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\videogame;
-use App\diduknow;
-use Session;
 
-class ArticlesController extends Controller
+class usefulController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,23 +13,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        if(Session::get('User') == NUll){
-
-            return redirect('/');
-        }else{
-        $curiosidad = diduknow::all();
-        
-        if((count($curiosidad->where('active', 1)) == 0)){
-            $curiosidad = NULL;
-        }else{
-            $curiosidad = $curiosidad->where('active', 1);
-            $curiosidad = $curiosidad->random();
-        } 
-
-        $videojuegos = videogame::paginate(10);
-
-        return view('principal',compact(['videojuegos'],['curiosidad']));
-    }
+        //
     }
 
     /**
@@ -40,9 +21,9 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($user, $videogame)
     {
-        //
+        return $user." ".$videogame;
     }
 
     /**
@@ -53,7 +34,7 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
@@ -96,8 +77,8 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($user,$videogame)
     {
-        //
+        return $user." ".$videogame;
     }
 }

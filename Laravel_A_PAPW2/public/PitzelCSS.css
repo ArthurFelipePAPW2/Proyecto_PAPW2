@@ -596,8 +596,9 @@ color: #fbf6eb;
 }
 
 .btn-util button{
-	padding: 10px 20px 10px 20px;
+	width: 100px;
 	margin-bottom: 50px;
+	border-radius: 50px;
 }
 
 .titulo-comentario{

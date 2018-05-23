@@ -8,6 +8,7 @@ use App\review;
 use App\score;
 use Carbon\Carbon;
 use App\favourite;
+use App\useful;
 use Session;
 use DB;
 class resenaController extends Controller

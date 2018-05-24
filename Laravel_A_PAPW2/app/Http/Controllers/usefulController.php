@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\useful;
 
 class usefulController extends Controller
 {
@@ -21,9 +22,17 @@ class usefulController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($user, $videogame)
+    public function create($user, $review)
     {
-        return $user." ".$videogame;
+
+        $useful = new useful(array(
+                        "id-user" => $user,
+                        "id-review" => $review
+        ));
+
+        $useful->save();
+
+        return back();
     }
 
     /**
@@ -77,8 +86,16 @@ class usefulController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($user,$videogame)
+    public function destroy($user,$review)
     {
-        return $user." ".$videogame;
+
+        $useful = useful::where([
+            ['id-user','=',$user],
+            ['id-review','=',$review]
+        ]);
+
+        $useful->delete();
+
+        return back();
     }
 }

@@ -27,7 +27,7 @@ class UserFormRequest extends FormRequest
         return [
             'username' => 'required|min:3|max:50',
             'apellido' => 'required|min:3|max:50',
-            'password' => 'required|min:6|max:30',
+            'password' => 'required|min:6|max:20',
             'imagen' => 'required',
             'answer' => 'required|min:3|max:100'
         ];

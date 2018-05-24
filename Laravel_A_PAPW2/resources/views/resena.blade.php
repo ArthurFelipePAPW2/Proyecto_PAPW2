@@ -4,7 +4,6 @@
 @section('comentarios')
 
 <div class="slider-comments container slide active">
-
 @for($x=1; $x <= count($Comentarios) ; $x++)
 <div class="container resena comentario">
 			<div class="row">
@@ -12,28 +11,66 @@
 					<center>
 						<a href="/perfil/{{ $Comentarios[$x-1]->Usuario->{'id-user'} }}"><img src="data:;base64,{{ $Comentarios[$x-1]->Usuario->{'avatar'} }}" class="img-responsive img-rounded img-comentario">	</a>			
 						<p class="name-user-comentario">
-							{{ $Comentarios[$x-1]->Usuario->{'name-user'} }}
+							<a href="/perfil/{{ $Comentarios[$x-1]->Usuario->{'id-user'} }}">{{ $Comentarios[$x-1]->Usuario->{'name-user'} }}</a>
 						</p>
 						<br>
 						<div class="btn-group btn-util">
+							@php
+								$Encontrado = false
+							@endphp
+
+							@foreach($MisUseful as $Useful)						
+							@if($Useful->{'id-review'} == $Comentarios[$x-1]->{'id-review'})
+								{{Form::open(array('url' => 
+								"BorrarUseful/".$user->{'id-user'}."/".$Comentarios[$x-1]->{'id-review'},'method' => 'get'))}}
+					        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
+					        	{{ Form::close() }}	
+					        	@php
+					        		$Encontrado = true
+					        	@endphp
+							@endif		
+
+							@endforeach
+
+							@if(count($MisUseful) == 0 || $Encontrado == false)
 							{{Form::open(array('url' => 
-							"AgregarUseful/".$user->{'id-user'}."/".$InfoDeResena->{'id-videogame'},'method' => 'get'))}}
-				        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
-				        	{{ Form::close() }}		
+								"AgregarUseful/".$user->{'id-user'}."/".$Comentarios[$x-1]->{'id-review'},'method' => 'get'))}}
+					        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
+					        {{ Form::close() }}	
+							@endif
 
-				        	<!-- {{Form::open(array('url' => 
-							"BorrarUseful/".$user->{'id-user'}."/".$InfoDeResena->{'id-videogame'},'method' => 'get'))}}
-				        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
-				        	{{ Form::close() }}	 -->
-
+							@php
+							unset($Useful)
+							@endphp
 						</div>
 					</center>
 				</div>
 				<div class="col-md-10">
 					<p class="fecha-comentario">Posteado el {{ $Comentarios[$x-1]->{'updated_at'} }}</p>
-					<p class="likes-comentario">[Likes: 50 | Dislikes: 10]</p>
+					<p class="likes-comentario">
+						@php
+							$Contar = 0
+						@endphp
+						@foreach($Likes as $Like)
+						@if($Like->{'id-review'} == $Comentarios[$x-1]->{'id-review'})
+						@php
+							$Contar ++
+						@endphp
+						@endif
+						@endforeach
+
+						@if($Contar == 0)
+						A nadie le parece buena esta reseña.
+						@endif
+						@if($Contar == 1)
+						A una persona le parece buena esta reseña.
+						@endif
+						@if($Contar > 1)
+						A <strong>{{ $Contar }}</strong> personas le parece buena esta reseña.
+						@endif
+					</p>
 					<div class="row">
-						<h3 class="titulo-comentario">{{ $Comentarios[$x-1]->{'titulo'} }}
+						<h3 class="titulo-comentario">{{ $Comentarios[$x-1]->{'titulo'} }} <br>
 							@foreach($Scores as $puntuacion)
 								@if($Comentarios[$x-1]->Usuario->{'id-user'} == $puntuacion->{'id-user'})
 
@@ -138,6 +175,7 @@
 							 <tr>
 							 	<td>Calificación:</td>
 							 	<td>
+							 		@if($CantidadDeCorazonesEnviados != 0)
 							 		@for($x=0; $x< $CorazonesLlenos; $x++)
 							 		<img src="../Imagenes/Full_Heart.png" class="img-responsive img-heart-resena">
 									@endfor
@@ -147,6 +185,9 @@
 									@for($x=0; $x< (5-$CantidadDeCorazonesEnviados); $x++)
 							 		<img src="../Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
 									@endfor
+									@else
+									Este juego no ha sido puntuado
+									@endif
   								</td>
 							 </tr>
 							</table>
@@ -159,7 +200,7 @@
 		<div class="container resena">
 		       	<div class="row">
 				    <div class="col-md-12 article-info-sinopsis">
-				        <p class="text-descripcion">Descripcion</p>
+				        <h2 clasS="text-descripcion">Descripción</h2>
 				        <p> {{ $InfoDeResena->{'description'} }}</p>
 			  		</div>
 			  	</div>

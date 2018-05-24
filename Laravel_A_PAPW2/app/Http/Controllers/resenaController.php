@@ -39,7 +39,7 @@ class resenaController extends Controller
 
         $Comentarios = review::where([
             ['id-videogame','=', $articulo]
-        ])->get();
+        ])->orderBy('created_at', 'desc')->get();
 
         $Scores = score::where([
             ['id-videogame','=', $articulo]
@@ -59,13 +59,21 @@ class resenaController extends Controller
             ['id-videogame','=', $articulo]
         ])->get();
 
+        $MisUseful = useful::where('id-user','=', $user->{'id-user'})->get();
+
+        $Likes = useful::whereHas('Review', function ($query)use ($articulo,$user) {
+            $query->where('id-videogame', '=', $articulo)->groupby('id-review');
+        })->get();
+
         $sumatoria = 0;
 
         for($i = 0;$i< count($PuntuacionJuego);$i++){
             $sumatoria = $sumatoria + $PuntuacionJuego[$i]->{'points'};
         }
 
+        if(count($PuntuacionJuego) != 0){
         $Promedio = $sumatoria/count($PuntuacionJuego);
+
 
         if($sumatoria % count($PuntuacionJuego) == 0){
         $Corazones = explode(".",$Promedio);
@@ -86,12 +94,17 @@ class resenaController extends Controller
         $CorazonesMedios = 0;
 
 
-        if($Corazones[1] > .5){
+        if($Corazones[1] >= .5){
             $CorazonesMedios = 1;
         }
 
         $CantidadDeCorazonesEnviados = $CorazonesLlenos + $CorazonesMedios;
         }
+    }else{
+        $CantidadDeCorazonesEnviados = 0;
+        $CorazonesLlenos = 0;
+        $CorazonesMedios = 0;
+    }
 
         
 
@@ -105,7 +118,9 @@ class resenaController extends Controller
             ['Favorito',$Favorito],
             ['CorazonesLlenos',$CorazonesLlenos],
             ['CorazonesMedios',$CorazonesMedios],
-            ['CantidadDeCorazonesEnviados',$CantidadDeCorazonesEnviados]
+            ['CantidadDeCorazonesEnviados',$CantidadDeCorazonesEnviados],
+            ['MisUseful',$MisUseful],
+            ['Likes',$Likes]
         );
 
         return view('resena')->with($arreglo);

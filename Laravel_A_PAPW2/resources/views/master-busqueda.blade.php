@@ -50,22 +50,10 @@
 
 		<img src="Imagenes/hollow2.png" class="img-responsive img-hollow4 visible-sm-inline visible-md-inline visible-lg-inline">
 				
-		<div class="container">
-			<div class="row">
-				<div class="col-md-9">
-					<h1 class="titulo-busqueda">Usuarios</h1>
-				</div>
-			</div>
-		</div>
+		@yield('warning')
 		@yield('busqueda-users')
 		<br><br>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-9">
-					<h1 class="titulo-busqueda">Videojuegos</h1>
-				</div>
-			</div>
-		</div>
+
 		@yield('busqueda-videogames')
 		<br><br>
 		@include('Blades.General.general-peticion-vdj')					   		   

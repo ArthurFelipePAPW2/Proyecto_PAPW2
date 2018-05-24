@@ -70,8 +70,8 @@ Route::post('/search', 'busquedaController@index');
 
 Route::get('/search2/{modo}/{busqueda}', 'busquedaController@BusquedaEspecifica')->where(['busqueda' => '[0-9a-zA-Z]+'],['modo' => '[a-zA-Z]+']);
 
-Route::get('/AgregarUseful/{user}/{videogame}', 'usefulController@create')->where(['user' => '[0-9]+'],['videogame' => '[0-9]+']);
+Route::get('/AgregarUseful/{user}/{review}', 'usefulController@create')->where(['user' => '[0-9]+'],['review' => '[0-9]+']);
 
-Route::get('/BorrarUseful/{user}/{videogame}', 'usefulController@destroy')->where(['user' => '[0-9]+'],['videogame' => '[0-9]+']);
+Route::get('/BorrarUseful/{user}/{review}', 'usefulController@destroy')->where(['user' => '[0-9]+'],['review' => '[0-9]+']);
 
 Route::post('/Lost-password','indexController@show');

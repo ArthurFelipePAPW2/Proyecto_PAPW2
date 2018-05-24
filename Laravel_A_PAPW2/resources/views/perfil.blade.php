@@ -176,13 +176,14 @@
 @endsection
 
 @section('favoritos-user')	
+@if(count($favoritos) != 0)
 <tr>
 @for($x=1; $x <= count($favoritos) ; $x++)
 		
-			<td>
+			<td><center>
 				<a href="/resena/{{ $favoritos[$x-1]->Videogame->{'id-videogame'} }}">
 				<img src="data:;base64,{{ $favoritos[$x-1]->Videogame->{'cover'} }}" class="img-responsive miniaturas-perfil callout"><br>
-			</a> 
+			</a> </center>
 		</td>
 			@if($x == 10)
 			</tr>
@@ -191,6 +192,11 @@
 		
 @endfor
 </tr>
+@else
+<tr>
+	<td class="sin-favs">Este usuario no ha agregado favoritos :(</td>
+</tr>
+@endif
 @endsection
 
 

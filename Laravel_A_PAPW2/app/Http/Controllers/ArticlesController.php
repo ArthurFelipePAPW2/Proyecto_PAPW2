@@ -29,7 +29,7 @@ class ArticlesController extends Controller
             $curiosidad = $curiosidad->random();
         } 
 
-        $videojuegos = videogame::paginate(10);
+        $videojuegos = videogame::orderBy('created_at', 'desc')->paginate(10);
 
         return view('principal',compact(['videojuegos'],['curiosidad']));
     }

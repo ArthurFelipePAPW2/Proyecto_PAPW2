@@ -583,18 +583,18 @@ color: #fbf6eb;
 	font-family: Verdana;
 }
 
-.text-descripcion{
-	color:white;
-	font-size: 14px;
-	font-family: Nozstudio;
-}
-
-.article-info-sinopsis p{
+.article-info-sinopsis{
 	color:white;
 	font-size: 14px;
 	font-family: verdana;
 	text-align: justify;
     text-justify: inter-word;
+}
+
+.text-descripcion{
+	color:white;
+	font-size: 20px;
+	font-family: Nozstudio;
 }
 
 .img-comentario{
@@ -635,6 +635,11 @@ color: #fbf6eb;
 	color: white;
 	font-size: 20px;
 	font-family: Nozstudio;
+}
+
+.name-user-comentario a{
+	text-decoration: none;
+	color: white;
 }
 
 
@@ -860,6 +865,11 @@ color: #fbf6eb;
 	color: white;
 	font-size: 11px;
 	text-align: left;
+}
+
+.sin-favs{
+	font-family: AmorE-Regular;
+	font-size: 18px;
 }
 
 .table-usuario{
@@ -1099,6 +1109,19 @@ color: #fbf6eb;
 	border-radius: 5px;
 }
 
+.text-descripcion2{
+	color:white;
+	font-size: 24px;
+	font-family: Nozstudio;
+	-webkit-text-stroke: 1px #556d84;
+}
+
+.text-descripcion3{
+	color:white;
+	font-size: 16px;
+	font-family: 'VTCSundaykomix';
+}
+
 .ver-mas{
 	font-size: 20px;
 	color: white;
@@ -1149,6 +1172,16 @@ color: #fbf6eb;
 .cuadro-busqueda{
 	background-color: #dae3ec61;
 	border: solid #dae3ec26 1px;
+}
+
+.cuadro-busqueda a{
+	text-decoration: none;
+}
+
+.cuadro-busqueda2{
+	background-color: #dae3ec61;
+	border: solid #dae3ec26 1px;
+	height: 50px;
 }
 
 .titulo-busqueda{

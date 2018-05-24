@@ -75,3 +75,5 @@ Route::get('/AgregarUseful/{user}/{review}', 'usefulController@create')->where([
 Route::get('/BorrarUseful/{user}/{review}', 'usefulController@destroy')->where(['user' => '[0-9]+'],['review' => '[0-9]+']);
 
 Route::post('/Lost-password','indexController@show');
+
+Route::get('/BorrarComentario/{review}/{user}/{videogame}', 'reviewController@destroy')->where(['review' => '[0-9]+'],['user' => '[0-9]+'],['videogame' => '[0-9]+']);

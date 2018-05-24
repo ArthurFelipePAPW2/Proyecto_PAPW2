@@ -43,6 +43,16 @@
 @section('acerca-de-mi')
 <b>Fecha de cumpleaños: </b> {{ $InfoDePerfil->{'birthday'} }} <br><br>
 <b>Fecha de ingreso: </b>{{$InfoDePerfil->created_at}}
+
+@if($InfoDePerfil->{'id-user'} != Session::get('User')->{'id-user'})
+{{Form::open(array('class' => 'form-index','url' => 'ModifyName','method' => 'post'))}}
+{{ Form::textarea('descripcion', null, array('class' => 'textarea-perfil','required')) }}     
+{{Form::close()}}
+@else
+<div class="texto-user">
+	<p>Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+</div>
+@endif
 @endsection
 
 @section('form-nombre')

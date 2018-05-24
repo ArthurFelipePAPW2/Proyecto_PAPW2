@@ -687,6 +687,12 @@ color: #fbf6eb;
 	background-color: white;
 }
 
+.mover-izquierda{
+	width: 100px;
+	margin-bottom: 5px;
+	border-radius: 50px;
+}
+
 .down-page-comment{
 	position: fixed;
 	bottom: 10px;
@@ -855,7 +861,7 @@ color: #fbf6eb;
 	color: white;
 	text-align: justify;
     text-justify: inter-word;
-    background-color: #e0c0c1b0;;
+    background-color: #e0c0c1b0;
     border-radius: 5px;
     padding: 8px;
     font-size: 12px;
@@ -865,6 +871,31 @@ color: #fbf6eb;
 	color: white;
 	font-size: 11px;
 	text-align: left;
+}
+
+.textarea-perfil{
+	padding: 8px;
+	color: white;
+	text-align: justify;
+    text-justify: inter-word;
+	resize:none;
+	width: 100%;
+	height: auto;
+	background-color: #e0c0c1b0;
+	border: none;
+	border-radius: 5px;
+}
+
+.texto-user{
+	padding: 8px;
+	color: white;
+	text-align: justify;
+    text-justify: inter-word;
+	width: 100%;
+	height: auto;
+	background-color: #e0c0c1b0;
+	border: none;
+	border-radius: 5px;
 }
 
 .sin-favs{

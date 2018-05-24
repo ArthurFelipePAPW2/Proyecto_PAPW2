@@ -45,7 +45,7 @@ class reviewController extends Controller
         $user = Session::get('User')->{'id-user'};
         $videogame = $request->get('videogame');
 
-        $result =  DB::table('reviews')->where([
+        $result =  review::where([
             ['id-user', '=', $user],
             ['id-videogame', '=', $videogame]
             ])->first();    
@@ -60,11 +60,11 @@ class reviewController extends Controller
 
         $review->save();
 
-            $score = new score(array(
+        $score = new score(array(
                             "points" => $rate,
                             "id-user" => $user,
                             "id-videogame" => $videogame
-            ));
+        ));
 
         $score->save();
         }
@@ -132,8 +132,17 @@ class reviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($review,$user,$videogame)
     {
-        //
+        review::where([
+            ['id-review','=',$review]
+        ])->delete();
+
+        score::where([
+            ['id-user','=',$user],
+            ['id-videogame','=', $videogame]
+        ])->delete();       
+
+         return back();
     }
 }

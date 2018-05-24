@@ -14,6 +14,11 @@
 							<a href="/perfil/{{ $Comentarios[$x-1]->Usuario->{'id-user'} }}">{{ $Comentarios[$x-1]->Usuario->{'name-user'} }}</a>
 						</p>
 						<br>
+						@if($Comentarios[$x-1]->Usuario->{'id-user'} == $user->{'id-user'})
+						{{Form::open(array('url' =>"BorrarComentario/".$Comentarios[$x-1]->{'id-review'}."/".$user->{'id-user'}."/".$InfoDeResena->{'id-videogame'},'method' => 'get'))}}
+						{{ Form::button('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => 'btn mover-izquierda')) }}		
+						{{ Form::close() }}	
+						@endif
 						<div class="btn-group btn-util">
 							@php
 								$Encontrado = false
@@ -46,7 +51,9 @@
 					</center>
 				</div>
 				<div class="col-md-10">
-					<p class="fecha-comentario">Posteado el {{ $Comentarios[$x-1]->{'updated_at'} }}</p>
+					<p class="fecha-comentario">
+					Posteado el {{ $Comentarios[$x-1]->{'updated_at'} }} 
+					</p>
 					<p class="likes-comentario">
 						@php
 							$Contar = 0

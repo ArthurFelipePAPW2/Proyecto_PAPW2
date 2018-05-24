@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class user extends Model
 {
     protected $primaryKey = 'id-user';
-    protected $fillable = ['name-user','last-name-user','email-user','pass-user','gender','avatar','birthday','id-city','id-security','answer'];
+    protected $fillable = ['name-user','last-name-user','email-user','pass-user','gender','avatar','birthday','id-city','id-security','answer','acerca'];
 
     public function Country(){
         return $this->hasManyThrough(country::Class,city::Class,'id-city','id-country');

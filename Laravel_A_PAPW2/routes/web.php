@@ -56,6 +56,8 @@ Route::post('/ModifySecurity', 'UsersController@ActualizarSeguridad');
 
 Route::post('/ModifyImage', 'UsersController@ActualizarImagen');
 
+Route::post('/ModifyAbout', 'UsersController@ActualizarAcerca');
+
 Route::post('/SendReview', 'reviewController@store');
 
 Route::post('/ModifyReview', 'reviewController@edit');

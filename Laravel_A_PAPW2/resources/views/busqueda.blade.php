@@ -19,7 +19,7 @@
 				<center><a href="/perfil/{{ $usuario->{'id-user'} }}"><img src="data:;base64,{{ $usuario->{'avatar'} }}" class="img-busqueda-perfil"></a></center><br>
 			</div>
 			<div class="col-md-9">
-					<a href="/perfil/{{ $usuario->{'id-user'} }}"><h3 class="text-descripcion">{{ $usuario->{'name-user'} }} {{ $usuario->{'last-name-user'} }}</h3></a><p class="text-descripcion3">{{ $usuario->{'pagina-web-user'} }}</p><p class="text-descripcion3">{{ $usuario->{'correo-contacto-user'} }} </p>
+					<a href="/perfil/{{ $usuario->{'id-user'} }}"><h3 class="text-descripcion">{{ $usuario->{'name-user'} }} {{ $usuario->{'last-name-user'} }}</h3></a><p class="text-descripcion3">{{ $usuario->{'acerca'} }}</p>
 			</div>
 			</div>
 		</div>

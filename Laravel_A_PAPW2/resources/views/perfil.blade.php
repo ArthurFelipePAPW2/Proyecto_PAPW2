@@ -1,6 +1,12 @@
 @extends('master-perfil')
 @section('title','Gamer')
 
+@section('error')
+@foreach($errors->all() as $error)
+<p class="alert alert-danger">{{$error}}</p>
+@endforeach
+@endsection
+
 @section('form-pass')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 <br>
@@ -44,20 +50,24 @@
 <b>Fecha de cumpleaños: </b> {{ $InfoDePerfil->{'birthday'} }} <br><br>
 <b>Fecha de ingreso: </b>{{$InfoDePerfil->created_at}}
 
-@if($InfoDePerfil->{'id-user'} != Session::get('User')->{'id-user'})
-{{Form::open(array('class' => 'form-index','url' => 'ModifyName','method' => 'post'))}}
-{{ Form::textarea('descripcion', null, array('class' => 'textarea-perfil','required')) }}     
+@if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
+{{Form::open(array('class' => 'form-index','url' => 'ModifyAbout','method' => 'post'))}}
+{{ Form::textarea('acerca', $InfoDePerfil->{'acerca'}, array('class' => 'textarea-perfil','required')) }}
+{{ Form::button('<span class="glyphicon glyphicon-pencil"></span>', array('type' => 'submit', 'class' =>'cambiar-acerca')) }}
 {{Form::close()}}
 @else
+@if($InfoDePerfil->{'acerca'} != NULL)
 <div class="texto-user">
-	<p>Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+	<p>{{  $InfoDePerfil->{'acerca'} }}</p>
 </div>
+@endif
 @endif
 @endsection
 
 @section('form-nombre')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 {{Form::open(array('class' => 'form-index','url' => 'ModifyName','method' => 'post'))}}
+
 	<td>
 		{{ Form::text('nombre', $InfoDePerfil->{'name-user'} , array('required')) }}
 	</td>

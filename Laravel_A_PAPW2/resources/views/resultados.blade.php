@@ -34,7 +34,7 @@
 				<center><a href="/perfil/{{ $resultado->{'id-user'} }}"><img src="data:;base64,{{ $resultado->{'avatar'} }}" class="img-busqueda-perfil"></a></center><br>
 			</div>
 			<div class="col-md-9">
-					<br><h3>{{ $resultado->{'name-user'} }} {{ $resultado->{'last-name-user'} }}</h3><p>{{ $resultado->{'pagina-web-user'} }}</p><p>{{ $resultado->{'correo-contacto-user'} }}</p><br>
+					<br><h3>{{ $resultado->{'name-user'} }} {{ $resultado->{'last-name-user'} }}</h3><p>{{ $resultado->{'acerca'} }}</p><br>
 			</div>
 			</div>
 		</div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserFormRequest;
+use App\Http\Requests\maodifyuser;
 use App\User;
 use App\diduknow;
 use DB;
@@ -153,7 +154,7 @@ class UsersController extends Controller
         }
     }
 
-    public function ActualizarContra(Request $request){
+    public function ActualizarContra(maodifyuser $request){
    
         $user_pass = $request->get('pass');;
         $salt = md5($user_pass);
@@ -165,7 +166,7 @@ class UsersController extends Controller
             return back();
     }
 
-    public function ActualizarNombre(Request $request)
+    public function ActualizarNombre(maodifyuser $request)
     {
             user::where('id-user', '=' , Session::get('User')->{'id-user'}
             )->update(['name-user' => $request->get('nombre')]);
@@ -173,7 +174,15 @@ class UsersController extends Controller
             return back();
     }
 
-     public function ActualizarApellido(Request $request)
+    public function ActualizarAcerca(maodifyuser $request)
+    {
+            user::where('id-user', '=' , Session::get('User')->{'id-user'}
+            )->update(['acerca' => $request->get('acerca')]);
+
+            return back();
+    }
+
+     public function ActualizarApellido(maodifyuser $request)
     {
             user::where('id-user', '=' , Session::get('User')->{'id-user'}
             )->update(['last-name-user' => $request->get('apellido')]);
@@ -197,7 +206,7 @@ class UsersController extends Controller
             return back();
     }
 
-     public function ActualizarWeb(Request $request)
+     public function ActualizarWeb(maodifyuser $request)
     {
             user::where('id-user', '=' , Session::get('User')->{'id-user'}
             )->update(['pagina-web-user' => $request->get('pagina')]);
@@ -205,7 +214,7 @@ class UsersController extends Controller
            return back();
     }
 
-     public function ActualizarImagen(Request $request)
+     public function ActualizarImagen(maodifyuser $request)
     {   
             $avatar = base64_encode(file_get_contents($request->file('imagen')->path()));
 

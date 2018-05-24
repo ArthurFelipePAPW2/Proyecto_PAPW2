@@ -595,6 +595,7 @@ color: #fbf6eb;
 	color:white;
 	font-size: 20px;
 	font-family: Nozstudio;
+	-webkit-text-stroke: 1px #556d84;
 }
 
 .img-comentario{
@@ -880,7 +881,7 @@ color: #fbf6eb;
     text-justify: inter-word;
 	resize:none;
 	width: 100%;
-	height: auto;
+	height: 150px;
 	background-color: #e0c0c1b0;
 	border: none;
 	border-radius: 5px;
@@ -894,6 +895,17 @@ color: #fbf6eb;
 	width: 100%;
 	height: auto;
 	background-color: #e0c0c1b0;
+	border: none;
+	border-radius: 5px;
+	margin-bottom: -10px;
+}
+
+.cambiar-acerca{
+	margin:0px;
+	margin-top: -20px;
+	width: 100%;
+	background-color: #e0c0c1b0;
+	color: white; 
 	border: none;
 	border-radius: 5px;
 }
@@ -1148,7 +1160,7 @@ color: #fbf6eb;
 }
 
 .text-descripcion3{
-	color:white;
+	color: #192637;
 	font-size: 16px;
 	font-family: 'VTCSundaykomix';
 }

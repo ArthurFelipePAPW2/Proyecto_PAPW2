@@ -44,6 +44,8 @@
 		</nav>
 
 		@include('Blades.General.general-peticion-vdj')
+
+		@yield('error')
 		<br>  			
 		
                            @yield('form-img')

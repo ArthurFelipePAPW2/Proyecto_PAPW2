@@ -24,7 +24,9 @@ class SuggestionFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'vg_name' => 'required|max:250|min:5',
+            'content' => 'required|max:140|min:10',
+            'link' => 'required|max:100|min:5'
         ];
     }
 }

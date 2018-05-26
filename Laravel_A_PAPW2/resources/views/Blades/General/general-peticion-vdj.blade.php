@@ -1,3 +1,16 @@
+@foreach($errors->all() as $error)
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">     
+      <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Error! </strong>{{$error}}
+      </div> 
+    </div>
+  </div>
+</div>
+@endforeach
+
 <div id="sendvdj" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                 <div class="modal-content">

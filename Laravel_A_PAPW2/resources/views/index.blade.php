@@ -45,7 +45,10 @@
 
 {{Form::open(array('class' => 'form-index','url' => 'registrar','method' => 'post','files' => true))}}
 @foreach($errors->all() as $error)
-<p class="alert alert-danger">{{$error}}</p>
+<div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Error! </strong>{{$error}}
+      </div> 
 @endforeach
 
 <div class="form-group row">

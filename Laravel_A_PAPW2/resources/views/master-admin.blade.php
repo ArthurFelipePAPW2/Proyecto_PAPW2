@@ -43,6 +43,7 @@
 		          	<li role="separator" class="divider"></li>
 		            <li><a data-toggle="modal" data-target="#agregarvdj">Agregar Videojuego</a></li>
 		            <li><a data-toggle="modal" data-target="#borrarvdj">Borrar Videojuego</a></li>
+		            <li><a data-toggle="modal" data-target="#altavdj">Retornar Videojuego</a></li>
 		            <li><a data-toggle="modal" data-target="#modificarvdj">Modificar Videojuego</a></li>	         
 		          </ul>
 		        </li>
@@ -87,6 +88,7 @@
 						   		   
 		@yield('agregar-vdj')
     @yield('borrar-vdj')
+    @yield('alta-vdj')
     @yield('borrar-curiosidad')
     @yield('agregar-curiosidad')
     @yield('alta-usuario')
@@ -118,5 +120,50 @@
 		</div>	  
 
     @include('Blades.General.general-js')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    </script>
+	<script>
+		$(document).ready(function(){
+	
+		    $(document).on('click', '#boton1', function(e){
+	
+		        e.preventDefault();
+	
+		        var url = '/ModJuego';
+		        //var idGame = document.getElementById('idGame');
+		        var idGame = $('#idGame').val();
+	
+		        //$('#info_game').html(idGame); // leave it blank before ajax call
+
+		        $.ajax({
+            		url			: url,
+            		type 		: 'post',
+ 					data		: {
+ 									"idGame":idGame,
+									"_token":"{{ csrf_token() }}"
+								  },
+ 					async		: true,
+ 					cache		: false,
+ 					success		: function(resp){
+ 						var data = JSON.parse(resp);
+ 						//$('#info_game').html(data['mode']);
+ 						$('#gHidden').val(idGame);
+ 						$('#gName').val(data['name-videogame']);
+ 						$('#gNProductor').val(data['productor']);
+ 						$('#gDesarrolladora').val(data['id-developer']);
+ 						$('#gDistribuidora').val(data['id-distributor']);
+ 						$('#gMode').val(data['mode']);
+ 						$('#gDescription').val(data['description']);
+ 					},
+        			error		: function() {
+          				alert("No jala");
+        			}
+        		});
+
+		    });
+	
+		});
+	
+	</script>
   </body>
 </html>

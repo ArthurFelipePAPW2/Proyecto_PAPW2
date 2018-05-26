@@ -74,13 +74,27 @@ class LoadSuggestions extends Controller
         $distributor->all();
 
         $suggestion = suggestion::all();
+
+        $videogame = videogame::where('active', 1);
+
+        $videogame = $videogame->pluck('name-videogame','id-videogame');
+
+        $videogame->all();
+
+        $downgame = videogame::where('active', 0);
+
+        $downgame = $downgame->pluck('name-videogame','id-videogame');
+
+        $downgame->all();
         
         $arreglo = compact(
             ['platform',$platform],
             ['genero',$genero],
             ['paises',$paises],
             ['distributor',$distributor],
-            ['suggestion',$suggestion]
+            ['suggestion',$suggestion],
+            ['videogame',$videogame],
+            ['downgame',$downgame]
         );
 
         return view('admin')->with($arreglo);

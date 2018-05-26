@@ -41,7 +41,7 @@
     <td class="titulo-solicitud">{{ $sugerencia->{'game-suggested'} }}</td> 
     <td>
       {{ $sugerencia->{'reason'} }} <br><br>
-      <a href="{{ $sugerencia->{'link'} }}">Ver el trailer del juego</a>
+      <a target="_blank" href="{{ $sugerencia->{'link'} }}">Ver el trailer del juego</a>
     </td>
     <td>
       <center><p class="user-solicitud">{{ $sugerencia->Usuario->{'name-user'} }}</p>
@@ -84,7 +84,7 @@
                                  {{ Form::select('plataforma[]', $platform,  null, ['class' => 'form-control input-sm', 'multiple' => 'multiple']) }}        
                                </div> 
                                <div class="form-group">
-                               	{{ Form::text('productor', null, array('placeholder'=>'Productor','class' => 'form-control input-sm','required')) }}     
+                               	{{ Form::text('productor', null, array('placeholder'=>'Productor','class' => 'form-control input-sm','required', 'id' => 'gProductor')) }}     
                                </div>
                                 <div class="form-group">
                                 {{ Form::select('desarrolladora', $distributor,null,['class'=>'form-control input-sm'])}}
@@ -128,18 +128,12 @@
                     </div>
                     <div class="modal-body">
                       <center>
-                            {{Form::open(array('url' => '/Modify','method' => 'post'))}}
-                               <div class="form-group">
+                            {{Form::open(array('url' => '/BorrarJuego','method' => 'post'))}}
+                            {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
+                            <div class="form-group">
                                	  {{ Form::label('VideoJuegos','Selecciona el Videojuego a Borrar') }}
-								       {{ Form::select('videojuego', array(
-										'1' => 'VideoJuego1', 
-										'2' => 'VideoJuego2',
-										'3' => 'VideoJuego3',
-										'4' => 'VideoJuego4',
-										'5' => 'VideoJuego5',
-										'6' => 'VideoJuego6'),
-									'null',['class'=>'form-control'])}}
-								  </div>  
+                                 {{ Form::select('videojuego', $videogame,  null, ['class' => 'form-control input-sm']) }}        
+                            </div>  
 								<div class="form-group">
 										{{ Form::password('password', array('class' => 'form-control input-sm','id'=>'pass','placeholder' =>'Ingresa tu contraseña','required')) }}
                                </div>        
@@ -152,6 +146,40 @@
                 </div>
             </div>
 
+@endsection
+
+@section('alta-vdj')
+<!--MODAL DE ALTA VDJ-->
+    <div id="altavdj" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"><center>
+                        <button type="button" class="close" data-dismiss="modal"> &times;</button><br><br>
+                          <div class="row">                        
+                            <div class="col-sm-12 Modal-Text">
+                            <h4>Rotornar Videojuego</h4>
+                            </div>
+                          </div></center>
+                    </div>
+                    <div class="modal-body">
+                      <center>
+                            {{Form::open(array('url' => '/AltaJuego','method' => 'post'))}}
+                            {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
+                            <div class="form-group">
+                                  {{ Form::label('VideoJuegos','Selecciona el Videojueg que quieres regresar') }}
+                                 {{ Form::select('downgame', $downgame,  null, ['class' => 'form-control input-sm', 'required']) }}        
+                            </div>  
+                <div class="form-group">
+                    {{ Form::password('password', array('class' => 'form-control input-sm','id'=>'pass','placeholder' =>'Ingresa tu contraseña','required')) }}
+                               </div>        
+                                {{Form::button('Borrar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}          
+                             
+                            {{Form::close()}}
+                      </center>
+                    </div>                  
+                </div>
+                </div>
+            </div>
 @endsection
 
 @section('borrar-curiosidad')
@@ -173,14 +201,7 @@
                             {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
                                <div class="form-group"> 
                                	     {{ Form::label('Curiosidad','Selecciona la curiosidad a Borrar') }}
-								     {{ Form::select('curiosidad', array(
-										'1' => 'Curiosidad1', 
-										'2' => 'Curiosidad2',
-										'3' => 'Curiosidad3',
-										'4' => 'Curiosidad4',
-										'5' => 'Curiosidad5',
-										'6' => 'Curiosidad6'),
-									'null',['class'=>'form-control'])}}
+								     {{ Form::text('curiosidad', null, array('placeholder'=>'Id DiduKnow','class' => 'form-control input-sm','required')) }}
 								  </div>  
 								<div class="form-group">
 										{{ Form::password('password', array('class' => 'form-control input-sm','id'=>'pass','placeholder' =>'Ingresa tu contraseña','required')) }}
@@ -312,16 +333,11 @@
                           {{Form::open(array('url' => '/Modify','method' => 'post'))}}
                                <div class="form-group">
                                	     {{ Form::label('VideoJuegos','Selecciona el Videojuego a Modificar') }}
-								       {{ Form::select('videojuego', array(
-										'1' => 'VideoJuego1', 
-										'2' => 'VideoJuego2',
-										'3' => 'VideoJuego3',
-										'4' => 'VideoJuego4',
-										'5' => 'VideoJuego5',
-										'6' => 'VideoJuego6'),
-									'null',['class'=>'form-control'])}}
+								                     {{ Form::select('videojuego', $videogame,  null, ['class' => 'form-control input-sm', 'id' => 'idGame']) }}
 								  </div>  
-                               <a data-toggle="modal" data-target="#infovdj"><p class="modificar-vdj-button">Modificar</p></a>                          
+                            <input type="button" name="view" value="Modificar" id="boton1" data-toggle="modal" data-target="#infovdj" class="btn btn-default btn-xs btn-login boton"/>
+
+                              <!--<a data-toggle="modal" data-target="#infovdj" class = "view_info"><p class="modificar-vdj-button">Modificar</p></a>-->                          
                             {{Form::close()}}
                       </center>
                     </div>                  
@@ -340,38 +356,37 @@
                           <div class="row">                        
 	                          <div class="col-sm-12 Modal-Text">
 	                          <h4>Información Actual</h4>
+                            <h1 id = "prueba"></h1>
 	                          </div>
                           </div></center>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id = "info_game">
                       <center>
-                          {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+                          {{Form::open(array('url' => '/ActJuego','method' => 'post'))}}
+                               {{ Form::hidden('idGame', '', array('id' => 'gHidden')) }}
+
                                <div class="form-group">
-                               	{{ Form::text('nombre', 'Nombre del juego', array('class' => 'form-control input-sm','required')) }} 
+                               	{{ Form::text('nombre', 'Nombre del juego', array('class' => 'form-control input-sm','required', 'id' => 'gName')) }} 
                                </div> 
+
                                <div class="form-group">
-                               	{{ Form::text('plataforma', 'Plataforma del juego', array('class' => 'form-control input-sm','required')) }} 
-                               </div> 
-                               <div class="form-group">
-                               	{{ Form::text('productor','Productor del juego', array('class' => 'form-control input-sm','required')) }} 
+                               	{{ Form::text('productor', null, array('placeholder'=>'Productor','class' => 'form-control input-sm','required', 'id' => 'gNProductor')) }} 
                                </div>
+
                                <div class="form-group">
-                               	{{ Form::text('desarrollador', 'Desarrollador del juego', array('class' => 'form-control input-sm','required')) }} 
+                               	{{ Form::select('desarrolladora', $distributor,null,['class'=>'form-control input-sm', 'id' => 'gDesarrolladora'])}} 
                                </div>
+
                                <div class="form-group">
-                               	{{ Form::text('genero', 'Genero del juego', array('class' => 'form-control input-sm','required')) }} 
+                               	{{ Form::select('distribuidora', $distributor,null,['class'=>'form-control input-sm', 'id' => 'gDistribuidora'])}} 
                                </div>
+
                                <div class="form-group">
-                               	{{ Form::text('productor', 'Productor del juego', array('class' => 'form-control input-sm','required')) }} 
+                               	{{ Form::text('modo', 'Modo del juego', array('class' => 'form-control input-sm','required', 'id' => 'gMode')) }} 
                                </div>
+
                                <div class="form-group">
-                               	{{ Form::text('distribuidora', 'Distribiudora del juego', array('class' => 'form-control input-sm','required')) }} 
-                               </div>
-                               <div class="form-group">
-                               	{{ Form::text('modo', 'Modo del juego', array('class' => 'form-control input-sm','required')) }} 
-                               </div>
-                               <div class="form-group">
-                               {{ Form::textarea('descripcion', 'Descripcion Descripcion Descripcion Descripcion Descripcion Descripcion Descripcion Descripcion Descripcion Descripcion' , array('class' => 'textarea-agregar-vdj','required')) }}  
+                               {{ Form::textarea('descripcion', '' , array('class' => 'textarea-agregar-vdj','required', 'id' => 'gDescription')) }}  
                                <div class="form-group">
 
                                </div>                             

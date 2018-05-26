@@ -78,4 +78,12 @@ Route::get('/BorrarUseful/{user}/{review}', 'usefulController@destroy')->where([
 
 Route::post('/Lost-password','indexController@show');
 
+Route::post('/BorrarJuego','DeleteGameController@destroy');
+
+Route::post('/AltaJuego','DeleteGameController@retorn');
+
+Route::post('/ModJuego','DeleteGameController@update');
+
+Route::post('/ActJuego','DeleteGameController@edit');
+
 Route::get('/BorrarComentario/{review}/{user}/{videogame}', 'reviewController@destroy')->where(['review' => '[0-9]+'],['user' => '[0-9]+'],['videogame' => '[0-9]+']);

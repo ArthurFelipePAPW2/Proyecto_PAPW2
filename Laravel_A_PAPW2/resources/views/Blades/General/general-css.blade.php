@@ -4,3 +4,4 @@
 <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="PitzelCSS.css">
 <script src="funciones.js"></script>
+<link rel="Shortcut Icon" href="Imagenes/Pitzel.ico" type="image/x-icon" />

@@ -1010,30 +1010,8 @@ color: #fbf6eb;
 	text-justify: inter-word;
 }
 
-.table-solicitud caption{
-	background-color: #d4c5c580;
-	color: #1d5a4b;
-	font-size: 18px;
-	font-family: Nozstudio;
-	padding-left: 60px;
-}
-
-.table-solicitud th{
-	font-size: 14px;
-	font-family: Nozstudio;
-	text-align: center;
-}
-
-.table-solicitud td:first-child{
-	width: 25%;
-}
-
-.table-solicitud td:nth-child(3){
-	width: 20%;
-}
-
-.table-solicitud td:last-child{
-	width: 5%;
+.sugerencia{
+	border: 1px solid;
 }
 
 .enviar-peticion{
@@ -1058,13 +1036,11 @@ color: #fbf6eb;
 }
 
 .user-solicitud{
-	padding-left: 10px;
-	text-align:left;
  	font-family: Nozstudio;
  	color: white;
  	font-size: 20px;
  	background-color:#232121b8;
- 	border-radius: 5px 5px 0px 0px;
+ 	border-radius: 5px 5px 5px 5px;
  	margin: 0px;
  	margin-left: 7px;
  	margin-right: 8px;

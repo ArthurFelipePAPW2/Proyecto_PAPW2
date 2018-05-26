@@ -37,26 +37,31 @@
 
 @section('peticion')
 @foreach($suggestion as $sugerencia)
-<tr>
-    <td class="titulo-solicitud">{{ $sugerencia->{'game-suggested'} }}</td> 
-    <td>
-      {{ $sugerencia->{'reason'} }} <br><br>
-      <a target="_blank" href="{{ $sugerencia->{'link'} }}">Ver el trailer del juego</a>
-    </td>
-    <td>
-      <center><p class="user-solicitud">{{ $sugerencia->Usuario->{'name-user'} }}</p>
-      <img src="data:;base64,{{ $sugerencia->Usuario->{'avatar'} }}" class="img-responsive img-solicitud">
-      </center>
-    </td>
-    <td>
+<div class="row sugerencia">
+     <div class="col-md-1">
       <center>
       {{Form::open(array('url' => '/Modify','method' => 'post'))}}
         {{ Form::hidden('peticion', '1') }}
         {{ Form::button('<span class="glyphicon glyphicon-remove"></span>', array('type' => 'submit', 'class'=>'enviar-peticion')) }}
       {{Form::close()}}
   </center>
-  </td>
-</tr>
+   </div>
+ <div class="col-md-2">
+     <center>
+      <p class="user-solicitud">{{ $sugerencia->Usuario->{'name-user'} }}</p>
+      <img src="data:;base64,{{ $sugerencia->Usuario->{'avatar'} }}" class="img-responsive img-solicitud">
+      </center>
+   </div>
+   <div class="col-md-4 titulo-solicitud">
+    <h3>Titulo:</h3>
+     {{ $sugerencia->{'game-suggested'} }}
+   </div>
+   <div class="col-md-5">
+    <h3>Descripcion:</h3>
+     {{ $sugerencia->{'reason'} }} <br><br>
+      <a target="_blank" href="{{ $sugerencia->{'link'} }}">Ver el trailer del juego</a>
+   </div>
+</div><br>
 @endforeach		
 @endsection
 

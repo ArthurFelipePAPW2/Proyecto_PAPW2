@@ -87,34 +87,25 @@
 		<br><br><br>	 
 						   		   
 		@yield('agregar-vdj')
-    @yield('borrar-vdj')
-    @yield('alta-vdj')
-    @yield('borrar-curiosidad')
-    @yield('agregar-curiosidad')
-    @yield('alta-usuario')
-    @yield('baja-usuario')
-    @yield('modificar-vdj')
-    @yield('info-vdj')
-    @yield('agregar-distribuidora')
+	    @yield('borrar-vdj')
+	    @yield('alta-vdj')
+	    @yield('borrar-curiosidad')
+	    @yield('agregar-curiosidad')
+	    @yield('alta-usuario')
+	    @yield('baja-usuario')
+	    @yield('modificar-vdj')
+	    @yield('info-vdj')
+	    @yield('agregar-distribuidora')
 
     
 
 		</nav>	
 		<br><br><br>
 		
-		<div class="container">
+		<div class="container ">
 			<div class="row">
-				<div class="col-md-11 col-md-offset-1">
-					<table class="table table-solicitud table-responsive">
-						<caption>Solicitudes de videojuegos</caption>
-						<thead>
-						<th>Titulo</th>	
-						<th>Descripción</th>	
-						<th>Usuario que envía</th>	
-						<th>Eliminar</th>		
-						</thead>
+				<div class="col-md-11 col-md-offset-1 table-solicitud">
 						@yield('peticion')
-					</table>
 				</div>
 			</div>
 		</div>	  

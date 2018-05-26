@@ -95,8 +95,17 @@ class SendSuggestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SuggestionFormRequest  $request)
     {
-        //
+        $sugg = $request->get('peticion');
+
+        echo $sugg;
+
+/*
+        DB::table('suggestions')
+            ->where('id-suggestion', '=' , $sugg)
+            ->delete();
+*/
+        //return back();
     }
 }

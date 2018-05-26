@@ -40,10 +40,10 @@
 <div class="row sugerencia">
      <div class="col-md-1">
       <center>
-      {{Form::open(array('url' => '/Modify','method' => 'post'))}}
-        {{ Form::hidden('peticion', '1') }}
+        {{Form::open(array('url' => '/DeleteSugg','method' => 'post'))}}
+        {{ Form::hidden('peticion', $sugerencia->{'id-suggestion'}) }}
         {{ Form::button('<span class="glyphicon glyphicon-remove"></span>', array('type' => 'submit', 'class'=>'enviar-peticion')) }}
-      {{Form::close()}}
+        {{Form::close()}}
   </center>
    </div>
  <div class="col-md-2">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdminFormRequest;
 use App\videogame;
+use App\suggestion;
 use DB;
 
 class DeleteGameController extends Controller
@@ -165,5 +166,23 @@ class DeleteGameController extends Controller
         }
 
         //echo $game;
+    }
+
+    public function deleteSugg(AdminFormRequest $request)
+    {
+        $id = $request->get('peticion');
+
+        $sugg = suggestion::find($id);
+
+        $sugg->delete();
+
+
+        //echo $sugg;
+
+        //DB::table('suggestions')
+         //   ->where('id-suggestion', '=' , $sugg)
+          //  ->delete();
+
+        return back();
     }
 }

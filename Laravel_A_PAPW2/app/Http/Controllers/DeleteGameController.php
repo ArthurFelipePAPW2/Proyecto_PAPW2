@@ -67,6 +67,12 @@ class DeleteGameController extends Controller
         $mode = $request->get('modo');
         $description = $request->get('descripcion');
 
+        if ($request->hasFile('newImage')) {
+            $cover = base64_encode(file_get_contents($request->file('newImage')->path()));
+        }else{
+            $cover = $request->get('pastImage');
+        }
+
         videogame::where('id-videogame', $idGame)
                 ->update([
                         'name-videogame' => $name,
@@ -74,7 +80,8 @@ class DeleteGameController extends Controller
                         'id-developer' => $developer,
                         'id-distributor' => $distributor,
                         'mode' => $mode,
-                        'description' => $description
+                        'description' => $description,
+                        'cover' => $cover,
                         ]);
 
         return back();

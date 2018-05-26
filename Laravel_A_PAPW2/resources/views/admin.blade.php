@@ -362,7 +362,7 @@
                     </div>
                     <div class="modal-body" id = "info_game">
                       <center>
-                          {{Form::open(array('url' => '/ActJuego','method' => 'post'))}}
+                          {{Form::open(array('url' => '/ActJuego','method' => 'post', 'files' => true))}}
                                {{ Form::hidden('idGame', '', array('id' => 'gHidden')) }}
 
                                <div class="form-group">
@@ -386,10 +386,19 @@
                                </div>
 
                                <div class="form-group">
-                               {{ Form::textarea('descripcion', '' , array('class' => 'textarea-agregar-vdj','required', 'id' => 'gDescription')) }}  
-                               <div class="form-group">
+                               {{ Form::textarea('descripcion', '' , array('class' => 'textarea-agregar-vdj','required', 'id' => 'gDescription')) }}
+                               </div>
 
-                               </div>                             
+                               <div class="form-group">
+                                  <img src="" class="img-responsive img-perfil img-rounded" id="gImage">
+                               </div>
+
+                               <div class="form-group">
+                                {{ Form::hidden('pastImage', '', array('id' => 'imageHidden')) }}
+                                {{ Form::label('nueva_imagen','Subir Imagen',array('class' => 'custom-file-upload-index custom-admin-file')) }}
+                                {{ Form::file('newImage',array('id' => 'nueva_imagen')) }}
+                               </div> 
+
                                 {{Form::button('Modificar', array('type' => 'submit', 'class' => 'btn btn-default btn-xs btn-login'))}}                         
                             {{Form::close()}}
                       </center>

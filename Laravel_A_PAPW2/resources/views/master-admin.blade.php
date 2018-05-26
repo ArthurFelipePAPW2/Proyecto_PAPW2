@@ -146,7 +146,8 @@
  					cache		: false,
  					success		: function(resp){
  						var data = JSON.parse(resp);
- 						//$('#info_game').html(data['mode']);
+ 						//var image = base64ToBlob(data['cover'], 'image/jpg');
+ 						
  						$('#gHidden').val(idGame);
  						$('#gName').val(data['name-videogame']);
  						$('#gNProductor').val(data['productor']);
@@ -154,6 +155,8 @@
  						$('#gDistribuidora').val(data['id-distributor']);
  						$('#gMode').val(data['mode']);
  						$('#gDescription').val(data['description']);
+ 						$('#imageHidden').val(data['cover']);
+ 						$('#gImage').attr('src', 'data:;base64,' + data['cover']);
  					},
         			error		: function() {
           				alert("No jala");

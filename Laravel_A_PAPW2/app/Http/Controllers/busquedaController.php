@@ -25,9 +25,9 @@ class busquedaController extends Controller
             $termino = $request->get('busqueda');
 
             $ArregloUsuarios = user::where('name-user','like','%'.$termino.'%')
-            ->orWhere('last-name-user', 'like','%'.$termino.'%')->limit(5)->get();
+            ->orWhere('last-name-user', 'like','%'.$termino.'%')->orderBy('created_at', 'desc')->limit(5)->get();
 
-            $ArregloVideogames = videogame::where('name-videogame','like','%'.$termino.'%')->limit(5)->get();
+            $ArregloVideogames = videogame::where('name-videogame','like','%'.$termino.'%')->orderBy('created_at', 'desc')->limit(5)->get();
 
             $arreglo = compact(
                 ['ArregloUsuarios',$ArregloUsuarios],
@@ -51,7 +51,7 @@ class busquedaController extends Controller
 
                     if($request->get('type') == NULL && $request->get('search') == NULL){
                         $DatosBusqueda = user::where('name-user','like','%'.$termino.'%')
-                        ->orWhere('last-name-user', 'like','%'.$termino.'%')->paginate(15);
+                        ->orWhere('last-name-user', 'like','%'.$termino.'%')->orderBy('created_at', 'desc')->paginate(15);
                     }else{
 
                         switch ($request->get('type')) {
@@ -63,7 +63,7 @@ class busquedaController extends Controller
                                     ->orWhere('last-name-user', 'like','%'.$termino.'%');
                                 }],
                                 ['correo-contacto-user','like','%'. $request->get('search').'%']
-                            ])->paginate(15);
+                            ])->orderBy('created_at', 'desc')->paginate(15);
 
                             break;
                             case 2:
@@ -73,7 +73,7 @@ class busquedaController extends Controller
                                         ->orWhere('last-name-user', 'like','%'.$termino.'%');
                                     }],
                                     ['pagina-web-user','like','%'. $request->get('search').'%']
-                                ])->paginate(15);
+                                ])->orderBy('created_at', 'desc')->paginate(15);
                             break;
                         }
 
@@ -92,13 +92,13 @@ class busquedaController extends Controller
                                 ->where([
                                         ['name-videogame','like','%'.$termino.'%'],
                                         ['name-platform','like','%'.$request->get('search').'%']
-                                ])->paginate(15);
+                                ])->orderBy('videogames.created_at', 'desc')->paginate(15);
                             break;
                             case 2:
                                 $DatosBusqueda = videogame::where([
                                     ['name-videogame','like','%'.$termino.'%'],
                                     ['productor','like','%'.$request->get('search').'%']
-                                ])->paginate(15);
+                                ])->orderBy('videogames.created_at', 'desc')->paginate(15);
                             break;
                             case 3:
                              $DatosBusqueda = DB::table('videogames')
@@ -106,7 +106,7 @@ class busquedaController extends Controller
                                 ->where([
                                         ['name-videogame','like','%'.$termino.'%'],
                                         ['name-distributor','like','%'.$request->get('search').'%']
-                                ])->paginate(15);
+                                ])->orderBy('videogames.created_at', 'desc')->paginate(15);
                             break;
                             case 4:
                             $DatosBusqueda = DB::table('videogames')
@@ -114,7 +114,7 @@ class busquedaController extends Controller
                                 ->where([
                                         ['name-videogame','like','%'.$termino.'%'],
                                         ['name-distributor','like','%'.$request->get('search').'%']
-                                ])->paginate(15);
+                                ])->orderBy('videogames.created_at', 'desc')->paginate(15);
                             break;
                             case 5:
                             $DatosBusqueda = DB::table('videogames')
@@ -123,7 +123,7 @@ class busquedaController extends Controller
                                 ->where([
                                         ['name-videogame','like','%'.$termino.'%'],
                                         ['name-gender','like','%'.$request->get('search').'%']
-                                ])->paginate(15);
+                                ])->orderBy('videogames.created_at', 'desc')->paginate(15);
                             break;
                         }   
                     }

@@ -369,6 +369,9 @@
                       <center>
                           {{Form::open(array('url' => '/ActJuego','method' => 'post', 'files' => true))}}
                                {{ Form::hidden('idGame', '', array('id' => 'gHidden')) }}
+                               <div class="form-group">
+                                  <img src="" class="img-responsive img-modificar-videojuego img-rounded" id="gImage">
+                               </div>
 
                                <div class="form-group">
                                	{{ Form::text('nombre', 'Nombre del juego', array('class' => 'form-control input-sm','required', 'id' => 'gName')) }} 
@@ -394,9 +397,7 @@
                                {{ Form::textarea('descripcion', '' , array('class' => 'textarea-agregar-vdj','required', 'id' => 'gDescription')) }}
                                </div>
 
-                               <div class="form-group">
-                                  <img src="" class="img-responsive img-perfil img-rounded" id="gImage">
-                               </div>
+
 
                                <div class="form-group">
                                 {{ Form::hidden('pastImage', '', array('id' => 'imageHidden')) }}

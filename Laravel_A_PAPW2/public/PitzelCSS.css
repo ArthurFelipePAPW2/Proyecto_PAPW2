@@ -114,8 +114,8 @@ input[type="file"] {
 	padding-bottom: 5px;
 	background-color: #0e283f;
 	border: none;
+	color:white;
 }
-
 
 @media only screen and (min-width: 4000px) {
 .my-def-bar{
@@ -125,6 +125,7 @@ input[type="file"] {
 	border: none;
 	margin-left: 30%;
 	margin-right: 30%;
+	color:white;
 }
 }
 
@@ -1055,6 +1056,10 @@ color: #fbf6eb;
 	resize:none;
 	width: 100%;
 	height: 120px;
+}
+
+.img-modificar-videojuego{
+	width: 50%;
 }
 
 .modificar-vdj-button{

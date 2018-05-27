@@ -114,7 +114,6 @@ input[type="file"] {
 	padding-bottom: 5px;
 	background-color: #0e283f;
 	border: none;
-	color:white;
 }
 
 @media only screen and (min-width: 4000px) {
@@ -125,7 +124,6 @@ input[type="file"] {
 	border: none;
 	margin-left: 30%;
 	margin-right: 30%;
-	color:white;
 }
 }
 

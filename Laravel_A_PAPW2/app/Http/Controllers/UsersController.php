@@ -41,6 +41,9 @@ class UsersController extends Controller
     public function store(UserFormRequest $request)
     {
 
+
+
+
     $nombre = $request->get('username');
     $apellido = $request->get('apellido');
     $email = $request->get('email');
@@ -52,6 +55,9 @@ class UsersController extends Controller
     $answer = $request->get('answer');
     $avatar = base64_encode(file_get_contents($request->file('imagen')->path()));
 
+    $ValidarCorreo = user::where('email-user','=',$email)->first();
+
+    if($ValidarCorreo == NULL){
     $user_pass =  $password;
     $salt = md5($user_pass);
     $pasword_encriptado = crypt($user_pass, $salt);
@@ -75,6 +81,9 @@ class UsersController extends Controller
         $user->save();
 
          return redirect('/articles');
+     }else{
+        return back()->withErrors(['Ese correo ya está en uso.']);;
+     }
     }
 
     /**

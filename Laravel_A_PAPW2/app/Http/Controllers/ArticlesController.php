@@ -30,7 +30,7 @@ class ArticlesController extends Controller
         } 
 
         $videojuegos = videogame::where('active', 1)
-                                ->orderBy('created_at', 'desc')->paginate(10);
+                                ->orderBy('created_at', 'desc')->paginate(5);
 
         return view('principal',compact(['videojuegos'],['curiosidad']));
     }

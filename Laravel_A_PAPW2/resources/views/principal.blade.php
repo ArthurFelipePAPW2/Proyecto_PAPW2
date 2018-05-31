@@ -3,7 +3,7 @@
 
 @section('sabias')
 <img src="Imagenes/celebi.png" class="img-responsive img-celebi visible-sm-inline visible-md-inline visible-lg-inline">
-<div class="sabias visible-sm-inline visible-md-inline visible-lg-inline">
+<div class="sabias visible-md-inline visible-lg-inline">
 
    <h3>¿Sabías Qué?</h3>
  	 @if($curiosidad)

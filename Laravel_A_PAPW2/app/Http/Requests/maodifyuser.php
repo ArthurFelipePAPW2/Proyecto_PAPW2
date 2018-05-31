@@ -25,7 +25,7 @@ class maodifyuser extends FormRequest
     public function rules()
     {
         return [
-            'pass' => 'max:6|min:20',
+            'pass' => 'max:20|min:6',
             'nombre' => 'min:3|max:50',
             'acerca' => 'max:140|min:0',
             'apellido' => 'min:3|max:50',

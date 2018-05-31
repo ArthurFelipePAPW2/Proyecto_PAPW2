@@ -1,6 +1,16 @@
 @extends('master-index')
 @section('title','Gamers')
 
+@section('boton-login')
+@if($user == NULL)
+<li>
+  <a data-toggle="modal" data-target="#loginModal">
+    <span class="glyphicon glyphicon-log-in btn-login-nav"> <label>LOGIN</label></span> 
+  </a>
+</li>
+@endif
+@endsection
+
 @section('alert')
   @if($msg != NULL)
   <div class="container">
@@ -8,12 +18,12 @@
       <div class="col-md-12">
   @if($msg == 'verdadero')
       <div class="alert alert-success">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+         <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onClick="location.href='/'">&times;</button>
       <strong>Success!</strong> Su nueva contraseña es: <strong>{{ $user }}</strong>
       </div> 
   @else
         <div class="alert alert-danger">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+         <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onClick="location.href='/'">&times;</button>
       <strong>Error!</strong> Los datos introducidos no son correctos
       </div> 
   @endif
@@ -25,7 +35,6 @@
 
 @section('lost-ing-mail')
 {{ Form::open(array('url' => 'Lost-password','method' => 'post')) }}
-@csrf
 
 <div class="form-group">
     {{ Form::text('email2', null, array('placeholder'=>'Ingrese su email','class' => 'form-control','required')) }}
@@ -140,7 +149,6 @@
 
 @section('login')
 {{Form::open(array('class' => 'form-inline','url' => 'login','method' => 'post'))}}
- @csrf
    <div class="form-group">
      {{ Form::email('email', null, array('placeholder'=>'E-mail','class' => 'form-control input-sm','required')) }}
    </div>

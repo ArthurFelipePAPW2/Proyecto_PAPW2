@@ -2,7 +2,11 @@
 @section('title','Gamers')
 
 @section('sabias')
+<<<<<<< HEAD
 <img src="Imagenes/celebi.png" class="img-responsive img-celebi visible-sm-inline visible-md-inline visible-lg-inline">
+=======
+<img src="Imagenes/celebi.png" class="img-responsive img-celebi visible-md-inline visible-lg-inline">
+>>>>>>> b83c7904734930ac13ae43cd6728610f9ff8189e
 <div class="sabias visible-md-inline visible-lg-inline">
 
    <h3>¿Sabías Qué?</h3>

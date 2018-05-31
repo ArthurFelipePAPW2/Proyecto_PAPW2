@@ -16,6 +16,7 @@
                     <div class="modal-body">
                       <center>
                             {{Form::open(array('url' => 'AgregarDistribuidora','method' => 'post'))}}
+                            @csrf
                                <div class="form-group"> 
                      {{ Form::label('Distribuidora','Ingrese una distribuidora') }}
                      {{ Form::text('distribuidora',null, array('class'=>'form-control', 'placeholder'=>'Agregue una distribuidora')) }}
@@ -41,6 +42,7 @@
      <div class="col-md-1">
       <center>
         {{Form::open(array('url' => '/DeleteSugg','method' => 'post'))}}
+        @csrf
         {{ Form::hidden('peticion', $sugerencia->{'id-suggestion'}) }}
         {{ Form::button('<span class="glyphicon glyphicon-remove"></span>', array('type' => 'submit', 'class'=>'enviar-peticion')) }}
         {{Form::close()}}
@@ -81,6 +83,7 @@
                     <div class="modal-body">
                       <center>
                            {{ Form::open(array('url' => 'registrarvdj','method' => 'post','files' => true)) }}
+                           @csrf
                            {{ Form::hidden('administrador', Session::get('Admin')->{'id-administrador'}) }} 
                                <div class="form-group">
                                	{{ Form::text('nombre', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}
@@ -134,6 +137,7 @@
                     <div class="modal-body">
                       <center>
                             {{Form::open(array('url' => '/BorrarJuego','method' => 'post'))}}
+                            @csrf
                             {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
                             <div class="form-group">
                                	  {{ Form::label('VideoJuegos','Selecciona el Videojuego a Borrar') }}
@@ -169,6 +173,7 @@
                     <div class="modal-body">
                       <center>
                             {{Form::open(array('url' => '/AltaJuego','method' => 'post'))}}
+                            @csrf
                             {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
                             <div class="form-group">
                                   {{ Form::label('VideoJuegos','Selecciona el Videojueg que quieres regresar') }}
@@ -203,6 +208,7 @@
                     <div class="modal-body">
                       <center>
                             {{Form::open(array('url' => 'BorrarCuriosidad','method' => 'post'))}}
+                            @csrf
                             {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
                                <div class="form-group"> 
                                	     {{ Form::label('Curiosidad','Selecciona la curiosidad a Borrar') }}
@@ -238,6 +244,7 @@
                     <div class="modal-body">
                       <center>
                             {{ Form::open(array('url' => 'agregarcuriosidad','method' => 'post')) }}
+                            @csrf
                             {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }}   
                                <div class="form-group">
 
@@ -268,6 +275,7 @@
                     <div class="modal-body">
                       <center>
                            {{Form::open(array('url' => 'AltaUser','method' => 'post'))}}
+                           @csrf
                            {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }} 
                                <div class="form-group">
                                	      {{ Form::label('usuario','Ingresa el Id del usuario') }}
@@ -302,6 +310,7 @@
                     <div class="modal-body">
                       <center>
                           {{Form::open(array('url' => 'BajaUser','method' => 'post'))}}
+                          @csrf
                           {{ Form::hidden('admin', Session::get('Admin')->{'id-administrador'}) }}  
                                <div class="form-group">
                                	      {{ Form::label('usuario','Ingresa el Id del usuario') }}
@@ -336,6 +345,7 @@
                     <div class="modal-body">
                       <center>
                           {{Form::open(array('url' => '/Modify','method' => 'post'))}}
+                          @csrf
                                <div class="form-group">
                                	     {{ Form::label('VideoJuegos','Selecciona el Videojuego a Modificar') }}
 								                     {{ Form::select('videojuego', $videogame,  null, ['class' => 'form-control input-sm', 'id' => 'idGame']) }}
@@ -368,6 +378,7 @@
                     <div class="modal-body" id = "info_game">
                       <center>
                           {{Form::open(array('url' => '/ActJuego','method' => 'post', 'files' => true))}}
+                          @csrf
                                {{ Form::hidden('idGame', '', array('id' => 'gHidden')) }}
                                <div class="form-group">
                                   <img src="" class="img-responsive img-modificar-videojuego img-rounded" id="gImage">

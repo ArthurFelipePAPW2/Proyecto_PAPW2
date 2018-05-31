@@ -32,6 +32,7 @@
         </span>  
 	</td>
 	{{Form::open(array('class' => 'form-index','url' => 'ModifyPass','method' => 'post'))}}
+	@csrf
 	<td>
 		{{ Form::password('pass', array('id'=>'pass','required')) }}
 	</td>
@@ -62,6 +63,7 @@
 
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 {{Form::open(array('class' => 'form-index','url' => 'ModifyAbout','method' => 'post'))}}
+@csrf
 {{ Form::textarea('acerca', $InfoDePerfil->{'acerca'}, array('class' => 'textarea-perfil','required')) }}
 {{ Form::button('<span class="glyphicon glyphicon-pencil"></span>', array('type' => 'submit', 'class' =>'cambiar-acerca')) }}
 {{Form::close()}}
@@ -77,6 +79,7 @@
 @section('form-nombre')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 {{Form::open(array('class' => 'form-index','url' => 'ModifyName','method' => 'post'))}}
+@csrf
 
 	<td>
 		{{ Form::text('nombre', $InfoDePerfil->{'name-user'} , array('required')) }}
@@ -97,6 +100,7 @@
 @section('form-apellido')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 {{Form::open(array('class' => 'form-index','url' => 'ModifyLastName','method' => 'post'))}}
+@csrf
 	<td>
 		{{ Form::text('apellido', $InfoDePerfil->{'last-name-user'}, array('required')) }}
 	</td>
@@ -129,6 +133,7 @@
                     <div class="modal-body">
                       <center>
 						{{Form::open(array('class' => 'form-index','url' => 'ModifyImage','method' => 'post','files' => true))}}
+						@csrf
 						<div class="form-group input-div">
 							{{ Form::label('file-upload','.',array('class' => 'custom-file-upload')) }}
 						   	{{ Form::file('imagen',array('id' => 'file-upload','required')) }}
@@ -146,6 +151,7 @@
 @section('form-ciudad')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 {{Form::open(array('class' => 'form-index','url' => 'ModifyCity','method' => 'post'))}}
+@csrf
 	<td>
 		{{ Form::select('ciudad',$ciudades,$InfoDePerfil->{'id-city'},['class'=>'form-control'])}}
 	</td>
@@ -165,6 +171,7 @@
 @section('form-correo')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 {{Form::open(array('class' => 'form-index','url' => 'ModifyEmail','method' => 'post'))}}
+@csrf
 	<td>
 		{{ Form::email('correo', $InfoDePerfil->{'correo-contacto-user'}, array('required')) }}
 	</td>
@@ -184,6 +191,7 @@
 @section('form-pagina')
 @if($InfoDePerfil->{'id-user'} == Session::get('User')->{'id-user'})
 {{Form::open(array('class' => 'form-index','url' => 'ModifyWeb','method' => 'post'))}}
+@csrf
 	<td>
 		{{ Form::text('pagina',$InfoDePerfil->{'pagina-web-user'} , array('required')) }}
 	</td>

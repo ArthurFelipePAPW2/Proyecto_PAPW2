@@ -16,6 +16,7 @@
 						<br>
 						@if($Comentarios[$x-1]->Usuario->{'id-user'} == $user->{'id-user'})
 						{{Form::open(array('url' =>"BorrarComentario/".$Comentarios[$x-1]->{'id-review'}."/".$user->{'id-user'}."/".$InfoDeResena->{'id-videogame'},'method' => 'get'))}}
+						@csrf
 						{{ Form::button('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => 'btn mover-izquierda')) }}		
 						{{ Form::close() }}	
 						@endif
@@ -28,6 +29,7 @@
 							@if($Useful->{'id-review'} == $Comentarios[$x-1]->{'id-review'})
 								{{Form::open(array('url' => 
 								"BorrarUseful/".$user->{'id-user'}."/".$Comentarios[$x-1]->{'id-review'},'method' => 'get'))}}
+								@csrf
 					        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-down"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
 					        	{{ Form::close() }}	
 					        	@php
@@ -40,6 +42,7 @@
 							@if(count($MisUseful) == 0 || $Encontrado == false)
 							{{Form::open(array('url' => 
 								"AgregarUseful/".$user->{'id-user'}."/".$Comentarios[$x-1]->{'id-review'},'method' => 'get'))}}
+								@csrf
 					        	{{ Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>', array('type' => 'submit', 'class' => 'btn')) }}		
 					        {{ Form::close() }}	
 							@endif
@@ -226,6 +229,7 @@
 			<div class="row">
 
 				{{Form::open(array('url' => 'SendReview','method' => 'post'))}}
+				@csrf
 				{{Form::hidden('videogame',$InfoDeResena->{'id-videogame'})}}
 				{{ Form::text('titulo-comentario', null, array('placeholder'=>'Titulo de tu comentario','id' => 'texto-comentar','required')) }}
 				<br>
@@ -262,6 +266,7 @@
 @if($Favorito != NULL)
 
 	{{Form::open(array('url' => 'BorrarFavorito','method' => 'post'))}}
+	@csrf
 	{{ Form::hidden('usuario', $user->{'id-user'}) }}
 	{{ Form::hidden('videogame', $InfoDeResena->{'id-videogame'}) }} 
 	<button class="botonFavorito favorito"></button>
@@ -270,6 +275,7 @@
 @else
 
 	{{Form::open(array('url' => 'AgregarFavorito','method' => 'post'))}}
+	@csrf
 	{{ Form::hidden('usuario', $user->{'id-user'}) }} 
 	{{ Form::hidden('videogame', $InfoDeResena->{'id-videogame'}) }} 
 	<button class="botonFavorito Nofavorito"></button>
@@ -298,6 +304,7 @@
                     <div class="modal-body">
                       <center>
                             {{ Form::open(array('url' => 'ModifyReview','method' => 'post')) }}
+                            @csrf
                             {{ Form::hidden('user', $user->{'id-user'}) }}   
                             {{ Form::hidden('videogame', $InfoDeResena->{'id-videogame'} ) }}   
                            <div class="form-group">

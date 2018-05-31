@@ -25,6 +25,7 @@
                     <div class="modal-body">
                       <center>
                            {{ Form::open(array('url' => 'EnviarSugerencia','method' => 'post'))}}  
+                           @csrf
                            {{ Form::hidden('user',Session::get('User')->{'id-user'}) }}
                                                        <div class="form-group">
                                 {{ Form::text('vg_name', null, array('placeholder'=>'Nombre del videojuego','class' => 'form-control input-sm','required')) }}

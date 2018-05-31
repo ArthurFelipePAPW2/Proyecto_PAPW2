@@ -51,7 +51,7 @@
 
 @section('busqueda-avanzada')
 {{Form::open(array('class' => 'form-avanzado','url' => '/search2/'.$modo.'/'.$termino,'method' => 'get','role' => 'search'))}}
-
+@csrf
 <div class="container">
 	<div class="row">
 		<div class="col-md-9">

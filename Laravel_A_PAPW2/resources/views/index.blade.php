@@ -25,6 +25,7 @@
 
 @section('lost-ing-mail')
 {{ Form::open(array('url' => 'Lost-password','method' => 'post')) }}
+@csrf
 
 <div class="form-group">
     {{ Form::text('email2', null, array('placeholder'=>'Ingrese su email','class' => 'form-control','required')) }}
@@ -44,6 +45,7 @@
 @section('formulario')
 
 {{Form::open(array('class' => 'form-index','url' => 'registrar','method' => 'post','files' => true))}}
+@csrf
 @foreach($errors->all() as $error)
 <div class="alert alert-danger">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -138,6 +140,7 @@
 
 @section('login')
 {{Form::open(array('class' => 'form-inline','url' => 'login','method' => 'post'))}}
+ @csrf
    <div class="form-group">
      {{ Form::email('email', null, array('placeholder'=>'E-mail','class' => 'form-control input-sm','required')) }}
    </div>

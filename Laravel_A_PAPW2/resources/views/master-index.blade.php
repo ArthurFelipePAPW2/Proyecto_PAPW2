@@ -29,11 +29,7 @@
               <div class="collapse navbar-collapse navbar-general" id="navbar-1">
               <!--Logueo -->
                <ul class="nav navbar-nav navbar-right">
-                   <li>
-                    <a data-toggle="modal" data-target="#loginModal">
-                      <span class="glyphicon glyphicon-log-in btn-login-nav"> <label>LOGIN</label></span> 
-                    </a>
-                   </li>
+                   @yield('boton-login')
                 </ul>
               </div>
             </div>

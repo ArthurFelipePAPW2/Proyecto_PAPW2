@@ -9,7 +9,7 @@
   @if($msg == 'verdadero')
       <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <strong>Success!</strong> Su nueva contraseña es: <strong>{{ $user->{'pass-user'} }}</strong>
+      <strong>Success!</strong> Su nueva contraseña es: <strong>{{ $user }}</strong>
       </div> 
   @else
         <div class="alert alert-danger">

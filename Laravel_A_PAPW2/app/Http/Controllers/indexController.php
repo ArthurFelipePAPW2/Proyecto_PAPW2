@@ -100,16 +100,15 @@ class indexController extends Controller
             for ($i = 0; $i < 8; $i++) {
                 $NuevaContrasena .= $caracteres[rand(0, $tamanocaracters - 1)];
             }
+            $user_pass_new =  $NuevaContrasena;
+            $salt = md5($user_pass_new);
+            $pasword_encriptado = crypt($user_pass_new, $salt);
 
             DB::table('users')
             ->where('id-user', '=' , $user->{'id-user'})
-            ->update(['pass-user' => $NuevaContrasena]);
+            ->update(['pass-user' => $pasword_encriptado]);
 
-            $user = user::where([
-                ['email-user','=', $request->get('email2')],
-                ['id-security','=', $request->get('pregunta2')],
-                ['answer','=', $request->get('respuesta2')]
-            ])->first();
+            $user = $NuevaContrasena;
 
             $msg = 'verdadero';
     }

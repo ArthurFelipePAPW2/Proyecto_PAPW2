@@ -121,10 +121,7 @@
 				<span class="glyphicon glyphicon-chevron-left"></span>
 			</button>
 		</div>
-		<div class="col-md-10 col-xs-10">
-			<p class="buttonSlide"></p>
-		</div>
-		<div class="col-md-1 col-xs-1">
+		<div class="col-md-1 col-xs-1 col-md-offset-10 col-xs-offset-8">
 			<button class="right-arrow" id="right-arrow">
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</button>
@@ -196,7 +193,7 @@
 							 		<img src="../Imagenes/Empty_Heart.png" class="img-responsive img-heart-resena">
 									@endfor
 									@else
-									Este juego no ha sido puntuado
+									No Rated
 									@endif
   								</td>
 							 </tr>

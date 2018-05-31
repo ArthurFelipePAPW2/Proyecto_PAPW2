@@ -577,6 +577,18 @@ color: #fbf6eb;
 	font-family: Nozstudio;
 }
 
+@media only screen and (max-width: 768px) {
+.table-info td:first-child{
+	font-size: 10px;
+	font-family: Nozstudio;
+}
+
+.table-info td:nth-child(2){
+	font-size: 10px;
+	font-family: Verdana;
+}
+}
+
 .table-info td:nth-child(2){
 	font-size: 14px;
 	font-family: Verdana;
